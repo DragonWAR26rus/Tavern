@@ -5,15 +5,17 @@
  */
 package ru.sfedu.chatasservice.entities;
 
+import java.io.Serializable;
+
 /**
  *
  * @author entropy
  */
 //Table platform_user
-public class PlatformUser {
+public class PlatformUser implements Serializable {
     
     private int id;
-    private String name;
+    private String login;
     private String avatarLink;
     private String lastAct;
     private boolean banned;
@@ -27,12 +29,12 @@ public class PlatformUser {
         this.id = id;
     }
     
-    public String getName() {
-        return name;
+    public String getLogin() {
+        return login;
     }
     
-    public void setName( String name ) {
-        this.name = name;
+    public void setLogin( String login ) {
+        this.login = login;
     }
     
     public String getAvatarLink() {
@@ -69,11 +71,23 @@ public class PlatformUser {
     
     protected PlatformUser(){}
     public PlatformUser(String name, String avatarLink, String lastAct, boolean banned, int platformId) {
-        this.name = name;
+        this.login = name;
         this.avatarLink = avatarLink;
         this.lastAct = lastAct;
         this.banned = banned;
         this.platformId = platformId;
+    }
+    
+    @Override
+    public String toString() {
+        return  "PlatformUser{" +
+                "id=" + id + 
+                ", login='" + login + '\'' +
+                ", avatarLink='" + avatarLink + '\'' +
+                ", lastAct=" + lastAct.toString() +
+                ", banned='" + banned + '\'' + 
+                ", plaftformId=" + platformId + 
+                '}';
     }
     
 }

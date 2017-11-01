@@ -5,12 +5,14 @@
  */
 package ru.sfedu.chatasservice.entities;
 
+import java.io.Serializable;
+
 /**
  *
  * @author entropy
  */
 // Table message
-public class Message {
+public class Message implements Serializable {
     
     private int id;
     private int senderId;
@@ -67,6 +69,16 @@ public class Message {
         this.text = text;
         this.sendTime = sendTime;
         this.platformId = platformId;
+    }
+    
+    @Override
+    public String toString() {
+        return  "Message{" +
+                "senderId=" + senderId + 
+                ", text='" + text + '\'' +
+                ", sendTime=" + sendTime.toString() +
+                ", plaftformId=" + platformId + 
+                '}';
     }
     
 }

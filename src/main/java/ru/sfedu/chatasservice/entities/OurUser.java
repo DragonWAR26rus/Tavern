@@ -1,12 +1,14 @@
 package ru.sfedu.chatasservice.entities;
 
+import java.io.Serializable;
+
 /**
  *
  * @author entropy
  */
 
 // Table our_user
-public class OurUser {
+public class OurUser implements Serializable {
     
     private int id;
     private String login;
@@ -50,6 +52,15 @@ public class OurUser {
         this.login = login;
         this.password = password;
         this.email = email;
+    }
+    
+    @Override
+    public String toString() {
+        return  "OurUser{" +
+                "id=" + id + 
+                ", login='" + login + '\'' +
+                ", email='" + email + '\'' +
+                '}';
     }
     
 }

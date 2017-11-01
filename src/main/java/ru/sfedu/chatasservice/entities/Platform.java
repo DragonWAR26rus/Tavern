@@ -1,12 +1,14 @@
 package ru.sfedu.chatasservice.entities;
 
+import java.io.Serializable;
+
 /**
  *
  * @author entropy
  */
 
 //Table platform
-public class Platform {
+public class Platform implements Serializable {
 
     private int id;
     private String domain;
@@ -50,6 +52,15 @@ public class Platform {
         this.domain = domain;
         this.key = key;
         this.ownerId = ownerId;
+    }
+    
+    @Override
+    public String toString() {
+        return  "Platform{" +
+                "id=" + id + 
+                ", key='" + key + '\'' +
+                ", ownerId=" + ownerId +
+                '}';
     }
     
 }
