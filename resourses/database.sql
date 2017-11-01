@@ -1,5 +1,5 @@
 
-DROP TABLE CASCADE IF EXISTS our_user;
+DROP TABLE our_user CASCADE;
 CREATE TABLE our_user (
     id serial primary key,
     login varchar(50) not null,
@@ -32,6 +32,6 @@ CREATE TABLE message (
     id serial primary key,
     sender_id integer REFERENCES platform_user(id),
     text text,
-    send_time varchar(15),
+    send_time varchar(20),
     platform_id integer REFERENCES platform(id)
 );

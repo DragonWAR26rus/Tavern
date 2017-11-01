@@ -1,7 +1,8 @@
-package ru.sfedu.chatasservice.database;
+package ru.sfedu.tavern.database;
 
 import java.sql.*;
 import org.apache.log4j.Logger;
+import ru.sfedu.tavern.AppConfig;
 
 /**
  *
@@ -12,14 +13,15 @@ public class Postgres {
     private static Postgres instance;
     private static final Logger log = Logger.getLogger(Postgres.class);
     
-    private Connection con = null;
-    private String url = "jdbc:postgresql://localhost:5432/servicedb";
-    private String login = "serviceuser";
-    private String password = "servicePass";
+    private Connection con  = null;
+    private String url      = AppConfig.getProperty("database.url");
+    private String login    = AppConfig.getProperty("database.login");
+    private String password = AppConfig.getProperty("database.password");
+    private String driver   = AppConfig.getProperty("database.driver");
     
     private Postgres(){
         try {
-            Class.forName("org.postgresql.Driver");
+            Class.forName(driver);
             con = DriverManager.getConnection(url, login, password);
         } catch (Exception ex) {
             log.info("Error connection: " + ex);

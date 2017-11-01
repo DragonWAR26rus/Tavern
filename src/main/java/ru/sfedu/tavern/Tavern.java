@@ -1,4 +1,4 @@
-package ru.sfedu.chatasservice;
+package ru.sfedu.tavern;
 
 import org.apache.log4j.Logger;
 
@@ -6,12 +6,12 @@ import org.apache.log4j.Logger;
  *
  * @author entropy
  */
-public class ChatAsServiceClient {
+public class Tavern {
     
-    private static Logger log = Logger.getLogger(ChatAsServiceClient.class);
+    private static Logger log = Logger.getLogger(Tavern.class);
     
-    public ChatAsServiceClient(){
-        log.debug("ChatAsServicelClient[0]: starting application............");
+    public Tavern(){
+        log.debug("Tavern[0]: starting application............");
         logBasicSystemInfo();
     }
     

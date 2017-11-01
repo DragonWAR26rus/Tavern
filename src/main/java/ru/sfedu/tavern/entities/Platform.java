@@ -1,4 +1,4 @@
-package ru.sfedu.chatasservice.entities;
+package ru.sfedu.tavern.entities;
 
 import java.io.Serializable;
 
