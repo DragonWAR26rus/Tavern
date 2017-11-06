@@ -1,5 +1,7 @@
 package ru.sfedu.tavern.entities;
 
+import com.opencsv.bean.CsvBindByName;
+import com.opencsv.bean.CsvBindByPosition;
 import java.util.ArrayList;
 
 /**
@@ -14,7 +16,7 @@ public class OurUser extends Entity{
     private String passwordHash;
     private String email;
     private String lastAct;
-    private ArrayList<Platform> platforms;
+    //private ArrayList<Platform> platforms;
     
     protected OurUser(){
         super(ClassType.OURUSER, 1l);
@@ -71,6 +73,7 @@ public class OurUser extends Entity{
         this.email = email;
     }
     
+    /*
     public ArrayList<Platform> getPlatforms() {
         return platforms;
     }
@@ -86,9 +89,10 @@ public class OurUser extends Entity{
         this.platforms = new ArrayList<Platform>();
         this.platforms.add(platform);
     }
-
+    */
+    
     public String valuesToString(boolean needId) {
-        String row = needId ? Long.toString(id) + ", '" : "'";
+        String row = needId ? Long.toString(getId()) + ", '" : "'";
         row += login + "', '" + passwordHash + "', '" + lastAct + "', '" + email + '\'';
         return row;
     }
@@ -96,7 +100,7 @@ public class OurUser extends Entity{
     @Override
     public String toString() {
         return  "OurUser{" +
-                "id=" + id + 
+                "id=" + getId() + 
                 ", login='" + login + '\'' +
                 ", passwordHash='" + passwordHash + '\'' +
                 ", lastAct='" + lastAct + '\'' +

@@ -33,7 +33,7 @@ public class PlatformUser extends Entity{
         this.platformId = platformId;
     }
     public PlatformUser(ArrayList<Object> initList) {
-        super(ClassType.OURUSER, initList.get(0) == null ? 1l : Long.parseLong(initList.get(0).toString()));
+        super(ClassType.PLATFORMUSER, initList.get(0) == null ? 1l : Long.parseLong(initList.get(0).toString()));
         String  _login      = initList.get(1) == null ? null : initList.get(1).toString();
         String  _avatarLink = initList.get(2) == null ? null : initList.get(2).toString();
         String  _lastAct    = initList.get(3) == null ? null : initList.get(3).toString();
@@ -45,14 +45,6 @@ public class PlatformUser extends Entity{
         this.lastAct    = _lastAct;
         this.banned     = _banned;
         this.platformId = _platformId;
-    }
-    
-    public long getId() {
-        return id;
-    }
-    
-    public void setId( long id ) {
-        this.id = id;
     }
     
     public String getLogin() {
@@ -98,7 +90,7 @@ public class PlatformUser extends Entity{
     @Override
     public String toString() {
         return  "PlatformUser{" +
-                "id=" + id + 
+                "id=" + getId() + 
                 ", login='" + login + '\'' +
                 ", avatarLink='" + avatarLink + '\'' +
                 ", lastAct='" + lastAct + '\'' +

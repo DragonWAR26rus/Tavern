@@ -5,16 +5,12 @@
  */
 package ru.sfedu.tavern;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 import ru.sfedu.tavern.database.DbConnection;
 import ru.sfedu.tavern.database.DbMetaTables;
 import ru.sfedu.tavern.dataproviders.CsvTools;
@@ -66,17 +62,17 @@ public class TavernTest {
     
                 // SELECT PLATFORMS
                 res =  instence.execSelectState(DbMetaTables.PLATFORM);
-                ArrayList<Platform> platformList = new ArrayList();
+                ArrayList<Entity> platformList = new ArrayList();
                 res.forEach( (args)->platformList.add( new Platform(args) ) );
                 
                 // SELECT PLATFORMS USERS
                 res =  instence.execSelectState(DbMetaTables.PLATFORM_USER);
-                ArrayList<PlatformUser> platformUsersList = new ArrayList();
+                ArrayList<Entity> platformUsersList = new ArrayList();
                 res.forEach( (args)->platformUsersList.add( new PlatformUser(args) ) );
                 
                 // SELECT MESSSAGES
                 res =  instence.execSelectState(DbMetaTables.MESSAGE);
-                ArrayList<Message> messagesList = new ArrayList();
+                ArrayList<Entity> messagesList = new ArrayList();
                 res.forEach( (args)->messagesList.add( new Message(args) ) );
                 
                 // SELECT TEST
@@ -91,6 +87,18 @@ public class TavernTest {
                 // CSV API TEST
                 CsvTools csv = new CsvTools();
                 csv.insert(userList);
+//                csv.insert(platformList);
+//                csv.insert(platformUsersList);
+//                csv.insert(messagesList);
+                try {
+                    System.out.println(csv.getObjectByID(1, ClassType.OURUSER).toString());
+                } catch ( Exception ex ) {}
+//                try {
+//                    System.out.println(csv.getObjectByID(1, ClassType.OURUSER).toString());
+//                } catch ( Exception ex ) {}
+//                try {
+//                    System.out.println(csv.getObjectByID(1, ClassType.PLATFORM).toString());
+//                } catch ( Exception ex ) {}
                 
             } catch (Exception ex) {
                 System.err.println(ex.getMessage());

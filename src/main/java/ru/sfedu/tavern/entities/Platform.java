@@ -1,5 +1,7 @@
 package ru.sfedu.tavern.entities;
 
+import com.opencsv.bean.CsvBindByName;
+import com.opencsv.bean.CsvBindByPosition;
 import java.util.ArrayList;
 
 /**
@@ -10,6 +12,7 @@ import java.util.ArrayList;
 //Table platform
 public class Platform extends Entity{
 
+    
     private String domain;
     private String key;
     private long ownerId;
@@ -24,7 +27,7 @@ public class Platform extends Entity{
         this.ownerId = ownerId;
     }
     public Platform(ArrayList<Object> initList) {
-        super(ClassType.OURUSER, initList.get(0) == null ? 1l : Long.parseLong(initList.get(0).toString()));
+        super(ClassType.PLATFORM, initList.get(0) == null ? 1l : Long.parseLong(initList.get(0).toString()));
         String _domain = initList.get(1) == null ? null : initList.get(1).toString();
         String _key    = initList.get(2) == null ? null : initList.get(2).toString();
         long _ownerId  = initList.get(3) == null ? null : Long.parseLong(initList.get(3).toString());
@@ -61,7 +64,7 @@ public class Platform extends Entity{
     @Override
     public String toString() {
         return  "Platform{" +
-                "id=" + id + 
+                "id=" + getId() + 
                 ", domain=" + domain +
                 ", key='" + key + '\'' +
                 ", ownerId=" + ownerId +

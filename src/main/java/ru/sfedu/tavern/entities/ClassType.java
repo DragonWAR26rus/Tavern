@@ -5,23 +5,27 @@
  */
 package ru.sfedu.tavern.entities;
 
+import ru.sfedu.tavern.Constants;
+
 /**
  *
  * @author entropy
  */
 public enum ClassType {
     
-    OURUSER      (OurUser.class),
-    PLATFORM     (Platform.class),
-    PLATFORMUSER (PlatformUser.class),
-    MESSAGE      (Message.class);
+    OURUSER      (Constants.HEADERS_OURUSER,        OurUser.class),
+    PLATFORM     (Constants.HEADERS_PLATFORM,       Platform.class),
+    PLATFORMUSER (Constants.HEADERS_PLATFORMUSER,   PlatformUser.class),
+    MESSAGE      (Constants.HEADERS_MESSAGE,        Message.class);
     
     
 
     private Class _class;
+    private String[] headers;
     private ClassType(){};
     
-    private ClassType(Class _class) {
+    private ClassType(String[] headers, Class _class) {
+        this.headers = headers;
         this._class = _class;
     }
     
@@ -32,6 +36,10 @@ public enum ClassType {
     
     public Class getCl() {
         return _class;
+    }
+    
+    public String[] getHeaders() {
+        return headers;
     }
 
 

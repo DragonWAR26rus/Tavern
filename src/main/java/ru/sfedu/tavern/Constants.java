@@ -13,6 +13,41 @@ public class Constants {
     public static final String DB_URL       = "database.url";
     public static final String DB_DRIVER    = "database.driver";
     
+    public static final String[] HEADERS_OURUSER = new String[] {
+        "id", 
+        "login", 
+        "passwordHash", 
+        "email", 
+        "lastAct"
+    };
+    
+    public static final String[] HEADERS_PLATFORM  = new String[] {
+        
+        "id", 
+        "domain", 
+        "key", 
+        "ownerId"
+    };
+    
+    public static final String[] HEADERS_MESSAGE = new String[] {
+        "classType", 
+        "id", 
+        "senderId", 
+        "text", 
+        "sendTime", 
+        "platformId"
+    };
+    
+    public static final String[] HEADERS_PLATFORMUSER = new String[] {
+        "classType", 
+        "id", 
+        "login",
+        "avatarLink", 
+        "lastAct", 
+        "banned", 
+        "platformId"
+    };
+    
     
     private Constants() {}
 

@@ -1,7 +1,8 @@
 
 package ru.sfedu.tavern.dataproviders;
 
-import com.opencsv.CSVWriter;
+import com.opencsv.bean.ColumnPositionMappingStrategy;
+import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.CsvToBeanBuilder;
 import com.opencsv.bean.StatefulBeanToCsv;
 import com.opencsv.bean.StatefulBeanToCsvBuilder;
@@ -10,9 +11,6 @@ import com.opencsv.exceptions.CsvRequiredFieldEmptyException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.Writer;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import org.apache.log4j.Logger;
@@ -139,9 +137,11 @@ public class CsvTools implements IDataProvider{
             
             FileWriter fw = new FileWriter(path, false);
             StatefulBeanToCsv beanToCsv = new StatefulBeanToCsvBuilder(fw)
+                    .withMappingStrategy(getStrategy(list.get(0).getClassType()))
                     .build();
             
             beanToCsv.write(list);
+            fw.close();
         } catch ( CsvDataTypeMismatchException | CsvRequiredFieldEmptyException | IOException ex ) {
             log.error("Ошибка записи: " + ex.getMessage());
         }
@@ -153,9 +153,15 @@ public class CsvTools implements IDataProvider{
             String path = getCsvFile(classType);
             FileReader fr = new FileReader(path);
             List<Entity> records; 
-            records = new CsvToBeanBuilder(fr).withType(classType.getCl()).build().parse();
+            records = new CsvToBeanBuilder(fr)
+                    .withMappingStrategy(getStrategy(classType))
+                    .withType(classType.getCl())
+                    .build()
+                    .parse();
+            
+            fr.close();
             return records;
-        } catch (IOException ex) {
+        } catch (Exception ex) {
             log.error("Ошибка чтения: " + ex.getMessage());
             return null;
         }        
@@ -167,6 +173,13 @@ public class CsvTools implements IDataProvider{
         String filePath = dirPath.concat(classType.toString()).concat(".csv");
         log.debug(filePath);
         return filePath;
+    }
+    
+    private ColumnPositionMappingStrategy getStrategy( ClassType type ) {
+        ColumnPositionMappingStrategy strategy = new ColumnPositionMappingStrategy();
+        strategy.setType(type.getCl());
+        strategy.setColumnMapping(type.getHeaders());
+        return strategy;
     }
 
 }

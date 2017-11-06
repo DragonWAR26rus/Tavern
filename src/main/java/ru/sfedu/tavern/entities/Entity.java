@@ -1,6 +1,8 @@
 
 package ru.sfedu.tavern.entities;
 
+import com.opencsv.bean.CsvBindByName;
+import com.opencsv.bean.CsvBindByPosition;
 import java.io.Serializable;
 
 /**
@@ -9,8 +11,11 @@ import java.io.Serializable;
  */
 public abstract class Entity implements Serializable{
 
-    protected long id = 1l;
+    
+    private long id = 1l;
     private ClassType classType;
+    
+    public Entity(){}
 
     public Entity(ClassType classType, long id) {
         this.classType = classType;

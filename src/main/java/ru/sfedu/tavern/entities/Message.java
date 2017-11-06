@@ -34,7 +34,7 @@ public class Message extends Entity{
         this.platformId = platformId;
     }
     public Message(ArrayList<Object> initList) {
-        super(ClassType.OURUSER, initList.get(0) == null ? 1l : Long.parseLong(initList.get(0).toString()));
+        super(ClassType.MESSAGE, initList.get(0) == null ? 1l : Long.parseLong(initList.get(0).toString()));
         long _senderId    = initList.get(1) == null ? null : Long.parseLong(initList.get(0).toString());
         String _text      = initList.get(2) == null ? null : initList.get(2).toString();
         String _send_time = initList.get(3) == null ? null : initList.get(3).toString();
@@ -81,7 +81,7 @@ public class Message extends Entity{
     @Override
     public String toString() {
         return  "Message{" +
-                "id=" + id +
+                "id=" + getId() +
                 ", senderId=" + senderId + 
                 ", text='" + text + '\'' +
                 ", sendTime='" + sendTime + '\'' +
