@@ -12,15 +12,17 @@ import java.util.ArrayList;
 //Table platform
 public class Platform extends Entity{
 
-    
+    @CsvBindByName
     private String domain;
+    @CsvBindByName
     private String key;
+    @CsvBindByName
     private long ownerId;
     
     public Platform(){
         super(ClassType.PLATFORM, 1l);
     }
-    public Platform(long id, long ownerId, String domain, String key){
+    public Platform(long id, String domain, String key, long ownerId){
         super(ClassType.PLATFORM, id);
         this.domain = domain;
         this.key = key;

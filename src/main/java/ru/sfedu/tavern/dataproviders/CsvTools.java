@@ -13,6 +13,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import org.apache.log4j.Logger;
 import ru.sfedu.tavern.Constants;
 import ru.sfedu.tavern.entities.ClassType;
@@ -135,34 +136,32 @@ public class CsvTools implements IDataProvider{
         try {
             String path = getCsvFile(list.get(0).getClassType());
             
-            FileWriter fw = new FileWriter(path, false);
-            StatefulBeanToCsv beanToCsv = new StatefulBeanToCsvBuilder(fw)
-                    .withMappingStrategy(getStrategy(list.get(0).getClassType()))
-                    .build();
-            
-            beanToCsv.write(list);
-            fw.close();
+            try (FileWriter fw = new FileWriter(path, false)) {
+                StatefulBeanToCsv beanToCsv = new StatefulBeanToCsvBuilder(fw)
+                        .withMappingStrategy(getStrategy(list.get(0).getClassType()))
+                        .build();
+                
+                beanToCsv.write(list);
+            }
         } catch ( CsvDataTypeMismatchException | CsvRequiredFieldEmptyException | IOException ex ) {
             log.error("Ошибка записи: " + ex.getMessage());
         }
     }
     
     private List<Entity> readFromCsv(ClassType classType){
-        
         try {
             String path = getCsvFile(classType);
-            FileReader fr = new FileReader(path);
-            List<Entity> records; 
-            records = new CsvToBeanBuilder(fr)
-                    .withMappingStrategy(getStrategy(classType))
-                    .withType(classType.getCl())
-                    .build()
-                    .parse();
-            
-            fr.close();
+            List<Entity> records;
+            try (FileReader fr = new FileReader(path)) {
+                records = new CsvToBeanBuilder(fr)
+                        .withMappingStrategy(getStrategy(classType))
+                        .withType(classType.getCl())
+                        .build()
+                        .parse();
+            }
             return records;
         } catch (Exception ex) {
-            log.error("Ошибка чтения: " + ex.getMessage());
+            log.error(ex);
             return null;
         }        
     }

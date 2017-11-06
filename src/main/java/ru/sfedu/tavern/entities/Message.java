@@ -5,6 +5,7 @@
  */
 package ru.sfedu.tavern.entities;
 
+import com.opencsv.bean.CsvBindByName;
 import java.util.ArrayList;
 
 /**
@@ -14,9 +15,13 @@ import java.util.ArrayList;
 // Table message
 public class Message extends Entity{
     
+    @CsvBindByName
     private long senderId;
+    @CsvBindByName
     private String text;
+    @CsvBindByName
     private String sendTime;
+    @CsvBindByName
     private long platformId;
     
     public Message(){
@@ -35,10 +40,10 @@ public class Message extends Entity{
     }
     public Message(ArrayList<Object> initList) {
         super(ClassType.MESSAGE, initList.get(0) == null ? 1l : Long.parseLong(initList.get(0).toString()));
-        long _senderId    = initList.get(1) == null ? null : Long.parseLong(initList.get(0).toString());
+        long _senderId    = initList.get(1) == null ? null : Long.parseLong(initList.get(1).toString());
         String _text      = initList.get(2) == null ? null : initList.get(2).toString();
         String _send_time = initList.get(3) == null ? null : initList.get(3).toString();
-        long _platformId  = initList.get(4) == null ? null : Long.parseLong(initList.get(0).toString());
+        long _platformId  = initList.get(4) == null ? null : Long.parseLong(initList.get(4).toString());
         
         this.senderId           = _senderId;
         this.text               = _text;

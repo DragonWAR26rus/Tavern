@@ -6,6 +6,7 @@
 package ru.sfedu.tavern.entities;
 
 
+import com.opencsv.bean.CsvBindByName;
 import java.util.ArrayList;
 
 /**
@@ -15,10 +16,15 @@ import java.util.ArrayList;
 //Table platform_user
 public class PlatformUser extends Entity{
     
+    @CsvBindByName
     private String login;
+    @CsvBindByName
     private String avatarLink;
+    @CsvBindByName
     private String lastAct;
+    @CsvBindByName
     private boolean banned;
+    @CsvBindByName
     private long platformId;
     
     public PlatformUser(){

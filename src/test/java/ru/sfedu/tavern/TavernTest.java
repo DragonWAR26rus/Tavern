@@ -87,18 +87,26 @@ public class TavernTest {
                 // CSV API TEST
                 CsvTools csv = new CsvTools();
                 csv.insert(userList);
-//                csv.insert(platformList);
-//                csv.insert(platformUsersList);
-//                csv.insert(messagesList);
+                csv.insert(platformList);
+                csv.insert(platformUsersList);
+                csv.insert(messagesList);
                 try {
-                    System.out.println(csv.getObjectByID(1, ClassType.OURUSER).toString());
+                    Entity test1 = (Entity) csv.getObjectByID(1, ClassType.OURUSER);
+                    OurUser test2 = (OurUser) test1;
+                    System.out.println(test2.toString());
                 } catch ( Exception ex ) {}
-//                try {
-//                    System.out.println(csv.getObjectByID(1, ClassType.OURUSER).toString());
-//                } catch ( Exception ex ) {}
-//                try {
-//                    System.out.println(csv.getObjectByID(1, ClassType.PLATFORM).toString());
-//                } catch ( Exception ex ) {}
+                try {
+                    System.out.println(csv.getObjectByID(2, ClassType.OURUSER).toString());
+                } catch ( Exception ex ) {}
+                try {
+                    System.out.println(csv.getObjectByID(1, ClassType.PLATFORM).toString());
+                } catch ( Exception ex ) {}
+                try {
+                    System.out.println(csv.getObjectByID(1, ClassType.MESSAGE).toString());
+                } catch ( Exception ex ) {}
+                try {
+                    System.out.println(csv.getObjectByID(1, ClassType.PLATFORMUSER).toString());
+                } catch ( Exception ex ) {}
                 
             } catch (Exception ex) {
                 System.err.println(ex.getMessage());

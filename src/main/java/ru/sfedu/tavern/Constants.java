@@ -22,7 +22,6 @@ public class Constants {
     };
     
     public static final String[] HEADERS_PLATFORM  = new String[] {
-        
         "id", 
         "domain", 
         "key", 
@@ -30,7 +29,6 @@ public class Constants {
     };
     
     public static final String[] HEADERS_MESSAGE = new String[] {
-        "classType", 
         "id", 
         "senderId", 
         "text", 
@@ -39,7 +37,6 @@ public class Constants {
     };
     
     public static final String[] HEADERS_PLATFORMUSER = new String[] {
-        "classType", 
         "id", 
         "login",
         "avatarLink", 

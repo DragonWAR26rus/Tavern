@@ -11,8 +11,9 @@ import java.io.Serializable;
  */
 public abstract class Entity implements Serializable{
 
-    
+    @CsvBindByName
     private long id = 1l;
+    @CsvBindByName
     private ClassType classType;
     
     public Entity(){}

@@ -12,13 +12,17 @@ import java.util.ArrayList;
 // Table our_user
 public class OurUser extends Entity{
     
+    @CsvBindByName
     private String login;
+    @CsvBindByName
     private String passwordHash;
+    @CsvBindByName
     private String email;
+    @CsvBindByName
     private String lastAct;
     //private ArrayList<Platform> platforms;
     
-    protected OurUser(){
+    public OurUser(){
         super(ClassType.OURUSER, 1l);
     }
     public OurUser(long id, String login, String passwordHash, String lastAct, String email) {
