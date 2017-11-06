@@ -1,6 +1,7 @@
 
 package ru.sfedu.tavern.dataproviders;
 
+import com.opencsv.CSVWriter;
 import com.opencsv.bean.CsvToBeanBuilder;
 import com.opencsv.bean.StatefulBeanToCsv;
 import com.opencsv.bean.StatefulBeanToCsvBuilder;
@@ -9,6 +10,9 @@ import com.opencsv.exceptions.CsvRequiredFieldEmptyException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.Writer;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import org.apache.log4j.Logger;
@@ -129,12 +133,15 @@ public class CsvTools implements IDataProvider{
         return target;
     }
     
-    private void writeToCsv(List<Entity> objectList) {
+    private void writeToCsv(List<Entity> list) {
         try {
-            String path = getCsvFile(objectList.get(0).getClassType());
+            String path = getCsvFile(list.get(0).getClassType());
+            
             FileWriter fw = new FileWriter(path, false);
-            StatefulBeanToCsv beanToCsv = new StatefulBeanToCsvBuilder(fw).build();
-            beanToCsv.write(objectList);
+            StatefulBeanToCsv beanToCsv = new StatefulBeanToCsvBuilder(fw)
+                    .build();
+            
+            beanToCsv.write(list);
         } catch ( CsvDataTypeMismatchException | CsvRequiredFieldEmptyException | IOException ex ) {
             log.error("Ошибка записи: " + ex.getMessage());
         }
@@ -146,7 +153,7 @@ public class CsvTools implements IDataProvider{
             String path = getCsvFile(classType);
             FileReader fr = new FileReader(path);
             List<Entity> records; 
-            records = new CsvToBeanBuilder(fr).withType(classType.getClass()).build().parse();
+            records = new CsvToBeanBuilder(fr).withType(classType.getCl()).build().parse();
             return records;
         } catch (IOException ex) {
             log.error("Ошибка чтения: " + ex.getMessage());
