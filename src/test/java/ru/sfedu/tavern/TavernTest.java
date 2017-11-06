@@ -8,6 +8,7 @@ package ru.sfedu.tavern;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -16,6 +17,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import ru.sfedu.tavern.database.DbConnection;
 import ru.sfedu.tavern.database.DbMetaTables;
+import ru.sfedu.tavern.dataproviders.CsvTools;
 import ru.sfedu.tavern.entities.*;
 
 /**
@@ -50,7 +52,8 @@ public class TavernTest {
     public void testMain() {
 //        System.out.println("main");
 //        String[] args = null;
-//        Tavern.main(args);
+//        Tavern.main(args);            
+            
             try {
                 DbConnection instence = DbConnection.getInstance();
     //            String row = "'Admin', 'e3afed0047b08059d0fada10f400c1e5','test@mail.ru', '" + System.currentTimeMillis() + '\'';
@@ -58,7 +61,7 @@ public class TavernTest {
     //            instence.execQuery("Insert into our_user(login, password_hash, email, last_act) values(" + row  + ")");
                 // SLECT OUR USER
                 ArrayList<ArrayList<Object>> res =  instence.execSelectState(DbMetaTables.OUR_USER);
-                ArrayList<OurUser> userList = new ArrayList();
+                ArrayList<Entity> userList = new ArrayList();
                 res.forEach( (args)->userList.add( new OurUser(args) ) );
     
                 // SELECT PLATFORMS
@@ -84,6 +87,11 @@ public class TavernTest {
                 platformList.forEach( (val)->System.out.println(val.toString()) );
                 platformUsersList.forEach( (val)->System.out.println(val.toString()) );
                 messagesList.forEach( (val)->System.out.println(val.toString()) );
+                
+                // CSV API TEST
+                CsvTools csv = new CsvTools();
+                csv.insert(userList);
+                
             } catch (Exception ex) {
                 System.err.println(ex.getMessage());
             }

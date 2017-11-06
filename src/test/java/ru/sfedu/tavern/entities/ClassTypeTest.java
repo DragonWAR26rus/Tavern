@@ -5,6 +5,7 @@
  */
 package ru.sfedu.tavern.entities;
 
+import static java.lang.System.console;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -39,6 +40,29 @@ public class ClassTypeTest {
         String name = "";
         ClassType expResult = null;
         ClassType result = ClassType.valueOf(name);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of toString method, of class ClassType.
+     */
+    @Test
+    public void testToString() {
+        ClassType test = ClassType.MESSAGE;
+        System.out.println(test.toString());
+    }
+
+    /**
+     * Test of getCl method, of class ClassType.
+     */
+    @Test
+    public void testGetCl() {
+        System.out.println("getCl");
+        ClassType instance = null;
+        Class expResult = null;
+        Class result = instance.getCl();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");

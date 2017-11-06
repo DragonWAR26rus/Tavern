@@ -11,9 +11,28 @@ package ru.sfedu.tavern.entities;
  */
 public enum ClassType {
     
-    OURUSER,
-    PLATFORM,
-    PLATFORMUSER,
-    MESSAGE;
+    OURUSER      (OurUser.class),
+    PLATFORM     (Platform.class),
+    PLATFORMUSER (PlatformUser.class),
+    MESSAGE      (Message.class);
     
+    
+
+    private Class _class;
+    private ClassType(){};
+    
+    private ClassType(Class _class) {
+        this._class = _class;
+    }
+    
+    @Override
+    public String toString() {
+        return super.toString();
+    }
+    
+    public Class getCl() {
+        return _class;
+    }
+
+
 }

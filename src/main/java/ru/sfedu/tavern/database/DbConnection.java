@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import org.apache.log4j.Logger;
+import ru.sfedu.tavern.Constants;
 import ru.sfedu.tavern.entities.ClassType;
 import ru.sfedu.tavern.entities.Entity;
 import ru.sfedu.tavern.utils.ConfigurationUtil;
@@ -29,10 +30,10 @@ public class DbConnection {
     
     private DbConnection() throws Exception{
         try{
-            url      = ConfigurationUtil.getConfigurationEntry("database.url");
-            login    = ConfigurationUtil.getConfigurationEntry("database.login");
-            password = ConfigurationUtil.getConfigurationEntry("database.password");
-            driver   = ConfigurationUtil.getConfigurationEntry("database.driver");
+            url      = ConfigurationUtil.getConfigurationEntry(Constants.DB_URL);
+            login    = ConfigurationUtil.getConfigurationEntry(Constants.DB_LOGIN);
+            password = ConfigurationUtil.getConfigurationEntry(Constants.DB_PASSWORD);
+            driver   = ConfigurationUtil.getConfigurationEntry(Constants.DB_DRIVER);
         } catch ( Exception ex ) {
             log.info(ex.getMessage());
             throw ex;

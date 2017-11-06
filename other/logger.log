@@ -30,3 +30,661 @@
 11.01:01.37.27  INFO	ru.sfedu.chatasservice.database.Postgres:50 - String in row: SERGEY
 11.01:01.37.27  INFO	ru.sfedu.chatasservice.database.Postgres:50 - String in row: KIRILL
 11.01:01.37.27  INFO	ru.sfedu.chatasservice.database.Postgres:50 - String in row: ANDREY
+11.06:17.11.06  INFO	ru.sfedu.tavern.database.DbConnection:45 - Trying to open DB connection...
+11.06:17.11.06  INFO	ru.sfedu.tavern.database.DbConnection:49 - DB connection opened!
+11.06:17.11.06 DEBUG	ru.sfedu.tavern.database.DbConnection:73 - SELECT * FROM our_user;
+11.06:17.11.06 DEBUG	ru.sfedu.tavern.database.DbConnection:76 - TABLE: our_user
+11.06:17.11.06 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 1 Column name: id	Column type: serial Value: 1
+11.06:17.11.06 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 2 Column name: login	Column type: varchar Value: Admin
+11.06:17.11.06 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 3 Column name: password_hash	Column type: varchar Value: e3afed0047b08059d0fada10f400c1e5
+11.06:17.11.06 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 4 Column name: last_act	Column type: varchar Value: 1509574941840
+11.06:17.11.06 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 5 Column name: email	Column type: varchar Value: test@mail.ru
+11.06:17.11.06 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 1	Admin	e3afed0047b08059d0fada10f400c1e5	1509574941840	test@mail.ru	
+11.06:17.11.06 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 1 Column name: id	Column type: serial Value: 2
+11.06:17.11.06 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 2 Column name: login	Column type: varchar Value: Entropy
+11.06:17.11.06 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 3 Column name: password_hash	Column type: varchar Value: passwordHash
+11.06:17.11.06 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 4 Column name: last_act	Column type: varchar Value: 1509574941840
+11.06:17.11.06 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 5 Column name: email	Column type: varchar Value: DragonWAR26russ@gmail.com
+11.06:17.11.06 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 2	Entropy	passwordHash	1509574941840	DragonWAR26russ@gmail.com	
+11.06:17.11.06 DEBUG	ru.sfedu.tavern.database.DbConnection:73 - SELECT * FROM platform;
+11.06:17.11.06 DEBUG	ru.sfedu.tavern.database.DbConnection:76 - TABLE: platform
+11.06:17.11.06 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 1 Column name: id	Column type: serial Value: 1
+11.06:17.11.06 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 2 Column name: domain	Column type: varchar Value: testDomain
+11.06:17.11.06 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 3 Column name: key	Column type: varchar Value: testkey
+11.06:17.11.06 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 4 Column name: owner_id	Column type: int4 Value: 2
+11.06:17.11.06 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 1	testDomain	testkey	2	
+11.06:17.11.06 DEBUG	ru.sfedu.tavern.database.DbConnection:73 - SELECT * FROM platform_user;
+11.06:17.11.06 DEBUG	ru.sfedu.tavern.database.DbConnection:76 - TABLE: platform_user
+11.06:17.11.06 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 1 Column name: id	Column type: serial Value: 1
+11.06:17.11.06 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 2 Column name: login	Column type: varchar Value: entropy
+11.06:17.11.06 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 3 Column name: avatar	Column type: varchar Value: http://yandex.ru/
+11.06:17.11.06 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 4 Column name: last_act	Column type: varchar Value: 1509574941840
+11.06:17.11.06 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 5 Column name: banned	Column type: bool Value: false
+11.06:17.11.06 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 6 Column name: platform_id	Column type: int4 Value: 1
+11.06:17.11.06 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 1	entropy	http://yandex.ru/	1509574941840	false	1	
+11.06:17.11.06 DEBUG	ru.sfedu.tavern.database.DbConnection:73 - SELECT * FROM message;
+11.06:17.11.06 DEBUG	ru.sfedu.tavern.database.DbConnection:76 - TABLE: message
+11.06:17.11.06 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 1 Column name: id	Column type: serial Value: 1
+11.06:17.11.06 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 2 Column name: sender_id	Column type: int4 Value: 1
+11.06:17.11.06 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 3 Column name: text	Column type: text Value: Hello taverna!
+11.06:17.11.06 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 4 Column name: send_time	Column type: varchar Value: 1509574941840
+11.06:17.11.06 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 5 Column name: platform_id	Column type: int4 Value: 1
+11.06:17.11.06 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 1	1	Hello taverna!	1509574941840	1	
+11.06:17.11.06 DEBUG	ru.sfedu.tavern.database.DbConnection:73 - SELECT * FROM test;
+11.06:17.11.06 DEBUG	ru.sfedu.tavern.database.DbConnection:76 - TABLE: test
+11.06:17.11.06 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 1 Column name: id	Column type: serial Value: 1
+11.06:17.11.06 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 2 Column name: name	Column type: varchar Value: SERGEY
+11.06:17.11.06 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 3 Column name: sec_name	Column type: varchar Value: null
+11.06:17.11.06 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 1	SERGEY	null	
+11.06:17.11.06 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 1 Column name: id	Column type: serial Value: 2
+11.06:17.11.06 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 2 Column name: name	Column type: varchar Value: KIRILL
+11.06:17.11.06 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 3 Column name: sec_name	Column type: varchar Value: null
+11.06:17.11.06 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 2	KIRILL	null	
+11.06:17.11.06 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 3 Column: 1 Column name: id	Column type: serial Value: 3
+11.06:17.11.06 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 3 Column: 2 Column name: name	Column type: varchar Value: ANDREY
+11.06:17.11.06 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 3 Column: 3 Column name: sec_name	Column type: varchar Value: null
+11.06:17.11.06 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 3	ANDREY	null	
+11.06:17.11.07 DEBUG	ru.sfedu.tavern.dataproviders.CsvTools:32 - CSV->INSERT(ARRAYLIST<ENTITY>)....
+11.06:17.11.07 DEBUG	ru.sfedu.tavern.dataproviders.CsvTools:43 - OurUser{id=1, login='Admin', passwordHash='e3afed0047b08059d0fada10f400c1e5', lastAct='1509574941840', email='test@mail.ru'}
+11.06:17.11.07 DEBUG	ru.sfedu.tavern.dataproviders.CsvTools:43 - OurUser{id=2, login='Entropy', passwordHash='passwordHash', lastAct='1509574941840', email='DragonWAR26russ@gmail.com'}
+11.06:17.12.16  INFO	ru.sfedu.tavern.database.DbConnection:45 - Trying to open DB connection...
+11.06:17.12.17  INFO	ru.sfedu.tavern.database.DbConnection:49 - DB connection opened!
+11.06:17.12.17 DEBUG	ru.sfedu.tavern.database.DbConnection:73 - SELECT * FROM our_user;
+11.06:17.12.17 DEBUG	ru.sfedu.tavern.database.DbConnection:76 - TABLE: our_user
+11.06:17.12.17 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 1 Column name: id	Column type: serial Value: 1
+11.06:17.12.17 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 2 Column name: login	Column type: varchar Value: Admin
+11.06:17.12.17 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 3 Column name: password_hash	Column type: varchar Value: e3afed0047b08059d0fada10f400c1e5
+11.06:17.12.17 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 4 Column name: last_act	Column type: varchar Value: 1509574941840
+11.06:17.12.17 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 5 Column name: email	Column type: varchar Value: test@mail.ru
+11.06:17.12.17 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 1	Admin	e3afed0047b08059d0fada10f400c1e5	1509574941840	test@mail.ru	
+11.06:17.12.17 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 1 Column name: id	Column type: serial Value: 2
+11.06:17.12.17 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 2 Column name: login	Column type: varchar Value: Entropy
+11.06:17.12.17 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 3 Column name: password_hash	Column type: varchar Value: passwordHash
+11.06:17.12.17 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 4 Column name: last_act	Column type: varchar Value: 1509574941840
+11.06:17.12.17 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 5 Column name: email	Column type: varchar Value: DragonWAR26russ@gmail.com
+11.06:17.12.17 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 2	Entropy	passwordHash	1509574941840	DragonWAR26russ@gmail.com	
+11.06:17.12.17 DEBUG	ru.sfedu.tavern.database.DbConnection:73 - SELECT * FROM platform;
+11.06:17.12.17 DEBUG	ru.sfedu.tavern.database.DbConnection:76 - TABLE: platform
+11.06:17.12.17 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 1 Column name: id	Column type: serial Value: 1
+11.06:17.12.17 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 2 Column name: domain	Column type: varchar Value: testDomain
+11.06:17.12.17 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 3 Column name: key	Column type: varchar Value: testkey
+11.06:17.12.17 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 4 Column name: owner_id	Column type: int4 Value: 2
+11.06:17.12.17 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 1	testDomain	testkey	2	
+11.06:17.12.17 DEBUG	ru.sfedu.tavern.database.DbConnection:73 - SELECT * FROM platform_user;
+11.06:17.12.17 DEBUG	ru.sfedu.tavern.database.DbConnection:76 - TABLE: platform_user
+11.06:17.12.17 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 1 Column name: id	Column type: serial Value: 1
+11.06:17.12.17 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 2 Column name: login	Column type: varchar Value: entropy
+11.06:17.12.17 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 3 Column name: avatar	Column type: varchar Value: http://yandex.ru/
+11.06:17.12.17 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 4 Column name: last_act	Column type: varchar Value: 1509574941840
+11.06:17.12.17 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 5 Column name: banned	Column type: bool Value: false
+11.06:17.12.17 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 6 Column name: platform_id	Column type: int4 Value: 1
+11.06:17.12.17 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 1	entropy	http://yandex.ru/	1509574941840	false	1	
+11.06:17.12.17 DEBUG	ru.sfedu.tavern.database.DbConnection:73 - SELECT * FROM message;
+11.06:17.12.17 DEBUG	ru.sfedu.tavern.database.DbConnection:76 - TABLE: message
+11.06:17.12.17 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 1 Column name: id	Column type: serial Value: 1
+11.06:17.12.17 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 2 Column name: sender_id	Column type: int4 Value: 1
+11.06:17.12.17 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 3 Column name: text	Column type: text Value: Hello taverna!
+11.06:17.12.17 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 4 Column name: send_time	Column type: varchar Value: 1509574941840
+11.06:17.12.17 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 5 Column name: platform_id	Column type: int4 Value: 1
+11.06:17.12.17 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 1	1	Hello taverna!	1509574941840	1	
+11.06:17.12.17 DEBUG	ru.sfedu.tavern.database.DbConnection:73 - SELECT * FROM test;
+11.06:17.12.17 DEBUG	ru.sfedu.tavern.database.DbConnection:76 - TABLE: test
+11.06:17.12.17 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 1 Column name: id	Column type: serial Value: 1
+11.06:17.12.17 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 2 Column name: name	Column type: varchar Value: SERGEY
+11.06:17.12.17 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 3 Column name: sec_name	Column type: varchar Value: null
+11.06:17.12.17 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 1	SERGEY	null	
+11.06:17.12.17 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 1 Column name: id	Column type: serial Value: 2
+11.06:17.12.17 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 2 Column name: name	Column type: varchar Value: KIRILL
+11.06:17.12.17 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 3 Column name: sec_name	Column type: varchar Value: null
+11.06:17.12.17 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 2	KIRILL	null	
+11.06:17.12.17 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 3 Column: 1 Column name: id	Column type: serial Value: 3
+11.06:17.12.17 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 3 Column: 2 Column name: name	Column type: varchar Value: ANDREY
+11.06:17.12.17 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 3 Column: 3 Column name: sec_name	Column type: varchar Value: null
+11.06:17.12.17 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 3	ANDREY	null	
+11.06:17.12.20  INFO	ru.sfedu.tavern.database.DbConnection:45 - Trying to open DB connection...
+11.06:17.12.20  INFO	ru.sfedu.tavern.database.DbConnection:49 - DB connection opened!
+11.06:17.12.20 DEBUG	ru.sfedu.tavern.database.DbConnection:73 - SELECT * FROM our_user;
+11.06:17.12.20 DEBUG	ru.sfedu.tavern.database.DbConnection:76 - TABLE: our_user
+11.06:17.12.20 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 1 Column name: id	Column type: serial Value: 1
+11.06:17.12.20 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 2 Column name: login	Column type: varchar Value: Admin
+11.06:17.12.20 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 3 Column name: password_hash	Column type: varchar Value: e3afed0047b08059d0fada10f400c1e5
+11.06:17.12.20 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 4 Column name: last_act	Column type: varchar Value: 1509574941840
+11.06:17.12.20 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 5 Column name: email	Column type: varchar Value: test@mail.ru
+11.06:17.12.20 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 1	Admin	e3afed0047b08059d0fada10f400c1e5	1509574941840	test@mail.ru	
+11.06:17.12.20 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 1 Column name: id	Column type: serial Value: 2
+11.06:17.12.20 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 2 Column name: login	Column type: varchar Value: Entropy
+11.06:17.12.20 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 3 Column name: password_hash	Column type: varchar Value: passwordHash
+11.06:17.12.20 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 4 Column name: last_act	Column type: varchar Value: 1509574941840
+11.06:17.12.20 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 5 Column name: email	Column type: varchar Value: DragonWAR26russ@gmail.com
+11.06:17.12.20 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 2	Entropy	passwordHash	1509574941840	DragonWAR26russ@gmail.com	
+11.06:17.12.20 DEBUG	ru.sfedu.tavern.database.DbConnection:73 - SELECT * FROM platform;
+11.06:17.12.20 DEBUG	ru.sfedu.tavern.database.DbConnection:76 - TABLE: platform
+11.06:17.12.20 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 1 Column name: id	Column type: serial Value: 1
+11.06:17.12.20 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 2 Column name: domain	Column type: varchar Value: testDomain
+11.06:17.12.20 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 3 Column name: key	Column type: varchar Value: testkey
+11.06:17.12.20 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 4 Column name: owner_id	Column type: int4 Value: 2
+11.06:17.12.20 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 1	testDomain	testkey	2	
+11.06:17.12.20 DEBUG	ru.sfedu.tavern.database.DbConnection:73 - SELECT * FROM platform_user;
+11.06:17.12.20 DEBUG	ru.sfedu.tavern.database.DbConnection:76 - TABLE: platform_user
+11.06:17.12.21 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 1 Column name: id	Column type: serial Value: 1
+11.06:17.12.21 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 2 Column name: login	Column type: varchar Value: entropy
+11.06:17.12.21 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 3 Column name: avatar	Column type: varchar Value: http://yandex.ru/
+11.06:17.12.21 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 4 Column name: last_act	Column type: varchar Value: 1509574941840
+11.06:17.12.21 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 5 Column name: banned	Column type: bool Value: false
+11.06:17.12.21 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 6 Column name: platform_id	Column type: int4 Value: 1
+11.06:17.12.21 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 1	entropy	http://yandex.ru/	1509574941840	false	1	
+11.06:17.12.21 DEBUG	ru.sfedu.tavern.database.DbConnection:73 - SELECT * FROM message;
+11.06:17.12.21 DEBUG	ru.sfedu.tavern.database.DbConnection:76 - TABLE: message
+11.06:17.12.21 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 1 Column name: id	Column type: serial Value: 1
+11.06:17.12.21 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 2 Column name: sender_id	Column type: int4 Value: 1
+11.06:17.12.21 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 3 Column name: text	Column type: text Value: Hello taverna!
+11.06:17.12.21 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 4 Column name: send_time	Column type: varchar Value: 1509574941840
+11.06:17.12.21 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 5 Column name: platform_id	Column type: int4 Value: 1
+11.06:17.12.21 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 1	1	Hello taverna!	1509574941840	1	
+11.06:17.12.21 DEBUG	ru.sfedu.tavern.database.DbConnection:73 - SELECT * FROM test;
+11.06:17.12.21 DEBUG	ru.sfedu.tavern.database.DbConnection:76 - TABLE: test
+11.06:17.12.21 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 1 Column name: id	Column type: serial Value: 1
+11.06:17.12.21 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 2 Column name: name	Column type: varchar Value: SERGEY
+11.06:17.12.21 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 3 Column name: sec_name	Column type: varchar Value: null
+11.06:17.12.21 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 1	SERGEY	null	
+11.06:17.12.21 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 1 Column name: id	Column type: serial Value: 2
+11.06:17.12.21 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 2 Column name: name	Column type: varchar Value: KIRILL
+11.06:17.12.21 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 3 Column name: sec_name	Column type: varchar Value: null
+11.06:17.12.21 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 2	KIRILL	null	
+11.06:17.12.21 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 3 Column: 1 Column name: id	Column type: serial Value: 3
+11.06:17.12.21 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 3 Column: 2 Column name: name	Column type: varchar Value: ANDREY
+11.06:17.12.21 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 3 Column: 3 Column name: sec_name	Column type: varchar Value: null
+11.06:17.12.21 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 3	ANDREY	null	
+11.06:17.12.24 DEBUG	ru.sfedu.tavern.dataproviders.CsvTools:32 - CSV->INSERT(ARRAYLIST<ENTITY>)....
+11.06:17.12.24 DEBUG	ru.sfedu.tavern.dataproviders.CsvTools:43 - OurUser{id=1, login='Admin', passwordHash='e3afed0047b08059d0fada10f400c1e5', lastAct='1509574941840', email='test@mail.ru'}
+11.06:17.12.24 DEBUG	ru.sfedu.tavern.dataproviders.CsvTools:43 - OurUser{id=2, login='Entropy', passwordHash='passwordHash', lastAct='1509574941840', email='DragonWAR26russ@gmail.com'}
+11.06:17.12.39 DEBUG	ru.sfedu.tavern.dataproviders.CsvTools:32 - CSV->INSERT(ARRAYLIST<ENTITY>)....
+11.06:17.15.57  INFO	ru.sfedu.tavern.database.DbConnection:45 - Trying to open DB connection...
+11.06:17.15.58  INFO	ru.sfedu.tavern.database.DbConnection:49 - DB connection opened!
+11.06:17.15.58 DEBUG	ru.sfedu.tavern.database.DbConnection:73 - SELECT * FROM our_user;
+11.06:17.15.58 DEBUG	ru.sfedu.tavern.database.DbConnection:76 - TABLE: our_user
+11.06:17.15.58 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 1 Column name: id	Column type: serial Value: 1
+11.06:17.15.58 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 2 Column name: login	Column type: varchar Value: Admin
+11.06:17.15.58 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 3 Column name: password_hash	Column type: varchar Value: e3afed0047b08059d0fada10f400c1e5
+11.06:17.15.58 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 4 Column name: last_act	Column type: varchar Value: 1509574941840
+11.06:17.15.58 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 5 Column name: email	Column type: varchar Value: test@mail.ru
+11.06:17.15.58 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 1	Admin	e3afed0047b08059d0fada10f400c1e5	1509574941840	test@mail.ru	
+11.06:17.15.58 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 1 Column name: id	Column type: serial Value: 2
+11.06:17.15.58 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 2 Column name: login	Column type: varchar Value: Entropy
+11.06:17.15.58 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 3 Column name: password_hash	Column type: varchar Value: passwordHash
+11.06:17.15.58 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 4 Column name: last_act	Column type: varchar Value: 1509574941840
+11.06:17.15.58 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 5 Column name: email	Column type: varchar Value: DragonWAR26russ@gmail.com
+11.06:17.15.58 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 2	Entropy	passwordHash	1509574941840	DragonWAR26russ@gmail.com	
+11.06:17.15.58 DEBUG	ru.sfedu.tavern.database.DbConnection:73 - SELECT * FROM platform;
+11.06:17.15.58 DEBUG	ru.sfedu.tavern.database.DbConnection:76 - TABLE: platform
+11.06:17.15.58 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 1 Column name: id	Column type: serial Value: 1
+11.06:17.15.58 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 2 Column name: domain	Column type: varchar Value: testDomain
+11.06:17.15.58 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 3 Column name: key	Column type: varchar Value: testkey
+11.06:17.15.58 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 4 Column name: owner_id	Column type: int4 Value: 2
+11.06:17.15.58 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 1	testDomain	testkey	2	
+11.06:17.15.58 DEBUG	ru.sfedu.tavern.database.DbConnection:73 - SELECT * FROM platform_user;
+11.06:17.15.58 DEBUG	ru.sfedu.tavern.database.DbConnection:76 - TABLE: platform_user
+11.06:17.15.58 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 1 Column name: id	Column type: serial Value: 1
+11.06:17.15.58 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 2 Column name: login	Column type: varchar Value: entropy
+11.06:17.15.58 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 3 Column name: avatar	Column type: varchar Value: http://yandex.ru/
+11.06:17.15.58 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 4 Column name: last_act	Column type: varchar Value: 1509574941840
+11.06:17.15.58 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 5 Column name: banned	Column type: bool Value: false
+11.06:17.15.58 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 6 Column name: platform_id	Column type: int4 Value: 1
+11.06:17.15.58 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 1	entropy	http://yandex.ru/	1509574941840	false	1	
+11.06:17.15.58 DEBUG	ru.sfedu.tavern.database.DbConnection:73 - SELECT * FROM message;
+11.06:17.15.58 DEBUG	ru.sfedu.tavern.database.DbConnection:76 - TABLE: message
+11.06:17.15.58 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 1 Column name: id	Column type: serial Value: 1
+11.06:17.15.58 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 2 Column name: sender_id	Column type: int4 Value: 1
+11.06:17.15.58 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 3 Column name: text	Column type: text Value: Hello taverna!
+11.06:17.15.58 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 4 Column name: send_time	Column type: varchar Value: 1509574941840
+11.06:17.15.58 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 5 Column name: platform_id	Column type: int4 Value: 1
+11.06:17.15.58 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 1	1	Hello taverna!	1509574941840	1	
+11.06:17.15.58 DEBUG	ru.sfedu.tavern.database.DbConnection:73 - SELECT * FROM test;
+11.06:17.15.58 DEBUG	ru.sfedu.tavern.database.DbConnection:76 - TABLE: test
+11.06:17.15.58 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 1 Column name: id	Column type: serial Value: 1
+11.06:17.15.58 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 2 Column name: name	Column type: varchar Value: SERGEY
+11.06:17.15.58 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 3 Column name: sec_name	Column type: varchar Value: null
+11.06:17.15.58 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 1	SERGEY	null	
+11.06:17.15.58 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 1 Column name: id	Column type: serial Value: 2
+11.06:17.15.58 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 2 Column name: name	Column type: varchar Value: KIRILL
+11.06:17.15.58 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 3 Column name: sec_name	Column type: varchar Value: null
+11.06:17.15.58 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 2	KIRILL	null	
+11.06:17.15.58 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 3 Column: 1 Column name: id	Column type: serial Value: 3
+11.06:17.15.58 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 3 Column: 2 Column name: name	Column type: varchar Value: ANDREY
+11.06:17.15.58 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 3 Column: 3 Column name: sec_name	Column type: varchar Value: null
+11.06:17.15.58 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 3	ANDREY	null	
+11.06:17.16.06 DEBUG	ru.sfedu.tavern.dataproviders.CsvTools:32 - CSV->INSERT(ARRAYLIST<ENTITY>)....
+11.06:17.17.24  INFO	ru.sfedu.tavern.database.DbConnection:45 - Trying to open DB connection...
+11.06:17.17.24  INFO	ru.sfedu.tavern.database.DbConnection:49 - DB connection opened!
+11.06:17.17.24 DEBUG	ru.sfedu.tavern.database.DbConnection:73 - SELECT * FROM our_user;
+11.06:17.17.24 DEBUG	ru.sfedu.tavern.database.DbConnection:76 - TABLE: our_user
+11.06:17.17.24 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 1 Column name: id	Column type: serial Value: 1
+11.06:17.17.24 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 2 Column name: login	Column type: varchar Value: Admin
+11.06:17.17.24 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 3 Column name: password_hash	Column type: varchar Value: e3afed0047b08059d0fada10f400c1e5
+11.06:17.17.24 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 4 Column name: last_act	Column type: varchar Value: 1509574941840
+11.06:17.17.24 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 5 Column name: email	Column type: varchar Value: test@mail.ru
+11.06:17.17.24 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 1	Admin	e3afed0047b08059d0fada10f400c1e5	1509574941840	test@mail.ru	
+11.06:17.17.24 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 1 Column name: id	Column type: serial Value: 2
+11.06:17.17.24 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 2 Column name: login	Column type: varchar Value: Entropy
+11.06:17.17.24 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 3 Column name: password_hash	Column type: varchar Value: passwordHash
+11.06:17.17.24 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 4 Column name: last_act	Column type: varchar Value: 1509574941840
+11.06:17.17.24 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 5 Column name: email	Column type: varchar Value: DragonWAR26russ@gmail.com
+11.06:17.17.24 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 2	Entropy	passwordHash	1509574941840	DragonWAR26russ@gmail.com	
+11.06:17.17.24 DEBUG	ru.sfedu.tavern.database.DbConnection:73 - SELECT * FROM platform;
+11.06:17.17.24 DEBUG	ru.sfedu.tavern.database.DbConnection:76 - TABLE: platform
+11.06:17.17.24 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 1 Column name: id	Column type: serial Value: 1
+11.06:17.17.24 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 2 Column name: domain	Column type: varchar Value: testDomain
+11.06:17.17.24 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 3 Column name: key	Column type: varchar Value: testkey
+11.06:17.17.24 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 4 Column name: owner_id	Column type: int4 Value: 2
+11.06:17.17.24 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 1	testDomain	testkey	2	
+11.06:17.17.24 DEBUG	ru.sfedu.tavern.database.DbConnection:73 - SELECT * FROM platform_user;
+11.06:17.17.24 DEBUG	ru.sfedu.tavern.database.DbConnection:76 - TABLE: platform_user
+11.06:17.17.24 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 1 Column name: id	Column type: serial Value: 1
+11.06:17.17.24 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 2 Column name: login	Column type: varchar Value: entropy
+11.06:17.17.24 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 3 Column name: avatar	Column type: varchar Value: http://yandex.ru/
+11.06:17.17.24 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 4 Column name: last_act	Column type: varchar Value: 1509574941840
+11.06:17.17.24 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 5 Column name: banned	Column type: bool Value: false
+11.06:17.17.24 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 6 Column name: platform_id	Column type: int4 Value: 1
+11.06:17.17.24 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 1	entropy	http://yandex.ru/	1509574941840	false	1	
+11.06:17.17.24 DEBUG	ru.sfedu.tavern.database.DbConnection:73 - SELECT * FROM message;
+11.06:17.17.24 DEBUG	ru.sfedu.tavern.database.DbConnection:76 - TABLE: message
+11.06:17.17.24 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 1 Column name: id	Column type: serial Value: 1
+11.06:17.17.24 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 2 Column name: sender_id	Column type: int4 Value: 1
+11.06:17.17.24 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 3 Column name: text	Column type: text Value: Hello taverna!
+11.06:17.17.24 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 4 Column name: send_time	Column type: varchar Value: 1509574941840
+11.06:17.17.24 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 5 Column name: platform_id	Column type: int4 Value: 1
+11.06:17.17.24 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 1	1	Hello taverna!	1509574941840	1	
+11.06:17.17.24 DEBUG	ru.sfedu.tavern.database.DbConnection:73 - SELECT * FROM test;
+11.06:17.17.24 DEBUG	ru.sfedu.tavern.database.DbConnection:76 - TABLE: test
+11.06:17.17.24 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 1 Column name: id	Column type: serial Value: 1
+11.06:17.17.24 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 2 Column name: name	Column type: varchar Value: SERGEY
+11.06:17.17.24 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 3 Column name: sec_name	Column type: varchar Value: null
+11.06:17.17.24 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 1	SERGEY	null	
+11.06:17.17.24 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 1 Column name: id	Column type: serial Value: 2
+11.06:17.17.24 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 2 Column name: name	Column type: varchar Value: KIRILL
+11.06:17.17.24 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 3 Column name: sec_name	Column type: varchar Value: null
+11.06:17.17.24 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 2	KIRILL	null	
+11.06:17.17.24 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 3 Column: 1 Column name: id	Column type: serial Value: 3
+11.06:17.17.24 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 3 Column: 2 Column name: name	Column type: varchar Value: ANDREY
+11.06:17.17.24 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 3 Column: 3 Column name: sec_name	Column type: varchar Value: null
+11.06:17.17.24 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 3	ANDREY	null	
+11.06:17.17.27 DEBUG	ru.sfedu.tavern.dataproviders.CsvTools:32 - CSV->INSERT(ARRAYLIST<ENTITY>)....
+11.06:17.18.06 DEBUG	ru.sfedu.tavern.dataproviders.CsvTools:43 - OurUser{id=1, login='Admin', passwordHash='e3afed0047b08059d0fada10f400c1e5', lastAct='1509574941840', email='test@mail.ru'}
+11.06:17.18.38 DEBUG	ru.sfedu.tavern.dataproviders.CsvTools:43 - OurUser{id=2, login='Entropy', passwordHash='passwordHash', lastAct='1509574941840', email='DragonWAR26russ@gmail.com'}
+11.06:17.27.07  INFO	ru.sfedu.tavern.database.DbConnection:45 - Trying to open DB connection...
+11.06:17.27.07  INFO	ru.sfedu.tavern.database.DbConnection:49 - DB connection opened!
+11.06:17.27.07 DEBUG	ru.sfedu.tavern.database.DbConnection:73 - SELECT * FROM our_user;
+11.06:17.27.07 DEBUG	ru.sfedu.tavern.database.DbConnection:76 - TABLE: our_user
+11.06:17.27.07 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 1 Column name: id	Column type: serial Value: 1
+11.06:17.27.07 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 2 Column name: login	Column type: varchar Value: Admin
+11.06:17.27.07 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 3 Column name: password_hash	Column type: varchar Value: e3afed0047b08059d0fada10f400c1e5
+11.06:17.27.07 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 4 Column name: last_act	Column type: varchar Value: 1509574941840
+11.06:17.27.07 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 5 Column name: email	Column type: varchar Value: test@mail.ru
+11.06:17.27.07 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 1	Admin	e3afed0047b08059d0fada10f400c1e5	1509574941840	test@mail.ru	
+11.06:17.27.07 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 1 Column name: id	Column type: serial Value: 2
+11.06:17.27.07 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 2 Column name: login	Column type: varchar Value: Entropy
+11.06:17.27.07 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 3 Column name: password_hash	Column type: varchar Value: passwordHash
+11.06:17.27.07 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 4 Column name: last_act	Column type: varchar Value: 1509574941840
+11.06:17.27.07 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 5 Column name: email	Column type: varchar Value: DragonWAR26russ@gmail.com
+11.06:17.27.07 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 2	Entropy	passwordHash	1509574941840	DragonWAR26russ@gmail.com	
+11.06:17.27.07 DEBUG	ru.sfedu.tavern.database.DbConnection:73 - SELECT * FROM platform;
+11.06:17.27.07 DEBUG	ru.sfedu.tavern.database.DbConnection:76 - TABLE: platform
+11.06:17.27.07 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 1 Column name: id	Column type: serial Value: 1
+11.06:17.27.07 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 2 Column name: domain	Column type: varchar Value: testDomain
+11.06:17.27.07 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 3 Column name: key	Column type: varchar Value: testkey
+11.06:17.27.07 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 4 Column name: owner_id	Column type: int4 Value: 2
+11.06:17.27.07 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 1	testDomain	testkey	2	
+11.06:17.27.07 DEBUG	ru.sfedu.tavern.database.DbConnection:73 - SELECT * FROM platform_user;
+11.06:17.27.07 DEBUG	ru.sfedu.tavern.database.DbConnection:76 - TABLE: platform_user
+11.06:17.27.07 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 1 Column name: id	Column type: serial Value: 1
+11.06:17.27.07 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 2 Column name: login	Column type: varchar Value: entropy
+11.06:17.27.07 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 3 Column name: avatar	Column type: varchar Value: http://yandex.ru/
+11.06:17.27.07 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 4 Column name: last_act	Column type: varchar Value: 1509574941840
+11.06:17.27.07 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 5 Column name: banned	Column type: bool Value: false
+11.06:17.27.07 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 6 Column name: platform_id	Column type: int4 Value: 1
+11.06:17.27.07 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 1	entropy	http://yandex.ru/	1509574941840	false	1	
+11.06:17.27.07 DEBUG	ru.sfedu.tavern.database.DbConnection:73 - SELECT * FROM message;
+11.06:17.27.07 DEBUG	ru.sfedu.tavern.database.DbConnection:76 - TABLE: message
+11.06:17.27.07 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 1 Column name: id	Column type: serial Value: 1
+11.06:17.27.07 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 2 Column name: sender_id	Column type: int4 Value: 1
+11.06:17.27.07 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 3 Column name: text	Column type: text Value: Hello taverna!
+11.06:17.27.07 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 4 Column name: send_time	Column type: varchar Value: 1509574941840
+11.06:17.27.07 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 5 Column name: platform_id	Column type: int4 Value: 1
+11.06:17.27.07 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 1	1	Hello taverna!	1509574941840	1	
+11.06:17.27.07 DEBUG	ru.sfedu.tavern.database.DbConnection:73 - SELECT * FROM test;
+11.06:17.27.07 DEBUG	ru.sfedu.tavern.database.DbConnection:76 - TABLE: test
+11.06:17.27.07 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 1 Column name: id	Column type: serial Value: 1
+11.06:17.27.07 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 2 Column name: name	Column type: varchar Value: SERGEY
+11.06:17.27.07 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 3 Column name: sec_name	Column type: varchar Value: null
+11.06:17.27.07 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 1	SERGEY	null	
+11.06:17.27.07 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 1 Column name: id	Column type: serial Value: 2
+11.06:17.27.07 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 2 Column name: name	Column type: varchar Value: KIRILL
+11.06:17.27.07 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 3 Column name: sec_name	Column type: varchar Value: null
+11.06:17.27.07 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 2	KIRILL	null	
+11.06:17.27.07 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 3 Column: 1 Column name: id	Column type: serial Value: 3
+11.06:17.27.07 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 3 Column: 2 Column name: name	Column type: varchar Value: ANDREY
+11.06:17.27.07 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 3 Column: 3 Column name: sec_name	Column type: varchar Value: null
+11.06:17.27.07 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 3	ANDREY	null	
+11.06:17.27.07 DEBUG	ru.sfedu.tavern.dataproviders.CsvTools:32 - CSV->INSERT(ARRAYLIST<ENTITY>)....
+11.06:17.28.01 DEBUG	ru.sfedu.tavern.dataproviders.CsvTools:43 - OurUser{id=1, login='Admin', passwordHash='e3afed0047b08059d0fada10f400c1e5', lastAct='1509574941840', email='test@mail.ru'}
+11.06:17.28.01 DEBUG	ru.sfedu.tavern.dataproviders.CsvTools:43 - OurUser{id=2, login='Entropy', passwordHash='passwordHash', lastAct='1509574941840', email='DragonWAR26russ@gmail.com'}
+11.06:17.45.32  INFO	ru.sfedu.tavern.database.DbConnection:45 - Trying to open DB connection...
+11.06:17.45.32  INFO	ru.sfedu.tavern.database.DbConnection:49 - DB connection opened!
+11.06:17.45.32 DEBUG	ru.sfedu.tavern.database.DbConnection:73 - SELECT * FROM our_user;
+11.06:17.45.32 DEBUG	ru.sfedu.tavern.database.DbConnection:76 - TABLE: our_user
+11.06:17.45.32 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 1 Column name: id	Column type: serial Value: 1
+11.06:17.45.32 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 2 Column name: login	Column type: varchar Value: Admin
+11.06:17.45.32 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 3 Column name: password_hash	Column type: varchar Value: e3afed0047b08059d0fada10f400c1e5
+11.06:17.45.32 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 4 Column name: last_act	Column type: varchar Value: 1509574941840
+11.06:17.45.32 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 5 Column name: email	Column type: varchar Value: test@mail.ru
+11.06:17.45.32 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 1	Admin	e3afed0047b08059d0fada10f400c1e5	1509574941840	test@mail.ru	
+11.06:17.45.32 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 1 Column name: id	Column type: serial Value: 2
+11.06:17.45.32 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 2 Column name: login	Column type: varchar Value: Entropy
+11.06:17.45.32 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 3 Column name: password_hash	Column type: varchar Value: passwordHash
+11.06:17.45.32 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 4 Column name: last_act	Column type: varchar Value: 1509574941840
+11.06:17.45.32 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 5 Column name: email	Column type: varchar Value: DragonWAR26russ@gmail.com
+11.06:17.45.32 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 2	Entropy	passwordHash	1509574941840	DragonWAR26russ@gmail.com	
+11.06:17.45.32 DEBUG	ru.sfedu.tavern.database.DbConnection:73 - SELECT * FROM platform;
+11.06:17.45.32 DEBUG	ru.sfedu.tavern.database.DbConnection:76 - TABLE: platform
+11.06:17.45.32 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 1 Column name: id	Column type: serial Value: 1
+11.06:17.45.32 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 2 Column name: domain	Column type: varchar Value: testDomain
+11.06:17.45.32 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 3 Column name: key	Column type: varchar Value: testkey
+11.06:17.45.32 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 4 Column name: owner_id	Column type: int4 Value: 2
+11.06:17.45.32 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 1	testDomain	testkey	2	
+11.06:17.45.32 DEBUG	ru.sfedu.tavern.database.DbConnection:73 - SELECT * FROM platform_user;
+11.06:17.45.32 DEBUG	ru.sfedu.tavern.database.DbConnection:76 - TABLE: platform_user
+11.06:17.45.32 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 1 Column name: id	Column type: serial Value: 1
+11.06:17.45.32 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 2 Column name: login	Column type: varchar Value: entropy
+11.06:17.45.32 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 3 Column name: avatar	Column type: varchar Value: http://yandex.ru/
+11.06:17.45.32 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 4 Column name: last_act	Column type: varchar Value: 1509574941840
+11.06:17.45.32 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 5 Column name: banned	Column type: bool Value: false
+11.06:17.45.32 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 6 Column name: platform_id	Column type: int4 Value: 1
+11.06:17.45.32 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 1	entropy	http://yandex.ru/	1509574941840	false	1	
+11.06:17.45.32 DEBUG	ru.sfedu.tavern.database.DbConnection:73 - SELECT * FROM message;
+11.06:17.45.32 DEBUG	ru.sfedu.tavern.database.DbConnection:76 - TABLE: message
+11.06:17.45.32 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 1 Column name: id	Column type: serial Value: 1
+11.06:17.45.32 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 2 Column name: sender_id	Column type: int4 Value: 1
+11.06:17.45.32 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 3 Column name: text	Column type: text Value: Hello taverna!
+11.06:17.45.32 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 4 Column name: send_time	Column type: varchar Value: 1509574941840
+11.06:17.45.32 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 5 Column name: platform_id	Column type: int4 Value: 1
+11.06:17.45.32 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 1	1	Hello taverna!	1509574941840	1	
+11.06:17.45.32 DEBUG	ru.sfedu.tavern.database.DbConnection:73 - SELECT * FROM test;
+11.06:17.45.32 DEBUG	ru.sfedu.tavern.database.DbConnection:76 - TABLE: test
+11.06:17.45.32 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 1 Column name: id	Column type: serial Value: 1
+11.06:17.45.32 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 2 Column name: name	Column type: varchar Value: SERGEY
+11.06:17.45.32 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 3 Column name: sec_name	Column type: varchar Value: null
+11.06:17.45.32 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 1	SERGEY	null	
+11.06:17.45.32 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 1 Column name: id	Column type: serial Value: 2
+11.06:17.45.32 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 2 Column name: name	Column type: varchar Value: KIRILL
+11.06:17.45.32 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 3 Column name: sec_name	Column type: varchar Value: null
+11.06:17.45.32 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 2	KIRILL	null	
+11.06:17.45.32 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 3 Column: 1 Column name: id	Column type: serial Value: 3
+11.06:17.45.32 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 3 Column: 2 Column name: name	Column type: varchar Value: ANDREY
+11.06:17.45.32 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 3 Column: 3 Column name: sec_name	Column type: varchar Value: null
+11.06:17.45.32 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 3	ANDREY	null	
+11.06:17.45.32 DEBUG	ru.sfedu.tavern.dataproviders.CsvTools:32 - CSV->INSERT(ARRAYLIST<ENTITY>)....
+11.06:17.45.32 ERROR	ru.sfedu.tavern.dataproviders.CsvTools:152 - Ошибка чтения: \Users\entropy\NetBeansProjects\Tavern\csv\OURUSER.csv (No such file or directory)
+11.06:17.45.32 DEBUG	ru.sfedu.tavern.dataproviders.CsvTools:43 - OurUser{id=1, login='Admin', passwordHash='e3afed0047b08059d0fada10f400c1e5', lastAct='1509574941840', email='test@mail.ru'}
+11.06:17.45.32 ERROR	ru.sfedu.tavern.dataproviders.CsvTools:152 - Ошибка чтения: \Users\entropy\NetBeansProjects\Tavern\csv\OURUSER.csv (No such file or directory)
+11.06:17.45.32 ERROR	ru.sfedu.tavern.dataproviders.CsvTools:126 - java.lang.NullPointerException
+11.06:17.45.32 DEBUG	ru.sfedu.tavern.dataproviders.CsvTools:43 - OurUser{id=2, login='Entropy', passwordHash='passwordHash', lastAct='1509574941840', email='DragonWAR26russ@gmail.com'}
+11.06:17.45.32 ERROR	ru.sfedu.tavern.dataproviders.CsvTools:152 - Ошибка чтения: \Users\entropy\NetBeansProjects\Tavern\csv\OURUSER.csv (No such file or directory)
+11.06:17.45.32 ERROR	ru.sfedu.tavern.dataproviders.CsvTools:126 - java.lang.NullPointerException
+11.06:17.46.18  INFO	ru.sfedu.tavern.database.DbConnection:45 - Trying to open DB connection...
+11.06:17.46.18  INFO	ru.sfedu.tavern.database.DbConnection:49 - DB connection opened!
+11.06:17.46.18 DEBUG	ru.sfedu.tavern.database.DbConnection:73 - SELECT * FROM our_user;
+11.06:17.46.18 DEBUG	ru.sfedu.tavern.database.DbConnection:76 - TABLE: our_user
+11.06:17.46.18 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 1 Column name: id	Column type: serial Value: 1
+11.06:17.46.18 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 2 Column name: login	Column type: varchar Value: Admin
+11.06:17.46.18 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 3 Column name: password_hash	Column type: varchar Value: e3afed0047b08059d0fada10f400c1e5
+11.06:17.46.18 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 4 Column name: last_act	Column type: varchar Value: 1509574941840
+11.06:17.46.18 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 5 Column name: email	Column type: varchar Value: test@mail.ru
+11.06:17.46.18 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 1	Admin	e3afed0047b08059d0fada10f400c1e5	1509574941840	test@mail.ru	
+11.06:17.46.18 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 1 Column name: id	Column type: serial Value: 2
+11.06:17.46.18 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 2 Column name: login	Column type: varchar Value: Entropy
+11.06:17.46.18 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 3 Column name: password_hash	Column type: varchar Value: passwordHash
+11.06:17.46.18 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 4 Column name: last_act	Column type: varchar Value: 1509574941840
+11.06:17.46.18 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 5 Column name: email	Column type: varchar Value: DragonWAR26russ@gmail.com
+11.06:17.46.18 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 2	Entropy	passwordHash	1509574941840	DragonWAR26russ@gmail.com	
+11.06:17.46.18 DEBUG	ru.sfedu.tavern.database.DbConnection:73 - SELECT * FROM platform;
+11.06:17.46.18 DEBUG	ru.sfedu.tavern.database.DbConnection:76 - TABLE: platform
+11.06:17.46.18 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 1 Column name: id	Column type: serial Value: 1
+11.06:17.46.18 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 2 Column name: domain	Column type: varchar Value: testDomain
+11.06:17.46.18 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 3 Column name: key	Column type: varchar Value: testkey
+11.06:17.46.18 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 4 Column name: owner_id	Column type: int4 Value: 2
+11.06:17.46.18 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 1	testDomain	testkey	2	
+11.06:17.46.18 DEBUG	ru.sfedu.tavern.database.DbConnection:73 - SELECT * FROM platform_user;
+11.06:17.46.18 DEBUG	ru.sfedu.tavern.database.DbConnection:76 - TABLE: platform_user
+11.06:17.46.18 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 1 Column name: id	Column type: serial Value: 1
+11.06:17.46.18 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 2 Column name: login	Column type: varchar Value: entropy
+11.06:17.46.18 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 3 Column name: avatar	Column type: varchar Value: http://yandex.ru/
+11.06:17.46.18 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 4 Column name: last_act	Column type: varchar Value: 1509574941840
+11.06:17.46.18 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 5 Column name: banned	Column type: bool Value: false
+11.06:17.46.18 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 6 Column name: platform_id	Column type: int4 Value: 1
+11.06:17.46.18 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 1	entropy	http://yandex.ru/	1509574941840	false	1	
+11.06:17.46.18 DEBUG	ru.sfedu.tavern.database.DbConnection:73 - SELECT * FROM message;
+11.06:17.46.18 DEBUG	ru.sfedu.tavern.database.DbConnection:76 - TABLE: message
+11.06:17.46.18 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 1 Column name: id	Column type: serial Value: 1
+11.06:17.46.18 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 2 Column name: sender_id	Column type: int4 Value: 1
+11.06:17.46.18 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 3 Column name: text	Column type: text Value: Hello taverna!
+11.06:17.46.18 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 4 Column name: send_time	Column type: varchar Value: 1509574941840
+11.06:17.46.18 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 5 Column name: platform_id	Column type: int4 Value: 1
+11.06:17.46.18 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 1	1	Hello taverna!	1509574941840	1	
+11.06:17.46.18 DEBUG	ru.sfedu.tavern.database.DbConnection:73 - SELECT * FROM test;
+11.06:17.46.18 DEBUG	ru.sfedu.tavern.database.DbConnection:76 - TABLE: test
+11.06:17.46.18 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 1 Column name: id	Column type: serial Value: 1
+11.06:17.46.18 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 2 Column name: name	Column type: varchar Value: SERGEY
+11.06:17.46.18 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 3 Column name: sec_name	Column type: varchar Value: null
+11.06:17.46.18 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 1	SERGEY	null	
+11.06:17.46.18 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 1 Column name: id	Column type: serial Value: 2
+11.06:17.46.18 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 2 Column name: name	Column type: varchar Value: KIRILL
+11.06:17.46.18 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 3 Column name: sec_name	Column type: varchar Value: null
+11.06:17.46.18 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 2	KIRILL	null	
+11.06:17.46.18 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 3 Column: 1 Column name: id	Column type: serial Value: 3
+11.06:17.46.18 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 3 Column: 2 Column name: name	Column type: varchar Value: ANDREY
+11.06:17.46.18 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 3 Column: 3 Column name: sec_name	Column type: varchar Value: null
+11.06:17.46.18 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 3	ANDREY	null	
+11.06:17.46.19 DEBUG	ru.sfedu.tavern.dataproviders.CsvTools:32 - CSV->INSERT(ARRAYLIST<ENTITY>)....
+11.06:17.46.19 DEBUG	ru.sfedu.tavern.dataproviders.CsvTools:43 - OurUser{id=1, login='Admin', passwordHash='e3afed0047b08059d0fada10f400c1e5', lastAct='1509574941840', email='test@mail.ru'}
+11.06:17.46.19 DEBUG	ru.sfedu.tavern.dataproviders.CsvTools:43 - OurUser{id=2, login='Entropy', passwordHash='passwordHash', lastAct='1509574941840', email='DragonWAR26russ@gmail.com'}
+11.06:17.50.49  INFO	ru.sfedu.tavern.database.DbConnection:45 - Trying to open DB connection...
+11.06:17.50.49  INFO	ru.sfedu.tavern.database.DbConnection:49 - DB connection opened!
+11.06:17.50.49 DEBUG	ru.sfedu.tavern.database.DbConnection:73 - SELECT * FROM our_user;
+11.06:17.50.49 DEBUG	ru.sfedu.tavern.database.DbConnection:76 - TABLE: our_user
+11.06:17.50.49 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 1 Column name: id	Column type: serial Value: 1
+11.06:17.50.49 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 2 Column name: login	Column type: varchar Value: Admin
+11.06:17.50.49 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 3 Column name: password_hash	Column type: varchar Value: e3afed0047b08059d0fada10f400c1e5
+11.06:17.50.49 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 4 Column name: last_act	Column type: varchar Value: 1509574941840
+11.06:17.50.49 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 5 Column name: email	Column type: varchar Value: test@mail.ru
+11.06:17.50.49 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 1	Admin	e3afed0047b08059d0fada10f400c1e5	1509574941840	test@mail.ru	
+11.06:17.50.49 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 1 Column name: id	Column type: serial Value: 2
+11.06:17.50.49 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 2 Column name: login	Column type: varchar Value: Entropy
+11.06:17.50.49 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 3 Column name: password_hash	Column type: varchar Value: passwordHash
+11.06:17.50.49 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 4 Column name: last_act	Column type: varchar Value: 1509574941840
+11.06:17.50.49 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 5 Column name: email	Column type: varchar Value: DragonWAR26russ@gmail.com
+11.06:17.50.49 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 2	Entropy	passwordHash	1509574941840	DragonWAR26russ@gmail.com	
+11.06:17.50.50 DEBUG	ru.sfedu.tavern.database.DbConnection:73 - SELECT * FROM platform;
+11.06:17.50.50 DEBUG	ru.sfedu.tavern.database.DbConnection:76 - TABLE: platform
+11.06:17.50.50 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 1 Column name: id	Column type: serial Value: 1
+11.06:17.50.50 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 2 Column name: domain	Column type: varchar Value: testDomain
+11.06:17.50.50 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 3 Column name: key	Column type: varchar Value: testkey
+11.06:17.50.50 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 4 Column name: owner_id	Column type: int4 Value: 2
+11.06:17.50.50 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 1	testDomain	testkey	2	
+11.06:17.50.50 DEBUG	ru.sfedu.tavern.database.DbConnection:73 - SELECT * FROM platform_user;
+11.06:17.50.50 DEBUG	ru.sfedu.tavern.database.DbConnection:76 - TABLE: platform_user
+11.06:17.50.50 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 1 Column name: id	Column type: serial Value: 1
+11.06:17.50.50 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 2 Column name: login	Column type: varchar Value: entropy
+11.06:17.50.50 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 3 Column name: avatar	Column type: varchar Value: http://yandex.ru/
+11.06:17.50.50 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 4 Column name: last_act	Column type: varchar Value: 1509574941840
+11.06:17.50.50 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 5 Column name: banned	Column type: bool Value: false
+11.06:17.50.50 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 6 Column name: platform_id	Column type: int4 Value: 1
+11.06:17.50.50 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 1	entropy	http://yandex.ru/	1509574941840	false	1	
+11.06:17.50.50 DEBUG	ru.sfedu.tavern.database.DbConnection:73 - SELECT * FROM message;
+11.06:17.50.50 DEBUG	ru.sfedu.tavern.database.DbConnection:76 - TABLE: message
+11.06:17.50.50 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 1 Column name: id	Column type: serial Value: 1
+11.06:17.50.50 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 2 Column name: sender_id	Column type: int4 Value: 1
+11.06:17.50.50 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 3 Column name: text	Column type: text Value: Hello taverna!
+11.06:17.50.50 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 4 Column name: send_time	Column type: varchar Value: 1509574941840
+11.06:17.50.50 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 5 Column name: platform_id	Column type: int4 Value: 1
+11.06:17.50.50 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 1	1	Hello taverna!	1509574941840	1	
+11.06:17.50.50 DEBUG	ru.sfedu.tavern.database.DbConnection:73 - SELECT * FROM test;
+11.06:17.50.50 DEBUG	ru.sfedu.tavern.database.DbConnection:76 - TABLE: test
+11.06:17.50.50 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 1 Column name: id	Column type: serial Value: 1
+11.06:17.50.50 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 2 Column name: name	Column type: varchar Value: SERGEY
+11.06:17.50.50 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 3 Column name: sec_name	Column type: varchar Value: null
+11.06:17.50.50 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 1	SERGEY	null	
+11.06:17.50.50 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 1 Column name: id	Column type: serial Value: 2
+11.06:17.50.50 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 2 Column name: name	Column type: varchar Value: KIRILL
+11.06:17.50.50 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 3 Column name: sec_name	Column type: varchar Value: null
+11.06:17.50.50 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 2	KIRILL	null	
+11.06:17.50.50 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 3 Column: 1 Column name: id	Column type: serial Value: 3
+11.06:17.50.50 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 3 Column: 2 Column name: name	Column type: varchar Value: ANDREY
+11.06:17.50.50 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 3 Column: 3 Column name: sec_name	Column type: varchar Value: null
+11.06:17.50.50 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 3	ANDREY	null	
+11.06:17.50.50 DEBUG	ru.sfedu.tavern.dataproviders.CsvTools:32 - CSV->INSERT(ARRAYLIST<ENTITY>)....
+11.06:17.50.50 DEBUG	ru.sfedu.tavern.dataproviders.CsvTools:158 - getCsvFile(OURUSER)......
+11.06:17.50.50 DEBUG	ru.sfedu.tavern.dataproviders.CsvTools:161 - /Users/entropy/NetBeansProjects/Tavern/csv/OURUSER.csv
+11.06:17.50.50 DEBUG	ru.sfedu.tavern.dataproviders.CsvTools:43 - OurUser{id=1, login='Admin', passwordHash='e3afed0047b08059d0fada10f400c1e5', lastAct='1509574941840', email='test@mail.ru'}
+11.06:17.50.50 DEBUG	ru.sfedu.tavern.dataproviders.CsvTools:158 - getCsvFile(OURUSER)......
+11.06:17.50.50 DEBUG	ru.sfedu.tavern.dataproviders.CsvTools:161 - /Users/entropy/NetBeansProjects/Tavern/csv/OURUSER.csv
+11.06:17.50.50 DEBUG	ru.sfedu.tavern.dataproviders.CsvTools:43 - OurUser{id=2, login='Entropy', passwordHash='passwordHash', lastAct='1509574941840', email='DragonWAR26russ@gmail.com'}
+11.06:17.50.50 DEBUG	ru.sfedu.tavern.dataproviders.CsvTools:158 - getCsvFile(OURUSER)......
+11.06:17.50.50 DEBUG	ru.sfedu.tavern.dataproviders.CsvTools:161 - /Users/entropy/NetBeansProjects/Tavern/csv/OURUSER.csv
+11.06:17.50.50 DEBUG	ru.sfedu.tavern.dataproviders.CsvTools:158 - getCsvFile(OURUSER)......
+11.06:17.50.50 DEBUG	ru.sfedu.tavern.dataproviders.CsvTools:161 - /Users/entropy/NetBeansProjects/Tavern/csv/OURUSER.csv
+11.06:17.54.23  INFO	ru.sfedu.tavern.database.DbConnection:45 - Trying to open DB connection...
+11.06:17.54.23  INFO	ru.sfedu.tavern.database.DbConnection:49 - DB connection opened!
+11.06:17.54.23 DEBUG	ru.sfedu.tavern.database.DbConnection:73 - SELECT * FROM our_user;
+11.06:17.54.23 DEBUG	ru.sfedu.tavern.database.DbConnection:76 - TABLE: our_user
+11.06:17.54.23 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 1 Column name: id	Column type: serial Value: 1
+11.06:17.54.23 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 2 Column name: login	Column type: varchar Value: Admin
+11.06:17.54.23 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 3 Column name: password_hash	Column type: varchar Value: e3afed0047b08059d0fada10f400c1e5
+11.06:17.54.23 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 4 Column name: last_act	Column type: varchar Value: 1509574941840
+11.06:17.54.23 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 5 Column name: email	Column type: varchar Value: test@mail.ru
+11.06:17.54.23 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 1	Admin	e3afed0047b08059d0fada10f400c1e5	1509574941840	test@mail.ru	
+11.06:17.54.23 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 1 Column name: id	Column type: serial Value: 2
+11.06:17.54.23 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 2 Column name: login	Column type: varchar Value: Entropy
+11.06:17.54.23 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 3 Column name: password_hash	Column type: varchar Value: passwordHash
+11.06:17.54.23 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 4 Column name: last_act	Column type: varchar Value: 1509574941840
+11.06:17.54.23 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 5 Column name: email	Column type: varchar Value: DragonWAR26russ@gmail.com
+11.06:17.54.23 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 2	Entropy	passwordHash	1509574941840	DragonWAR26russ@gmail.com	
+11.06:17.54.23 DEBUG	ru.sfedu.tavern.database.DbConnection:73 - SELECT * FROM platform;
+11.06:17.54.23 DEBUG	ru.sfedu.tavern.database.DbConnection:76 - TABLE: platform
+11.06:17.54.23 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 1 Column name: id	Column type: serial Value: 1
+11.06:17.54.23 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 2 Column name: domain	Column type: varchar Value: testDomain
+11.06:17.54.23 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 3 Column name: key	Column type: varchar Value: testkey
+11.06:17.54.23 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 4 Column name: owner_id	Column type: int4 Value: 2
+11.06:17.54.23 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 1	testDomain	testkey	2	
+11.06:17.54.23 DEBUG	ru.sfedu.tavern.database.DbConnection:73 - SELECT * FROM platform_user;
+11.06:17.54.23 DEBUG	ru.sfedu.tavern.database.DbConnection:76 - TABLE: platform_user
+11.06:17.54.23 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 1 Column name: id	Column type: serial Value: 1
+11.06:17.54.23 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 2 Column name: login	Column type: varchar Value: entropy
+11.06:17.54.23 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 3 Column name: avatar	Column type: varchar Value: http://yandex.ru/
+11.06:17.54.23 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 4 Column name: last_act	Column type: varchar Value: 1509574941840
+11.06:17.54.23 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 5 Column name: banned	Column type: bool Value: false
+11.06:17.54.23 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 6 Column name: platform_id	Column type: int4 Value: 1
+11.06:17.54.23 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 1	entropy	http://yandex.ru/	1509574941840	false	1	
+11.06:17.54.23 DEBUG	ru.sfedu.tavern.database.DbConnection:73 - SELECT * FROM message;
+11.06:17.54.23 DEBUG	ru.sfedu.tavern.database.DbConnection:76 - TABLE: message
+11.06:17.54.23 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 1 Column name: id	Column type: serial Value: 1
+11.06:17.54.23 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 2 Column name: sender_id	Column type: int4 Value: 1
+11.06:17.54.23 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 3 Column name: text	Column type: text Value: Hello taverna!
+11.06:17.54.23 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 4 Column name: send_time	Column type: varchar Value: 1509574941840
+11.06:17.54.23 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 5 Column name: platform_id	Column type: int4 Value: 1
+11.06:17.54.23 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 1	1	Hello taverna!	1509574941840	1	
+11.06:17.54.24 DEBUG	ru.sfedu.tavern.database.DbConnection:73 - SELECT * FROM test;
+11.06:17.54.24 DEBUG	ru.sfedu.tavern.database.DbConnection:76 - TABLE: test
+11.06:17.54.24 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 1 Column name: id	Column type: serial Value: 1
+11.06:17.54.24 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 2 Column name: name	Column type: varchar Value: SERGEY
+11.06:17.54.24 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 3 Column name: sec_name	Column type: varchar Value: null
+11.06:17.54.24 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 1	SERGEY	null	
+11.06:17.54.24 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 1 Column name: id	Column type: serial Value: 2
+11.06:17.54.24 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 2 Column name: name	Column type: varchar Value: KIRILL
+11.06:17.54.24 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 3 Column name: sec_name	Column type: varchar Value: null
+11.06:17.54.24 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 2	KIRILL	null	
+11.06:17.54.24 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 3 Column: 1 Column name: id	Column type: serial Value: 3
+11.06:17.54.24 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 3 Column: 2 Column name: name	Column type: varchar Value: ANDREY
+11.06:17.54.24 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 3 Column: 3 Column name: sec_name	Column type: varchar Value: null
+11.06:17.54.24 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 3	ANDREY	null	
+11.06:17.54.24 DEBUG	ru.sfedu.tavern.dataproviders.CsvTools:32 - CSV->INSERT(ARRAYLIST<ENTITY>)....
+11.06:17.54.24 DEBUG	ru.sfedu.tavern.dataproviders.CsvTools:158 - getCsvFile(OURUSER)......
+11.06:17.54.24 DEBUG	ru.sfedu.tavern.dataproviders.CsvTools:161 - /csv/OURUSER.csv
+11.06:17.54.24 ERROR	ru.sfedu.tavern.dataproviders.CsvTools:152 - Ошибка чтения: /csv/OURUSER.csv (No such file or directory)
+11.06:17.54.24 DEBUG	ru.sfedu.tavern.dataproviders.CsvTools:43 - OurUser{id=1, login='Admin', passwordHash='e3afed0047b08059d0fada10f400c1e5', lastAct='1509574941840', email='test@mail.ru'}
+11.06:17.54.24 DEBUG	ru.sfedu.tavern.dataproviders.CsvTools:158 - getCsvFile(OURUSER)......
+11.06:17.54.24 DEBUG	ru.sfedu.tavern.dataproviders.CsvTools:161 - /csv/OURUSER.csv
+11.06:17.54.24 ERROR	ru.sfedu.tavern.dataproviders.CsvTools:152 - Ошибка чтения: /csv/OURUSER.csv (No such file or directory)
+11.06:17.54.24 ERROR	ru.sfedu.tavern.dataproviders.CsvTools:126 - java.lang.NullPointerException
+11.06:17.54.24 DEBUG	ru.sfedu.tavern.dataproviders.CsvTools:43 - OurUser{id=2, login='Entropy', passwordHash='passwordHash', lastAct='1509574941840', email='DragonWAR26russ@gmail.com'}
+11.06:17.54.24 DEBUG	ru.sfedu.tavern.dataproviders.CsvTools:158 - getCsvFile(OURUSER)......
+11.06:17.54.24 DEBUG	ru.sfedu.tavern.dataproviders.CsvTools:161 - /csv/OURUSER.csv
+11.06:17.54.24 ERROR	ru.sfedu.tavern.dataproviders.CsvTools:152 - Ошибка чтения: /csv/OURUSER.csv (No such file or directory)
+11.06:17.54.24 ERROR	ru.sfedu.tavern.dataproviders.CsvTools:126 - java.lang.NullPointerException
+11.06:17.54.24 DEBUG	ru.sfedu.tavern.dataproviders.CsvTools:158 - getCsvFile(OURUSER)......
+11.06:17.54.24 DEBUG	ru.sfedu.tavern.dataproviders.CsvTools:161 - /csv/OURUSER.csv
+11.06:17.54.24 ERROR	ru.sfedu.tavern.dataproviders.CsvTools:139 - Ошибка записи: /csv/OURUSER.csv (No such file or directory)
+11.06:17.56.54  INFO	ru.sfedu.tavern.database.DbConnection:45 - Trying to open DB connection...
+11.06:17.56.54  INFO	ru.sfedu.tavern.database.DbConnection:49 - DB connection opened!
+11.06:17.56.54 DEBUG	ru.sfedu.tavern.database.DbConnection:73 - SELECT * FROM our_user;
+11.06:17.56.54 DEBUG	ru.sfedu.tavern.database.DbConnection:76 - TABLE: our_user
+11.06:17.56.54 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 1 Column name: id	Column type: serial Value: 1
+11.06:17.56.54 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 2 Column name: login	Column type: varchar Value: Admin
+11.06:17.56.54 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 3 Column name: password_hash	Column type: varchar Value: e3afed0047b08059d0fada10f400c1e5
+11.06:17.56.54 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 4 Column name: last_act	Column type: varchar Value: 1509574941840
+11.06:17.56.54 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 5 Column name: email	Column type: varchar Value: test@mail.ru
+11.06:17.56.54 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 1	Admin	e3afed0047b08059d0fada10f400c1e5	1509574941840	test@mail.ru	
+11.06:17.56.54 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 1 Column name: id	Column type: serial Value: 2
+11.06:17.56.54 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 2 Column name: login	Column type: varchar Value: Entropy
+11.06:17.56.54 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 3 Column name: password_hash	Column type: varchar Value: passwordHash
+11.06:17.56.54 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 4 Column name: last_act	Column type: varchar Value: 1509574941840
+11.06:17.56.54 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 5 Column name: email	Column type: varchar Value: DragonWAR26russ@gmail.com
+11.06:17.56.54 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 2	Entropy	passwordHash	1509574941840	DragonWAR26russ@gmail.com	
+11.06:17.56.54 DEBUG	ru.sfedu.tavern.database.DbConnection:73 - SELECT * FROM platform;
+11.06:17.56.54 DEBUG	ru.sfedu.tavern.database.DbConnection:76 - TABLE: platform
+11.06:17.56.54 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 1 Column name: id	Column type: serial Value: 1
+11.06:17.56.54 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 2 Column name: domain	Column type: varchar Value: testDomain
+11.06:17.56.54 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 3 Column name: key	Column type: varchar Value: testkey
+11.06:17.56.54 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 4 Column name: owner_id	Column type: int4 Value: 2
+11.06:17.56.54 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 1	testDomain	testkey	2	
+11.06:17.56.54 DEBUG	ru.sfedu.tavern.database.DbConnection:73 - SELECT * FROM platform_user;
+11.06:17.56.54 DEBUG	ru.sfedu.tavern.database.DbConnection:76 - TABLE: platform_user
+11.06:17.56.54 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 1 Column name: id	Column type: serial Value: 1
+11.06:17.56.54 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 2 Column name: login	Column type: varchar Value: entropy
+11.06:17.56.54 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 3 Column name: avatar	Column type: varchar Value: http://yandex.ru/
+11.06:17.56.54 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 4 Column name: last_act	Column type: varchar Value: 1509574941840
+11.06:17.56.54 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 5 Column name: banned	Column type: bool Value: false
+11.06:17.56.54 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 6 Column name: platform_id	Column type: int4 Value: 1
+11.06:17.56.54 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 1	entropy	http://yandex.ru/	1509574941840	false	1	
+11.06:17.56.54 DEBUG	ru.sfedu.tavern.database.DbConnection:73 - SELECT * FROM message;
+11.06:17.56.54 DEBUG	ru.sfedu.tavern.database.DbConnection:76 - TABLE: message
+11.06:17.56.54 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 1 Column name: id	Column type: serial Value: 1
+11.06:17.56.54 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 2 Column name: sender_id	Column type: int4 Value: 1
+11.06:17.56.54 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 3 Column name: text	Column type: text Value: Hello taverna!
+11.06:17.56.54 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 4 Column name: send_time	Column type: varchar Value: 1509574941840
+11.06:17.56.54 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 5 Column name: platform_id	Column type: int4 Value: 1
+11.06:17.56.54 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 1	1	Hello taverna!	1509574941840	1	
+11.06:17.56.54 DEBUG	ru.sfedu.tavern.database.DbConnection:73 - SELECT * FROM test;
+11.06:17.56.54 DEBUG	ru.sfedu.tavern.database.DbConnection:76 - TABLE: test
+11.06:17.56.54 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 1 Column name: id	Column type: serial Value: 1
+11.06:17.56.54 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 2 Column name: name	Column type: varchar Value: SERGEY
+11.06:17.56.54 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 1 Column: 3 Column name: sec_name	Column type: varchar Value: null
+11.06:17.56.54 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 1	SERGEY	null	
+11.06:17.56.54 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 1 Column name: id	Column type: serial Value: 2
+11.06:17.56.54 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 2 Column name: name	Column type: varchar Value: KIRILL
+11.06:17.56.54 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 2 Column: 3 Column name: sec_name	Column type: varchar Value: null
+11.06:17.56.54 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 2	KIRILL	null	
+11.06:17.56.54 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 3 Column: 1 Column name: id	Column type: serial Value: 3
+11.06:17.56.54 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 3 Column: 2 Column name: name	Column type: varchar Value: ANDREY
+11.06:17.56.54 DEBUG	ru.sfedu.tavern.database.DbConnection:84 - Row number: 3 Column: 3 Column name: sec_name	Column type: varchar Value: null
+11.06:17.56.54 DEBUG	ru.sfedu.tavern.database.DbConnection:96 - 3	ANDREY	null	
+11.06:17.56.54 DEBUG	ru.sfedu.tavern.dataproviders.CsvTools:32 - CSV->INSERT(ARRAYLIST<ENTITY>)....
+11.06:17.56.54 DEBUG	ru.sfedu.tavern.dataproviders.CsvTools:158 - getCsvFile(OURUSER)......
+11.06:17.56.54 DEBUG	ru.sfedu.tavern.dataproviders.CsvTools:161 - src/main/resources/csv/OURUSER.csv
+11.06:17.56.54 DEBUG	ru.sfedu.tavern.dataproviders.CsvTools:43 - OurUser{id=1, login='Admin', passwordHash='e3afed0047b08059d0fada10f400c1e5', lastAct='1509574941840', email='test@mail.ru'}
+11.06:17.56.54 DEBUG	ru.sfedu.tavern.dataproviders.CsvTools:158 - getCsvFile(OURUSER)......
+11.06:17.56.54 DEBUG	ru.sfedu.tavern.dataproviders.CsvTools:161 - src/main/resources/csv/OURUSER.csv
+11.06:17.56.54 DEBUG	ru.sfedu.tavern.dataproviders.CsvTools:43 - OurUser{id=2, login='Entropy', passwordHash='passwordHash', lastAct='1509574941840', email='DragonWAR26russ@gmail.com'}
+11.06:17.56.54 DEBUG	ru.sfedu.tavern.dataproviders.CsvTools:158 - getCsvFile(OURUSER)......
+11.06:17.56.54 DEBUG	ru.sfedu.tavern.dataproviders.CsvTools:161 - src/main/resources/csv/OURUSER.csv
+11.06:17.56.54 DEBUG	ru.sfedu.tavern.dataproviders.CsvTools:158 - getCsvFile(OURUSER)......
+11.06:17.56.54 DEBUG	ru.sfedu.tavern.dataproviders.CsvTools:161 - src/main/resources/csv/OURUSER.csv
