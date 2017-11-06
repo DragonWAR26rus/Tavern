@@ -1,6 +1,6 @@
 package ru.sfedu.tavern.entities;
 
-import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  *
@@ -8,19 +8,35 @@ import java.io.Serializable;
  */
 
 // Table our_user
-public class OurUser implements Serializable {
+public class OurUser extends Entity{
     
-    private int id;
     private String login;
-    private String password;
+    private String passwordHash;
     private String email;
+    private String lastAct;
+    private ArrayList<Platform> platforms;
     
-    public int getId() {
-        return id;
+    protected OurUser(){
+        super(ClassType.OURUSER, 1l);
     }
-    
-    public void setId( int id ) {
-        this.id = id;
+    public OurUser(long id, String login, String passwordHash, String lastAct, String email) {
+        super(ClassType.OURUSER, id);
+        this.login          = login;
+        this.passwordHash   = passwordHash;
+        this.lastAct        = lastAct;
+        this.email          = email;
+    }
+    public OurUser(ArrayList<Object> initList) {
+        super(ClassType.OURUSER, initList.get(0) == null ? 1l : Long.parseLong(initList.get(0).toString()));
+        String _login        = initList.get(1) == null ? null : initList.get(1).toString();
+        String _passwordHash = initList.get(2) == null ? null : initList.get(2).toString();
+        String _lastAct      = initList.get(3) == null ? null : initList.get(3).toString();
+        String _email        = initList.get(4) == null ? null : initList.get(4).toString();
+        
+        this.login          = _login;
+        this.passwordHash   = _passwordHash;
+        this.lastAct        = _lastAct;
+        this.email          = _email;
     }
     
     public String getLogin() {
@@ -31,12 +47,20 @@ public class OurUser implements Serializable {
         this.login = login;
     }
     
-    public String getPassword() {
-        return password;
+    public String getPasswordHash() {
+        return passwordHash;
     }
     
-    public void setPassword( String password ) {
-        this.password = password;
+    public void setPasswordHash( String passwordHash ) {
+        this.passwordHash = passwordHash;
+    }
+    
+    public String getLastAct() {
+        return lastAct;
+    }
+    
+    public void setLastAct( String lastAct ) {
+        this.lastAct = lastAct;
     }
     
     public String getEmail() {
@@ -47,11 +71,26 @@ public class OurUser implements Serializable {
         this.email = email;
     }
     
-    protected OurUser(){}
-    public OurUser(String email, String login, String password) {
-        this.login = login;
-        this.password = password;
-        this.email = email;
+    public ArrayList<Platform> getPlatforms() {
+        return platforms;
+    }
+    
+    public void setPlatforms( ArrayList<Platform> platforms ){
+        this.platforms = new ArrayList<Platform>();
+        platforms.forEach((el)->{if(el.getOwnerId() == id) this.platforms.add(el); });
+        this.platforms = platforms;
+    }
+    
+    public void setPlatforms( Platform platform ){
+        if(platform.getOwnerId() != id) return;
+        this.platforms = new ArrayList<Platform>();
+        this.platforms.add(platform);
+    }
+
+    public String valuesToString(boolean needId) {
+        String row = needId ? Long.toString(id) + ", '" : "'";
+        row += login + "', '" + passwordHash + "', '" + lastAct + "', '" + email + '\'';
+        return row;
     }
     
     @Override
@@ -59,8 +98,31 @@ public class OurUser implements Serializable {
         return  "OurUser{" +
                 "id=" + id + 
                 ", login='" + login + '\'' +
+                ", passwordHash='" + passwordHash + '\'' +
+                ", lastAct='" + lastAct + '\'' +
                 ", email='" + email + '\'' +
                 '}';
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        
+        final OurUser other = (OurUser) obj;
+        if (getId() != other.getId()) {
+            return false;
+        }
+        
+        return true;
     }
     
 }

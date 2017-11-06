@@ -1,6 +1,6 @@
 package ru.sfedu.tavern.entities;
 
-import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  *
@@ -8,19 +8,30 @@ import java.io.Serializable;
  */
 
 //Table platform
-public class Platform implements Serializable {
+public class Platform extends Entity{
 
-    private int id;
     private String domain;
     private String key;
-    private int ownerId;
+    private long ownerId;
     
-    public int getId(){
-        return id;
+    public Platform(){
+        super(ClassType.PLATFORM, 1l);
     }
-    
-    public void setId( int id ){
-        this.id = id;
+    public Platform(long id, long ownerId, String domain, String key){
+        super(ClassType.PLATFORM, id);
+        this.domain = domain;
+        this.key = key;
+        this.ownerId = ownerId;
+    }
+    public Platform(ArrayList<Object> initList) {
+        super(ClassType.OURUSER, initList.get(0) == null ? 1l : Long.parseLong(initList.get(0).toString()));
+        String _domain = initList.get(1) == null ? null : initList.get(1).toString();
+        String _key    = initList.get(2) == null ? null : initList.get(2).toString();
+        long _ownerId  = initList.get(3) == null ? null : Long.parseLong(initList.get(3).toString());
+        
+        this.domain  = _domain;
+        this.key     = _key;
+        this.ownerId = _ownerId;
     }
     
     public String getDomain(){
@@ -39,7 +50,7 @@ public class Platform implements Serializable {
         this.key = key;
     }
     
-    public int getOwnerId(){
+    public long getOwnerId(){
         return ownerId;
     }
     
@@ -47,20 +58,35 @@ public class Platform implements Serializable {
         this.ownerId = ownerId;
     }
     
-    protected Platform(){}
-    public Platform(String domain, String key, int ownerId){
-        this.domain = domain;
-        this.key = key;
-        this.ownerId = ownerId;
-    }
-    
     @Override
     public String toString() {
         return  "Platform{" +
                 "id=" + id + 
+                ", domain=" + domain +
                 ", key='" + key + '\'' +
                 ", ownerId=" + ownerId +
                 '}';
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        
+        final Platform other = (Platform) obj;
+        if (getId() != other.getId()) {
+            return false;
+        }
+        
+        return true;
     }
     
 }

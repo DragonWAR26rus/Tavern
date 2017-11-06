@@ -3,20 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ru.sfedu.tavern.dataprovider;
+package ru.sfedu;
+
+import org.junit.runner.RunWith;
+import org.junit.runners.Suite;
 
 /**
  *
  * @author entropy
  */
-public interface IDataProvider<T> {
-    
-    void saveRecord(T o);
-    
-    void deleteRecord(T o);
-    
-    T getRecordById(long id);
-    
-    void initDataSource();
+@RunWith(Suite.class)
+@Suite.SuiteClasses({ru.sfedu.tavern.TavernSuite.class})
+public class SfeduSuite {
     
 }

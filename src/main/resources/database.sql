@@ -19,12 +19,12 @@ CREATE TABLE platform (
 DROP TABLE IF EXISTS platform_user;
 CREATE TABLE platform_user (
     id serial primary key,
-    name varchar(50) not null,
+    login varchar(50) not null,
     avatar_link varchar(255),
     last_act varchar(20),
     banned boolean,
     platform_id integer REFERENCES platform(id),
-    UNIQUE( name, platform_id )
+    UNIQUE( login, platform_id )
 );
 
 DROP TABLE IF EXISTS message;
