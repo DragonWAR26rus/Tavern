@@ -1,7 +1,6 @@
 
 package ru.sfedu.tavern.dataproviders;
 
-import com.opencsv.CSVWriter;
 import com.opencsv.bean.CsvToBeanBuilder;
 import com.opencsv.bean.StatefulBeanToCsv;
 import com.opencsv.bean.StatefulBeanToCsvBuilder;
@@ -10,9 +9,6 @@ import com.opencsv.exceptions.CsvRequiredFieldEmptyException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.Writer;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import org.apache.log4j.Logger;
@@ -28,12 +24,33 @@ import ru.sfedu.tavern.utils.ConfigurationUtil;
 public class CsvTools implements IDataProvider{
     
     private static Logger log = Logger.getLogger(CsvTools.class);
+    CsvToBeanBuilder<Entity> builder;
+    FileWriter writer;
+    StatefulBeanToCsv beanToCsv;
+    
+    public void initBuilder(ClassType type) {
+        try {
+            builder = new CsvToBeanBuilder(new FileReader(getCsvFile(type))).withType(type.getCl());
+        } catch ( Exception ex ) {
+            log.debug(ex);
+        }
+    }
+    
+    public void initBeanToCsv(ClassType type, boolean append) {
+        try {
+            writer = new FileWriter(getCsvFile(type), append);
+            beanToCsv = new StatefulBeanToCsvBuilder(writer).build();
+        } catch ( IOException ex ) {
+            log.error(ex);
+        }
+    }
 
     public CsvTools() {}
 
     @Override
     public void insert(ArrayList<Entity> objectList) {
         log.debug("CSV->INSERT(ARRAYLIST<ENTITY>)....");
+        
         ArrayList<Entity> savedRecords = null;
         ClassType classType = objectList.get(0).getClassType();
         try {
@@ -55,20 +72,15 @@ public class CsvTools implements IDataProvider{
 
     @Override
     public void insert(Entity object) {
-        ArrayList<Entity> savedRecords = null;
-        ClassType classType = object.getClassType();
+        
+        initBeanToCsv(object.getClassType(), true);
+        log.info(object.toString());
         try {
-            savedRecords = (ArrayList<Entity>) readFromCsv(classType);
-        } catch (Exception ex) {
+            beanToCsv.write(object);
+            writer.close();
+        } catch ( Exception ex ) {
             log.error(ex);
         }
-        
-        if(savedRecords == null) savedRecords = new ArrayList();
-        if(getObjectByID(object.getId(), object.getClassType()) == null){
-            savedRecords.add(object);
-        }
-        
-        writeToCsv(savedRecords);
     }
 
     @Override
@@ -116,21 +128,20 @@ public class CsvTools implements IDataProvider{
 
     @Override
     public Entity getObjectByID(long id, ClassType type) {
-        Entity target = null;
-        try {
-            List<Entity> records;
-            records = readFromCsv(type);
-            for(Entity obj: records) {
-                if( obj.getId() == id ) {
-                    target = obj;
-                    break;
-                };
+        initBuilder(type);
+        
+        try{
+            List<Entity> list = builder.build().parse();
+            for( Entity item : list ) {
+                if( item.getId() == id ) {
+                    log.info(item.toString());
+                    return item;
+                }
             }
         } catch ( Exception ex ) {
             log.error(ex);
         }
-        
-        return target;
+        return null;
     }
     
     private void writeToCsv(List<Entity> list) {
@@ -142,6 +153,7 @@ public class CsvTools implements IDataProvider{
                     .build();
             
             beanToCsv.write(list);
+            fw.close();
         } catch ( CsvDataTypeMismatchException | CsvRequiredFieldEmptyException | IOException ex ) {
             log.error("Ошибка записи: " + ex.getMessage());
         }
