@@ -5,6 +5,7 @@
  */
 package ru.sfedu.tavern.entities;
 
+import ru.sfedu.tavern.model.entities.PlatformUser;
 import org.junit.Test;
 import static org.junit.Assert.*;
 

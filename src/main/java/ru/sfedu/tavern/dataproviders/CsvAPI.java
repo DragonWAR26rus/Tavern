@@ -13,22 +13,21 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 import org.apache.log4j.Logger;
-import ru.sfedu.tavern.Constants;
-import ru.sfedu.tavern.entities.ClassType;
-import ru.sfedu.tavern.entities.Entity;
+import ru.sfedu.tavern.model.Constants;
+import ru.sfedu.tavern.model.entities.ClassType;
+import ru.sfedu.tavern.model.entities.Entity;
 import ru.sfedu.tavern.utils.ConfigurationUtil;
 
 /**
  *
  * @author entropy
  */
-public class CsvTools implements IDataProvider{
+public class CsvAPI implements IDataProvider{
     
-    private static Logger log = Logger.getLogger(CsvTools.class);
+    private static Logger log = Logger.getLogger(CsvAPI.class);
 
-    public CsvTools() {}
+    public CsvAPI() {}
 
     @Override
     public void insert(ArrayList<Entity> objectList) {
@@ -54,6 +53,7 @@ public class CsvTools implements IDataProvider{
 
     @Override
     public void insert(Entity object) {
+        log.debug("CSV->INSERT(ENTITY)....");
         ArrayList<Entity> savedRecords = null;
         ClassType classType = object.getClassType();
         try {
@@ -134,7 +134,7 @@ public class CsvTools implements IDataProvider{
     
     private void writeToCsv(List<Entity> list) {
         try {
-            String path = getCsvFile(list.get(0).getClassType());
+            String path = getPathCsvFile(list.get(0).getClassType());
             
             try (FileWriter fw = new FileWriter(path, false)) {
                 StatefulBeanToCsv beanToCsv = new StatefulBeanToCsvBuilder(fw)
@@ -150,7 +150,7 @@ public class CsvTools implements IDataProvider{
     
     private List<Entity> readFromCsv(ClassType classType){
         try {
-            String path = getCsvFile(classType);
+            String path = getPathCsvFile(classType);
             List<Entity> records;
             try (FileReader fr = new FileReader(path)) {
                 records = new CsvToBeanBuilder(fr)
@@ -160,13 +160,13 @@ public class CsvTools implements IDataProvider{
                         .parse();
             }
             return records;
-        } catch (Exception ex) {
+        } catch (IOException | IllegalStateException ex) {
             log.error(ex);
             return null;
         }        
     }
     
-    private String getCsvFile(ClassType classType) throws IOException {
+    private String getPathCsvFile(ClassType classType) throws IOException {
         log.debug("getCsvFile(" + classType.toString() + ")......");
         String dirPath = ConfigurationUtil.getConfigurationEntry(Constants.PATH_TO_SCV);
         String filePath = dirPath.concat(classType.toString()).concat(".csv");

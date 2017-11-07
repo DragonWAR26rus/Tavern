@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ru.sfedu.tavern.entities;
+package ru.sfedu.tavern.model.entities;
 
-import ru.sfedu.tavern.Constants;
+import ru.sfedu.tavern.model.Constants;
 
 /**
  *

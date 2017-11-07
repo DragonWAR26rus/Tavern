@@ -5,6 +5,8 @@
  */
 package ru.sfedu.tavern.entities;
 
+import ru.sfedu.tavern.model.entities.OurUser;
+import ru.sfedu.tavern.model.entities.Platform;
 import java.util.ArrayList;
 import org.junit.Test;
 import static org.junit.Assert.*;

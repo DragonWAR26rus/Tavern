@@ -1,4 +1,4 @@
-package ru.sfedu.tavern.entities;
+package ru.sfedu.tavern.model.entities;
 
 import com.opencsv.bean.CsvBindByName;
 import com.opencsv.bean.CsvBindByPosition;

@@ -2,12 +2,8 @@ package ru.sfedu.tavern.database;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
 import org.apache.log4j.Logger;
-import ru.sfedu.tavern.Constants;
-import ru.sfedu.tavern.entities.ClassType;
-import ru.sfedu.tavern.entities.Entity;
+import ru.sfedu.tavern.model.Constants;
 import ru.sfedu.tavern.utils.ConfigurationUtil;
 
 /**

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ru.sfedu.tavern.entities;
+package ru.sfedu.tavern.model.entities;
 
 import com.opencsv.bean.CsvBindByName;
 import java.util.ArrayList;

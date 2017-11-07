@@ -8,8 +8,8 @@ package ru.sfedu.tavern.dataproviders;
 import java.util.ArrayList;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import ru.sfedu.tavern.entities.ClassType;
-import ru.sfedu.tavern.entities.Entity;
+import ru.sfedu.tavern.model.entities.ClassType;
+import ru.sfedu.tavern.model.entities.Entity;
 
 /**
  *

@@ -8,8 +8,8 @@ package ru.sfedu.tavern.dataproviders;
 import java.util.ArrayList;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import ru.sfedu.tavern.entities.ClassType;
-import ru.sfedu.tavern.entities.Entity;
+import ru.sfedu.tavern.model.entities.ClassType;
+import ru.sfedu.tavern.model.entities.Entity;
 
 /**
  *
@@ -21,66 +21,66 @@ public class DbToolsTest {
     }
 
     /**
-     * Test of insert method, of class DbTools.
+     * Test of insert method, of class DbAPI.
      */
     @Test
     public void testInsert_ArrayList() throws Exception {
         System.out.println("insert");
         ArrayList<Entity> object = null;
-        DbTools instance = new DbTools();
+        DbAPI instance = new DbAPI();
         instance.insert(object);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
 
     /**
-     * Test of insert method, of class DbTools.
+     * Test of insert method, of class DbAPI.
      */
     @Test
     public void testInsert_Entity() throws Exception {
         System.out.println("insert");
         Entity object = null;
-        DbTools instance = new DbTools();
+        DbAPI instance = new DbAPI();
         instance.insert(object);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
 
     /**
-     * Test of update method, of class DbTools.
+     * Test of update method, of class DbAPI.
      */
     @Test
     public void testUpdate() throws Exception {
         System.out.println("update");
         Entity object = null;
-        DbTools instance = new DbTools();
+        DbAPI instance = new DbAPI();
         instance.update(object);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
 
     /**
-     * Test of delete method, of class DbTools.
+     * Test of delete method, of class DbAPI.
      */
     @Test
     public void testDelete() throws Exception {
         System.out.println("delete");
         Entity object = null;
-        DbTools instance = new DbTools();
+        DbAPI instance = new DbAPI();
         instance.delete(object);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
 
     /**
-     * Test of getObjectByID method, of class DbTools.
+     * Test of getObjectByID method, of class DbAPI.
      */
     @Test
     public void testGetObjectByID() throws Exception {
         System.out.println("getObjectByID");
         long id = 0L;
         ClassType type = null;
-        DbTools instance = new DbTools();
+        DbAPI instance = new DbAPI();
         Entity expResult = null;
         Entity result = instance.getObjectByID(id, type);
         assertEquals(expResult, result);

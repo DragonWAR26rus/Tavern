@@ -3,22 +3,20 @@ package ru.sfedu.tavern.dataproviders;
 
 import java.util.ArrayList;
 import ru.sfedu.tavern.database.DbConnection;
-import ru.sfedu.tavern.entities.ClassType;
-import ru.sfedu.tavern.entities.Entity;
+import ru.sfedu.tavern.model.entities.ClassType;
+import ru.sfedu.tavern.model.entities.Entity;
 
 /**
  *
  * @author entropy
  */
-public class DbTools implements IDataProvider{
+public class DbAPI implements IDataProvider{
 
 //    private final DbConnection instence = DbConnection.getInstance();
-    private final String OurUserCols = "login, password_hash, last_act, email";
-    private final String[] TableNames = {"our_user", "platform", "platform_user", "messages"};
     
     
     
-    public DbTools() {
+    public DbAPI() {
 
     }
 

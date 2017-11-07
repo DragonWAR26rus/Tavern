@@ -5,6 +5,12 @@
  */
 package ru.sfedu.tavern;
 
+import ru.sfedu.tavern.model.entities.OurUser;
+import ru.sfedu.tavern.model.entities.PlatformUser;
+import ru.sfedu.tavern.model.entities.Message;
+import ru.sfedu.tavern.model.entities.ClassType;
+import ru.sfedu.tavern.model.entities.Platform;
+import ru.sfedu.tavern.model.entities.Entity;
 import java.util.ArrayList;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -13,8 +19,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import ru.sfedu.tavern.database.DbConnection;
 import ru.sfedu.tavern.database.DbMetaTables;
-import ru.sfedu.tavern.dataproviders.CsvTools;
-import ru.sfedu.tavern.entities.*;
+import ru.sfedu.tavern.dataproviders.CsvAPI;
 
 /**
  *
@@ -85,25 +90,28 @@ public class TavernTest {
                 messagesList.forEach( (val)->System.out.println(val.toString()) );
                 
                 // CSV API TEST
-                CsvTools csv = new CsvTools();
+                CsvAPI csv = new CsvAPI();
                 csv.insert(userList);
                 csv.insert(platformList);
                 csv.insert(platformUsersList);
                 csv.insert(messagesList);
+                System.out.println("=============================================");
+//                try {
+//                    Entity test1 = (Entity) csv.getObjectByID(1, ClassType.OURUSER);
+//                    OurUser test2 = (OurUser) test1;
+//                    System.out.println(test2.toString());
+//                } catch ( Exception ex ) {}
+//                try {
+//                    System.out.println(csv.getObjectByID(2, ClassType.OURUSER).toString());
+//                } catch ( Exception ex ) {}
                 try {
-                    Entity test1 = (Entity) csv.getObjectByID(1, ClassType.OURUSER);
-                    OurUser test2 = (OurUser) test1;
+                    Entity test1 = (Entity) csv.getObjectByID(1, ClassType.PLATFORM);
+                    Platform test2 = (Platform) test1;
                     System.out.println(test2.toString());
-                } catch ( Exception ex ) {}
-                try {
-                    System.out.println(csv.getObjectByID(2, ClassType.OURUSER).toString());
-                } catch ( Exception ex ) {}
-                try {
-                    System.out.println(csv.getObjectByID(1, ClassType.PLATFORM).toString());
-                } catch ( Exception ex ) {}
-                try {
-                    System.out.println(csv.getObjectByID(1, ClassType.MESSAGE).toString());
-                } catch ( Exception ex ) {}
+                } catch ( Exception ex ) { System.err.println(ex);}
+//                try {
+//                    System.out.println(csv.getObjectByID(1, ClassType.MESSAGE).toString());
+//                } catch ( Exception ex ) {}
                 try {
                     System.out.println(csv.getObjectByID(1, ClassType.PLATFORMUSER).toString());
                 } catch ( Exception ex ) {}

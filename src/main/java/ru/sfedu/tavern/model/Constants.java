@@ -1,5 +1,5 @@
 
-package ru.sfedu.tavern;
+package ru.sfedu.tavern.model;
 
 /**
  *
