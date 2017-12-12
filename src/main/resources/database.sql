@@ -1,37 +1,42 @@
 
-DROP TABLE our_user CASCADE;
+DROP TABLE IF EXISTS our_user CASCADE;
 CREATE TABLE our_user (
     id serial primary key,
     login varchar(50) not null,
-    password_hash varchar(32) not null,
-    last_act varchar(20),
+    passwordHash varchar(32) not null,
+    lastAct varchar(20),
     email varchar(255) not null
 );
 
-DROP TABLE IF EXISTS platform;
+DROP TABLE IF EXISTS platform CASCADE;
 CREATE TABLE platform (
     id serial primary key,
     domain varchar(50) not null,
     key varchar(50) not null,
-    owner_id integer REFERENCES our_user(id)
+    ownerId integer NOT NULL REFERENCES our_user(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
-DROP TABLE IF EXISTS platform_user;
+DROP TABLE IF EXISTS platform_user CASCADE;
 CREATE TABLE platform_user (
     id serial primary key,
     login varchar(50) not null,
-    avatar_link varchar(255),
-    last_act varchar(20),
+    avatarlink varchar(255),
+    lastAct varchar(20),
     banned boolean,
-    platform_id integer REFERENCES platform(id),
-    UNIQUE( login, platform_id )
+    platformId integer NOT NULL REFERENCES platform(id) ON DELETE CASCADE ON UPDATE CASCADE,
+    UNIQUE( login, platformId )
 );
 
-DROP TABLE IF EXISTS message;
+DROP TABLE IF EXISTS message CASCADE;
 CREATE TABLE message (
     id serial primary key,
-    sender_id integer REFERENCES platform_user(id),
+    senderId integer NOT NULL REFERENCES platform_user(id) ON DELETE CASCADE ON UPDATE CASCADE,
     text text,
-    send_time varchar(20),
-    platform_id integer REFERENCES platform(id)
+    sendTime varchar(20),
+    platformId integer NOT NULL REFERENCES platform(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
+
+insert into our_user(id, login, passwordHash, lastAct, email) values(111, 'Sergey', 'passhashSuperHash', '123', 'sergey.s.l@mail.ru');
+insert into platform(id, domain, key, ownerId) values(111, 'seregaDomain', 'keeey', 111);
+insert into platform_user(id, login, avatarlink, lastAct, banned, platformId) values(111,'seregaLogin', 'avavava', 123, false, 111);
+insert into message(id, senderId, text, sendTime, platformId) values(111, 111, 'avasdadasdvava', 124, 111);

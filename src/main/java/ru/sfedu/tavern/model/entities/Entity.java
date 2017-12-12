@@ -11,25 +11,20 @@ import java.io.Serializable;
  */
 public abstract class Entity implements Serializable{
 
-    @CsvBindByName
-    private long id = 1l;
-    @CsvBindByName
+//    @CsvBindByPosition(position = 1)
+//    protected long id = 1l;
+//    @CsvBindByPosition
     private ClassType classType;
     
     public Entity(){}
 
-    public Entity(ClassType classType, long id) {
+    public Entity(ClassType classType) {
         this.classType = classType;
-        this.id = id;
     }
     
-    public long getId() {
-        return id;
-    }
+    public abstract long getId();
 
-    public void setId( long id ){
-        this.id = id;
-    }
+    public abstract void setId( long id );
     
     public ClassType getClassType() {
         return classType;
@@ -38,5 +33,7 @@ public abstract class Entity implements Serializable{
     public void setClassType( ClassType classType ) {
         this.classType = classType;
     }
+    
+    public abstract String toString(boolean comma);
     
 }

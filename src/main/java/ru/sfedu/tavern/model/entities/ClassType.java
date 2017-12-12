@@ -13,25 +13,31 @@ import ru.sfedu.tavern.model.Constants;
  */
 public enum ClassType {
     
-    OURUSER      (Constants.HEADERS_OURUSER,        OurUser.class),
-    PLATFORM     (Constants.HEADERS_PLATFORM,       Platform.class),
-    PLATFORMUSER (Constants.HEADERS_PLATFORMUSER,   PlatformUser.class),
-    MESSAGE      (Constants.HEADERS_MESSAGE,        Message.class);
+    OURUSER      (Constants.HEADERS_OURUSER,      OurUser.class,      Constants.OURUSER_FILENAME,       Constants.OURUSER_TABLE),
+    PLATFORM     (Constants.HEADERS_PLATFORM,     Platform.class,     Constants.PLATFORM_FILENAME,      Constants.PLATFORM_TABLE),
+    PLATFORMUSER (Constants.HEADERS_PLATFORMUSER, PlatformUser.class, Constants.PLATFORMUSER_FILENAME,  Constants.PLATFORMUSER_TABLE),
+    MESSAGE      (Constants.HEADERS_MESSAGE,      Message.class,      Constants.MESSAGE_FILENAME,       Constants.MESSAGE_TABLE);
     
-    
-
     private Class _class;
     private String[] headers;
+    private String fileName;
+    private String tableName;
     private ClassType(){};
     
-    private ClassType(String[] headers, Class _class) {
+    private ClassType(String[] headers, Class _class, String fileName, String tableName) {
         this.headers = headers;
         this._class = _class;
+        this.fileName = fileName;
+        this.tableName = tableName;
     }
     
     @Override
     public String toString() {
         return super.toString();
+    }
+    
+    public String getHeaderString() {
+        return String.join(", ", headers);
     }
     
     public Class getCl() {
@@ -42,5 +48,12 @@ public enum ClassType {
         return headers;
     }
 
+    public String getFileName() {
+        return fileName;
+    }
+    
+    public String getTableName() {
+        return tableName;
+    }
 
 }

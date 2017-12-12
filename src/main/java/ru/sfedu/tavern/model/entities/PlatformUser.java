@@ -7,31 +7,44 @@ package ru.sfedu.tavern.model.entities;
 
 
 import com.opencsv.bean.CsvBindByName;
+import com.opencsv.bean.CsvBindByPosition;
 import java.util.ArrayList;
+import org.simpleframework.xml.Element;
+import org.simpleframework.xml.Root;
 
 /**
  *
  * @author entropy
  */
 //Table platform_user
+@Root
 public class PlatformUser extends Entity{
     
-    @CsvBindByName
+    @Element
+    @CsvBindByPosition(position = 1)
+    private long id = 1l;
+    @Element
+    @CsvBindByPosition(position = 2)
     private String login;
-    @CsvBindByName
+    @Element
+    @CsvBindByPosition(position = 3)
     private String avatarLink;
-    @CsvBindByName
+    @Element
+    @CsvBindByPosition(position = 4)
     private String lastAct;
-    @CsvBindByName
+    @Element
+    @CsvBindByPosition(position = 5)
     private boolean banned;
-    @CsvBindByName
+    @Element
+    @CsvBindByPosition(position = 6)
     private long platformId;
     
     public PlatformUser(){
-        super(ClassType.PLATFORMUSER, 1l);
+        super(ClassType.PLATFORMUSER);
     }
     public PlatformUser(long id, String login, String avatarLink, String lastAct, boolean banned, long platformId) {
-        super(ClassType.PLATFORMUSER, id);
+        super(ClassType.PLATFORMUSER);
+        this.id         = id;
         this.login      = login;
         this.avatarLink = avatarLink;
         this.lastAct    = lastAct;
@@ -39,7 +52,8 @@ public class PlatformUser extends Entity{
         this.platformId = platformId;
     }
     public PlatformUser(ArrayList<Object> initList) {
-        super(ClassType.PLATFORMUSER, initList.get(0) == null ? 1l : Long.parseLong(initList.get(0).toString()));
+        super(ClassType.PLATFORMUSER);
+        this.id             = initList.get(0) == null ? 1l : Long.parseLong(initList.get(0).toString());
         String  _login      = initList.get(1) == null ? null : initList.get(1).toString();
         String  _avatarLink = initList.get(2) == null ? null : initList.get(2).toString();
         String  _lastAct    = initList.get(3) == null ? null : initList.get(3).toString();
@@ -106,6 +120,20 @@ public class PlatformUser extends Entity{
     }
     
     @Override
+    public String toString( boolean comma ) {
+        if(comma) {
+            return  getId() + 
+                ", '" + login + '\'' +
+                ", '" + avatarLink + '\'' +
+                ", '" + lastAct + '\'' +
+                ", " + String.valueOf(banned) + 
+                ", " + platformId;
+        } else {
+            return toString();
+        }
+    }
+    
+    @Override
     public boolean equals(Object obj) {
         
         if (this == obj) {
@@ -124,6 +152,16 @@ public class PlatformUser extends Entity{
         }
         
         return true;
+    }
+
+    @Override
+    public long getId() {
+        return id;
+    }
+
+    @Override
+    public void setId(long id) {
+        this.id = id;
     }
     
 }

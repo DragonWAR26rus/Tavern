@@ -2,8 +2,15 @@ package ru.sfedu.tavern.database;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.List;
 import org.apache.log4j.Logger;
 import ru.sfedu.tavern.model.Constants;
+import ru.sfedu.tavern.model.entities.ClassType;
+import ru.sfedu.tavern.model.entities.Entity;
+import ru.sfedu.tavern.model.entities.Message;
+import ru.sfedu.tavern.model.entities.OurUser;
+import ru.sfedu.tavern.model.entities.Platform;
+import ru.sfedu.tavern.model.entities.PlatformUser;
 import ru.sfedu.tavern.utils.ConfigurationUtil;
 
 /**
@@ -101,18 +108,62 @@ public class DbConnection {
         }        
     }
     
-    public ResultSet execQuery (String query){
+    public List<Entity> execQuery (String query, ClassType classType){
+        List<Entity> result = new ArrayList();
         if(con != null){
             try (Statement stmt = con.createStatement(); ResultSet rs = stmt.executeQuery(query)){
-                return rs;
+                ResultSetMetaData rsmd = rs.getMetaData();
+                while(rs.next()) {
+                    Entity obj = null;
+                    switch(classType) {
+                        case OURUSER:
+                            obj = new OurUser(
+                                    rs.getLong(1),
+                                    rs.getString(2),
+                                    rs.getString(3),
+                                    rs.getString(4),
+                                    rs.getString(5)
+                            );
+                            break;
+                        case PLATFORM:
+                            obj = new Platform(
+                                    rs.getLong(1),
+                                    rs.getString(2),
+                                    rs.getString(3),
+                                    rs.getLong(4)  
+                            );
+                            break;
+                        case PLATFORMUSER:
+                            obj = new PlatformUser(
+                                    rs.getLong(1),
+                                    rs.getString(2),
+                                    rs.getString(3),
+                                    rs.getString(4),
+                                    rs.getBoolean(5),
+                                    rs.getLong(6)
+                            );
+                            break;
+                        case MESSAGE:
+                            obj = new Message(
+                                    rs.getLong(1),
+                                    rs.getLong(2),
+                                    rs.getString(3),
+                                    rs.getString(4),
+                                    rs.getLong(5)
+                            );
+                            break;
+                    }
+                    result.add(obj);
+                }
+                
             } catch (Exception ex){
-                log.info("Exception: " + ex);
-                return null;
+                log.warn("Exception: " + ex);
+                return result;
             }
         } else {
             openConnection();
-            return null;
         }
+        return result;
     }
     
     // Thread safe singleton

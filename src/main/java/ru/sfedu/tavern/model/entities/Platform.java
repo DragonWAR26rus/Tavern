@@ -3,6 +3,8 @@ package ru.sfedu.tavern.model.entities;
 import com.opencsv.bean.CsvBindByName;
 import com.opencsv.bean.CsvBindByPosition;
 import java.util.ArrayList;
+import org.simpleframework.xml.Element;
+import org.simpleframework.xml.Root;
 
 /**
  *
@@ -10,26 +12,35 @@ import java.util.ArrayList;
  */
 
 //Table platform
+@Root
 public class Platform extends Entity{
 
-    @CsvBindByName
+    @Element
+    @CsvBindByPosition(position = 1)
+    private long id = 1l;
+    @Element
+    @CsvBindByPosition(position = 2)
     private String domain;
-    @CsvBindByName
+    @Element
+    @CsvBindByPosition(position = 3)
     private String key;
-    @CsvBindByName
+    @Element
+    @CsvBindByPosition(position = 4)
     private long ownerId;
     
     public Platform(){
-        super(ClassType.PLATFORM, 1l);
+        super(ClassType.PLATFORM);
     }
     public Platform(long id, String domain, String key, long ownerId){
-        super(ClassType.PLATFORM, id);
+        super(ClassType.PLATFORM);
+        this.id = id;
         this.domain = domain;
         this.key = key;
         this.ownerId = ownerId;
     }
     public Platform(ArrayList<Object> initList) {
-        super(ClassType.PLATFORM, initList.get(0) == null ? 1l : Long.parseLong(initList.get(0).toString()));
+        super(ClassType.PLATFORM);
+        this.id        = initList.get(0) == null ? 1l : Long.parseLong(initList.get(0).toString());
         String _domain = initList.get(1) == null ? null : initList.get(1).toString();
         String _key    = initList.get(2) == null ? null : initList.get(2).toString();
         long _ownerId  = initList.get(3) == null ? null : Long.parseLong(initList.get(3).toString());
@@ -67,10 +78,22 @@ public class Platform extends Entity{
     public String toString() {
         return  "Platform{" +
                 "id=" + getId() + 
-                ", domain=" + domain +
+                ", domain='" + domain + '\'' + 
                 ", key='" + key + '\'' +
                 ", ownerId=" + ownerId +
                 '}';
+    }
+    
+    @Override
+    public String toString(boolean comma) {
+        if(comma) {
+            return  getId() + 
+                    ", '" + domain + '\'' +
+                    ", '" + key + '\'' +
+                    ", " + ownerId;
+        } else {
+            return toString();
+        }
     }
     
     @Override
@@ -92,6 +115,16 @@ public class Platform extends Entity{
         }
         
         return true;
+    }
+
+    @Override
+    public long getId() {
+        return id;
+    }
+
+    @Override
+    public void setId(long id) {
+        this.id = id;
     }
     
 }

@@ -5,7 +5,11 @@
  */
 package ru.sfedu.tavern.dataproviders;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+import ru.sfedu.tavern.model.Result;
 import ru.sfedu.tavern.model.entities.ClassType;
 import ru.sfedu.tavern.model.entities.Entity;
 
@@ -15,14 +19,15 @@ import ru.sfedu.tavern.model.entities.Entity;
  */
 public interface IDataProvider {
    
-    public void insert(ArrayList<Entity> object) throws Exception; 
+    public Result insert(ArrayList<Entity> object) throws Exception; 
     
-    public void insert(Entity object) throws Exception; 
+    public Result insert(Entity object) throws Exception; 
     
-    public void update(Entity object) throws Exception;
+    public Result update(Entity object) throws Exception;
     
-    public void delete(Entity object) throws Exception; 
+    public Result delete(Entity object) throws Exception; 
 
-    public Entity getObjectByID(long id, ClassType type) throws Exception;
+    public Optional<Entity> getObjectByID(long id, ClassType type);
     
+    public List<Entity> select(String col, String val, ClassType type) throws Exception;
 }

@@ -6,40 +6,53 @@
 package ru.sfedu.tavern.model.entities;
 
 import com.opencsv.bean.CsvBindByName;
+import com.opencsv.bean.CsvBindByPosition;
 import java.util.ArrayList;
+import org.simpleframework.xml.Element;
+import org.simpleframework.xml.Root;
 
 /**
  *
  * @author entropy
  */
 // Table message
+@Root
 public class Message extends Entity{
     
-    @CsvBindByName
+    @Element
+    @CsvBindByPosition(position = 1)
+    private long id = 1l;
+    @Element
+    @CsvBindByPosition(position = 2)
     private long senderId;
-    @CsvBindByName
+    @Element
+    @CsvBindByPosition(position = 3)
     private String text;
-    @CsvBindByName
+    @Element
+    @CsvBindByPosition(position = 4)
     private String sendTime;
-    @CsvBindByName
+    @Element
+    @CsvBindByPosition(position = 5)
     private long platformId;
     
     public Message(){
-        super(ClassType.MESSAGE, 1l);
+        super(ClassType.MESSAGE);
     }
     public Message( long id,
-                    long senderId, 
-                    long platformId,
+                    long senderId,
                     String sendTime,
-                    String text){
-        super(ClassType.MESSAGE, id);
+                    String text,
+                    long platformId){
+        super(ClassType.MESSAGE);
+        this.id = id;
         this.senderId = senderId;
         this.text = text;
         this.sendTime = sendTime;
         this.platformId = platformId;
     }
     public Message(ArrayList<Object> initList) {
-        super(ClassType.MESSAGE, initList.get(0) == null ? 1l : Long.parseLong(initList.get(0).toString()));
+        super(ClassType.MESSAGE);
+        this.id = initList.get(0) == null ? 1l : Long.parseLong(initList.get(0).toString());
         long _senderId    = initList.get(1) == null ? null : Long.parseLong(initList.get(1).toString());
         String _text      = initList.get(2) == null ? null : initList.get(2).toString();
         String _send_time = initList.get(3) == null ? null : initList.get(3).toString();
@@ -95,6 +108,20 @@ public class Message extends Entity{
     }
     
     @Override
+    public String toString(boolean comma) {
+        if(comma) {
+            return  getId() +
+                ", " + senderId + 
+                ", '" + text + '\'' +
+                ", '" + sendTime + '\'' +
+                ", " + platformId;
+        } else {
+            return toString();
+        }
+        
+    }
+    
+    @Override
     public boolean equals(Object obj) {
         
         if (this == obj) {
@@ -113,6 +140,16 @@ public class Message extends Entity{
         }
         
         return true;
+    }
+
+    @Override
+    public long getId() {
+        return id;
+    }
+
+    @Override
+    public void setId(long id) {
+        this.id = id;
     }
     
 }

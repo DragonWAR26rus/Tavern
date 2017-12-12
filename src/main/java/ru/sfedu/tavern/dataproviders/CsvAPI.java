@@ -13,11 +13,16 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import org.apache.log4j.Logger;
+import ru.sfedu.tavern.exception.RecordNotFoundException;
 import ru.sfedu.tavern.model.Constants;
+import ru.sfedu.tavern.model.Result;
+import ru.sfedu.tavern.model.StatusType;
 import ru.sfedu.tavern.model.entities.ClassType;
 import ru.sfedu.tavern.model.entities.Entity;
 import ru.sfedu.tavern.utils.ConfigurationUtil;
+import ru.sfedu.tavern.utils.CsvFilter;
 
 /**
  *
@@ -25,41 +30,43 @@ import ru.sfedu.tavern.utils.ConfigurationUtil;
  */
 public class CsvAPI implements IDataProvider{
     
-    private static Logger log = Logger.getLogger(CsvAPI.class);
+    private static Logger logger = Logger.getLogger(CsvAPI.class);
 
     public CsvAPI() {}
 
     @Override
-    public void insert(ArrayList<Entity> objectList) {
-        log.debug("CSV->INSERT(ARRAYLIST<ENTITY>)....");
-        ArrayList<Entity> savedRecords = null;
+    public Result insert(ArrayList<Entity> objectList) {
+        logger.debug("CSV->INSERT(ARRAYLIST<ENTITY>)....");
+        List<Entity> savedRecords = null;
         ClassType classType = objectList.get(0).getClassType();
         try {
-            savedRecords = (ArrayList<Entity>) readFromCsv(classType);
+            savedRecords = readFromCsv(classType);
         } catch (Exception ex) {
-            log.error(ex);
+            logger.error(ex);
+            return new Result(StatusType.ERROR);
         }
         
         if(savedRecords == null) savedRecords = new ArrayList();
         for(Entity obj: objectList) {
-            log.debug(obj.toString());
+            logger.debug(obj.toString());
             if(getObjectByID(obj.getId(), obj.getClassType()) == null){
                 savedRecords.add(obj);
             }
         }
         
-        writeToCsv(savedRecords);
+        return writeToCsv(savedRecords);
     }
 
     @Override
-    public void insert(Entity object) {
-        log.debug("CSV->INSERT(ENTITY)....");
-        ArrayList<Entity> savedRecords = null;
+    public Result insert(Entity object) {
+        logger.debug("CSV->INSERT(ENTITY)....");
+        List<Entity> savedRecords = null;
         ClassType classType = object.getClassType();
         try {
-            savedRecords = (ArrayList<Entity>) readFromCsv(classType);
+            savedRecords = readFromCsv(classType);
         } catch (Exception ex) {
-            log.error(ex);
+            logger.error(ex);
+            return new Result(StatusType.ERROR);
         }
         
         if(savedRecords == null) savedRecords = new ArrayList();
@@ -67,17 +74,18 @@ public class CsvAPI implements IDataProvider{
             savedRecords.add(object);
         }
         
-        writeToCsv(savedRecords);
+        return writeToCsv(savedRecords);
     }
 
     @Override
-    public void update(Entity updateableObject) {
+    public Result update(Entity updateableObject) {
         ArrayList<Entity> savedRecords = null;
         ClassType classType = updateableObject.getClassType();
         try {
             savedRecords = (ArrayList<Entity>) readFromCsv(classType);
         } catch (Exception ex) {
-            log.error(ex);
+            logger.error(ex);
+            return new Result(StatusType.ERROR);
         }
         
         if(savedRecords == null) savedRecords = new ArrayList();
@@ -89,17 +97,18 @@ public class CsvAPI implements IDataProvider{
             }
         }
         
-        writeToCsv(savedRecords);
+        return writeToCsv(savedRecords);
     }
 
     @Override
-    public void delete(Entity removeableObject) {
-        ArrayList<Entity> savedRecords = null;
+    public Result delete(Entity removeableObject) {
+        List<Entity> savedRecords = null;
         ClassType classType = removeableObject.getClassType();
         try {
-            savedRecords = (ArrayList<Entity>) readFromCsv(classType);
+            savedRecords = readFromCsv(classType);
         } catch (Exception ex) {
-            log.error(ex);
+            logger.error(ex);
+            return new Result(StatusType.ERROR);
         }
         
         if(savedRecords == null) savedRecords = new ArrayList();
@@ -110,31 +119,34 @@ public class CsvAPI implements IDataProvider{
             }
         }
         
-        writeToCsv(savedRecords);
+        return writeToCsv(savedRecords);
     }
 
     @Override
-    public Entity getObjectByID(long id, ClassType type) {
-        Entity target = null;
+    public Optional<Entity> getObjectByID(long id, ClassType type) {
+        Optional<Entity> result = Optional.empty();
         try {
             List<Entity> records;
             records = readFromCsv(type);
             for(Entity obj: records) {
                 if( obj.getId() == id ) {
-                    target = obj;
+                    records.clear();
+                    records.add(obj);
                     break;
                 };
+                records.remove(obj);
             }
+            result = Optional.ofNullable(records.get(0));
         } catch ( Exception ex ) {
-            log.error(ex);
+            logger.error(ex);
         }
         
-        return target;
+        return result;
     }
     
-    private void writeToCsv(List<Entity> list) {
+    private Result writeToCsv(List<Entity> list) {
         try {
-            String path = getPathCsvFile(list.get(0).getClassType());
+            String path = getFilePath(list.get(0).getClassType());
             
             try (FileWriter fw = new FileWriter(path, false)) {
                 StatefulBeanToCsv beanToCsv = new StatefulBeanToCsvBuilder(fw)
@@ -144,33 +156,22 @@ public class CsvAPI implements IDataProvider{
                 beanToCsv.write(list);
             }
         } catch ( CsvDataTypeMismatchException | CsvRequiredFieldEmptyException | IOException ex ) {
-            log.error("Ошибка записи: " + ex.getMessage());
+            logger.error("Ошибка записи: " + ex.getMessage());
+            return new Result(StatusType.ERROR);
         }
+        return new Result(StatusType.OK);
     }
     
-    private List<Entity> readFromCsv(ClassType classType){
-        try {
-            String path = getPathCsvFile(classType);
-            List<Entity> records;
-            try (FileReader fr = new FileReader(path)) {
-                records = new CsvToBeanBuilder(fr)
-                        .withMappingStrategy(getStrategy(classType))
-                        .withType(classType.getCl())
-                        .build()
-                        .parse();
-            }
-            return records;
-        } catch (IOException | IllegalStateException ex) {
-            log.error(ex);
-            return null;
-        }        
+    private List<Entity> readFromCsv(ClassType classType) 
+            throws Exception {
+        return readFromCsv(null, null, classType);
     }
     
-    private String getPathCsvFile(ClassType classType) throws IOException {
-        log.debug("getCsvFile(" + classType.toString() + ")......");
+    public String getFilePath(ClassType classType) throws IOException {
+        logger.debug("getCsvFile(" + classType.toString() + ")......");
         String dirPath = ConfigurationUtil.getConfigurationEntry(Constants.PATH_TO_SCV);
-        String filePath = dirPath.concat(classType.toString()).concat(".csv");
-        log.debug(filePath);
+        String filePath = dirPath.concat(classType.getFileName()).concat(".csv");
+        logger.debug(filePath);
         return filePath;
     }
     
@@ -179,6 +180,61 @@ public class CsvAPI implements IDataProvider{
         strategy.setType(type.getCl());
         strategy.setColumnMapping(type.getHeaders());
         return strategy;
+    }
+    
+    // =======================================================================
+    
+    public List<Entity> select(ClassType type) throws Exception{
+        return readFromCsv(type);
+    }
+    
+    public List<Entity> select(String col, String val, ClassType type) 
+            throws Exception{
+        List<Entity> result;
+//        CSVReader reader = new CSVReader(new FileReader(getFilePath(type)));
+        try {
+            result = readFromCsv(col, val, type);
+//            CsvToBean ctb = new CsvToBean();
+//            CsvFilter filter = new CsvFilter(getStrategy(type), col, val);
+//            List<Entity> list = ctb.parse(getStrategy(type), reader, filter);
+//            if(list.isEmpty()) throw new RecordNotFoundException(0);
+//            result = Optional.ofNullable(list);
+//            reader.close();
+//        } catch (RecordNotFoundException e){
+//            logger.trace(e.getMessage());
+//            throw e;
+        } catch (Exception e) {
+//            reader.close();
+            logger.error(e.getMessage());
+            throw e;
+        }
+        return result;
+    }
+    
+    private List<Entity> readFromCsv(String col, String val, ClassType classType) 
+            throws Exception {
+        List<Entity> result;
+        CsvToBean ctb;
+        try {
+            String path = getFilePath(classType);
+            List<Entity> records;
+            try (FileReader fr = new FileReader(path)) {
+                CsvFilter filter = new CsvFilter(getStrategy(classType), col, val);
+                records = new CsvToBeanBuilder(fr)
+                        .withMappingStrategy(getStrategy(classType))
+                        .withType(classType.getCl())
+                        .withFilter(filter)
+                        .build()
+                        .parse();
+            }
+            if(records.isEmpty()) throw new RecordNotFoundException(0);
+            result = records;
+            
+        } catch (IOException | IllegalStateException | RecordNotFoundException ex) {
+            logger.error(ex);            
+            throw ex;
+        }  
+        return result;
     }
 
 }
