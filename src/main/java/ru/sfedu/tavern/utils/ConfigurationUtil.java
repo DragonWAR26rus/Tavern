@@ -53,4 +53,14 @@ public class ConfigurationUtil {
         return getConfiguration().getProperty(key);
     }
     
+    /**
+     * Sets configuration entry value
+     * @param key Entry key
+     * @param value Entry value
+     * @throws IOException In case of the configuration file read failure
+     */
+    public static void setConfigurationEntry(String key, String value) throws IOException{
+        getConfiguration().setProperty(key, value);
+    }
+    
 }

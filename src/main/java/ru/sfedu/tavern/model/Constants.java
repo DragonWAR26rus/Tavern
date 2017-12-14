@@ -24,6 +24,7 @@ public class Constants {
     public static final String PLATFORMUSER_TABLE = "platform_user";
     public static final String MESSAGE_TABLE      = "message";
     
+    public static final String DP_DRIVER          = "dataprovider.driver";
     
     public static final String[] HEADERS_OURUSER = new String[] {
         "id", 

@@ -19,15 +19,20 @@ import ru.sfedu.tavern.model.entities.Entity;
  */
 public interface IDataProvider {
    
-    public Result insert(ArrayList<Entity> object) throws Exception; 
+    public Result insert(List<Entity> object) throws Exception; 
     
-    public Result insert(Entity object) throws Exception; 
+    public Result insert(Optional<Entity> object) throws Exception; 
     
-    public Result update(Entity object) throws Exception;
+    public Result update(Optional<Entity> object) throws Exception;
     
-    public Result delete(Entity object) throws Exception; 
+    public Result delete(Optional<Entity> object) throws Exception; 
+    
+    public Result delete (List<Entity> objects) throws Exception;
+    
+    public long getNextId (ClassType type);
 
     public Optional<Entity> getObjectByID(long id, ClassType type);
     
     public List<Entity> select(String col, String val, ClassType type) throws Exception;
+
 }

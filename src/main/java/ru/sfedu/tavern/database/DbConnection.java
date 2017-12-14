@@ -3,7 +3,9 @@ package ru.sfedu.tavern.database;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import org.apache.log4j.Logger;
+import ru.sfedu.tavern.dataproviders.JdbcAPI;
 import ru.sfedu.tavern.model.Constants;
 import ru.sfedu.tavern.model.entities.ClassType;
 import ru.sfedu.tavern.model.entities.Entity;
@@ -24,6 +26,13 @@ public class DbConnection {
     
     private String insertPreStatement = "INSERT INTO %s (%s) VALUES %s;";
     private String selectPreStatement = "SELECT * FROM %s;";
+    
+    private static List<Entity> ourUserList;
+    private static List<Entity> platformList;
+    private static List<Entity> platformUserList;
+    private static List<Entity> messageList;
+    private static Savepoint savepoint;
+    private static boolean transactionThere;
     
     private Connection con  = null;
     private String url;
@@ -66,96 +75,57 @@ public class DbConnection {
         }
     }
     
-    public ArrayList<ArrayList<Object>> execSelectState( DbMetaTables tableName ){
-        if(con == null){
-            openConnection();
-        }
-        ArrayList<ArrayList<Object>> resMatrix = new ArrayList<ArrayList<Object>>();
-        try( Statement stmt = con.createStatement() ) {
-            String query = String.format(selectPreStatement, tableName.getTableName());
-            log.debug(query);
-            ResultSet rs = stmt.executeQuery(query);
-            ResultSetMetaData rsmd = rs.getMetaData();
-            log.debug("TABLE: " + tableName.getTableName());
-
-            while(rs.next()){
-                ArrayList<Object> resRow = new ArrayList();
-                String row = "";
-                for( int i = 0; i < rsmd.getColumnCount(); i++){
-                    Object value = rs.getObject(i + 1);
-                    String strValue = value == null ? "null" : value.toString();
-                    log.debug(
-                            "Row number: " + rs.getRow() + 
-                            " Column: " + (i + 1) + 
-                            " Column name: " + rsmd.getColumnName(i + 1) +
-                            "\tColumn type: " + rsmd.getColumnTypeName(i + 1) + 
-                            " Value: " + strValue
-                    );
-                    resRow.add(value);
-
-                    row += strValue;
-                    row += "\t";                    
-                }
-                log.debug(row);
-                resMatrix.add(resRow);
-            }
-            rs.close();
-            stmt.close();
-        } catch (Exception ex){
-            log.info("Exception: " + ex);
-        } finally {
-            return resMatrix;
-        }        
-    }
-    
     public List<Entity> execQuery (String query, ClassType classType){
         List<Entity> result = new ArrayList();
         if(con != null){
-            try (Statement stmt = con.createStatement(); ResultSet rs = stmt.executeQuery(query)){
-                ResultSetMetaData rsmd = rs.getMetaData();
-                while(rs.next()) {
-                    Entity obj = null;
-                    switch(classType) {
-                        case OURUSER:
-                            obj = new OurUser(
-                                    rs.getLong(1),
-                                    rs.getString(2),
-                                    rs.getString(3),
-                                    rs.getString(4),
-                                    rs.getString(5)
-                            );
-                            break;
-                        case PLATFORM:
-                            obj = new Platform(
-                                    rs.getLong(1),
-                                    rs.getString(2),
-                                    rs.getString(3),
-                                    rs.getLong(4)  
-                            );
-                            break;
-                        case PLATFORMUSER:
-                            obj = new PlatformUser(
-                                    rs.getLong(1),
-                                    rs.getString(2),
-                                    rs.getString(3),
-                                    rs.getString(4),
-                                    rs.getBoolean(5),
-                                    rs.getLong(6)
-                            );
-                            break;
-                        case MESSAGE:
-                            obj = new Message(
-                                    rs.getLong(1),
-                                    rs.getLong(2),
-                                    rs.getString(3),
-                                    rs.getString(4),
-                                    rs.getLong(5)
-                            );
-                            break;
+            try (Statement stmt = con.createStatement(); ){
+                try (ResultSet rs = stmt.executeQuery(query)){
+                    ResultSetMetaData rsmd = rs.getMetaData();
+                    while(rs.next()) {
+                        Entity obj = null;
+                        switch(classType) {
+                            case OURUSER:
+                                obj = new OurUser(
+                                        rs.getLong(1),
+                                        rs.getString(2),
+                                        rs.getString(3),
+                                        rs.getString(4),
+                                        rs.getString(5)
+                                );
+                                break;
+                            case PLATFORM:
+                                obj = new Platform(
+                                        rs.getLong(1),
+                                        rs.getString(2),
+                                        rs.getString(3),
+                                        rs.getLong(4)  
+                                );
+                                break;
+                            case PLATFORMUSER:
+                                obj = new PlatformUser(
+                                        rs.getLong(1),
+                                        rs.getString(2),
+                                        rs.getString(3),
+                                        rs.getString(4),
+                                        rs.getBoolean(5),
+                                        rs.getLong(6)
+                                );
+                                break;
+                            case MESSAGE:
+                                obj = new Message(
+                                        rs.getLong(1),
+                                        rs.getLong(2),
+                                        rs.getString(3),
+                                        rs.getString(4),
+                                        rs.getLong(5)
+                                );
+                                break;
+                        }
+                        result.add(obj);
                     }
-                    result.add(obj);
+                } catch (Exception ex) {
+                    
                 }
-                
             } catch (Exception ex){
                 log.warn("Exception: " + ex);
                 return result;
@@ -182,5 +152,47 @@ public class DbConnection {
         return instance;
     }
     
+    public static void beginTransaction() {
+        JdbcAPI jdbc = new JdbcAPI();
+        try {
+            ourUserList = jdbc.select(ClassType.OURUSER);
+            platformList = jdbc.select(ClassType.PLATFORM);
+            platformUserList = jdbc.select(ClassType.PLATFORMUSER);
+            messageList = jdbc.select(ClassType.MESSAGE);
+            transactionThere = true;
+        }catch (Exception ex) {
+            transactionThere = false;
+        }
+    }
+    
+    public static void commitTransaction() {
+        ourUserList = null;
+        platformList = null;
+        platformUserList = null;
+        messageList = null;
+        transactionThere = false;
+    }
+    
+    public static void rollbackTransaction() {
+        JdbcAPI jdbc = new JdbcAPI();
+        try {
+            jdbc.select(ClassType.OURUSER).stream().forEach(iterator -> {
+                try {
+                    jdbc.delete(Optional.ofNullable(iterator));
+                } catch (Exception ex){}
+            });
+            jdbc.insert((ArrayList)ourUserList);
+            jdbc.insert((ArrayList)platformList);
+            jdbc.insert((ArrayList)platformUserList);
+            jdbc.insert((ArrayList)messageList);
+            ourUserList = null;
+            platformList = null;
+            platformUserList = null;
+            messageList = null;
+            transactionThere = false;
+        } catch (Exception ex) {
+            
+        }
+    }
     
 }

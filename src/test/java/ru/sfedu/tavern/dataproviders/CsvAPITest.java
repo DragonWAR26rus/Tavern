@@ -12,7 +12,10 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import ru.sfedu.tavern.model.entities.ClassType;
 import ru.sfedu.tavern.model.entities.Entity;
+import ru.sfedu.tavern.model.entities.Message;
 import ru.sfedu.tavern.model.entities.OurUser;
+import ru.sfedu.tavern.model.entities.Platform;
+import ru.sfedu.tavern.model.entities.PlatformUser;
 
 /**
  *
@@ -41,12 +44,33 @@ public class CsvAPITest {
      */
     @Test
     public void testInsert_Entity() {
-        System.out.println("insert");
-        Entity object = null;
+        
         CsvAPI instance = new CsvAPI();
-        instance.insert(object);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        System.out.println("insert");
+        for(int i = 1; i < 4; i++) {
+            Entity object1 = new OurUser(i, "Test" + i, "Hash" + i, "123" + i, "qwe" + i + "@mail.ru");
+            instance.insert(Optional.ofNullable(object1));
+            for(int j = 1; j < 4; j++) {
+                int q = (i-1) * 4 + j;
+                Entity object2 = new Platform(q, "domain" + q, "key" + q, i);
+                instance.insert(Optional.ofNullable(object2));
+                for(int x = 1; x < 4; x++) {
+                    int z = (i-1) * 4 + (q-1) * 4 + x;
+                    Entity object3 = new PlatformUser(z, "login" + z, "link" + z, "321" + z, false, q);
+                    instance.insert(Optional.ofNullable(object3));
+                    for(int d = 1; d < 4; d++) {
+                        int m = (i-1) * 4 + (q-1) * 4 + (z-1) * 4 + d;
+                        Entity object4 = new Message(m, z, "555"+m, "dsdasd", q);
+                         instance.insert(Optional.ofNullable(object4));
+                    }
+                }
+            }
+        }
+        
+        // Test wrong dependency
+        Entity wrongObj = new Platform(112312, "domain", "key", 1233212);
+        instance.insert(Optional.ofNullable(wrongObj));
+//        instance.insert(object1);
     }
 
     /**
@@ -57,9 +81,11 @@ public class CsvAPITest {
         System.out.println("update");
         OurUser updateableObject = new OurUser(2, "Entropy", "NewPassHash1", "1509574941841", "DragonWAR26russ@gmail.com");
         CsvAPI instance = new CsvAPI();
-        instance.update(updateableObject);
-        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
+        try {
+            instance.update(Optional.ofNullable(updateableObject));
+        } catch (Exception ex) {
+            
+        }
     }
 
     /**
@@ -69,10 +95,12 @@ public class CsvAPITest {
     public void testDelete() {
         System.out.println("delete");
         CsvAPI instance = new CsvAPI();
-        Entity removeableObject = instance.getObjectByID(2, ClassType.OURUSER);
-        instance.delete(removeableObject);
-        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
+        Entity removeableObject = instance.getObjectByID(1, ClassType.OURUSER).get();
+        Entity removeableObject2 = instance.getObjectByID(3, ClassType.OURUSER).get();
+        List<Entity> l = new ArrayList();
+        l.add(removeableObject);
+        l.add(removeableObject2);
+        instance.delete(l);
     }
 
     /**
@@ -84,27 +112,9 @@ public class CsvAPITest {
         long id = 1L;
         ClassType type = ClassType.PLATFORM;
         CsvAPI instance = new CsvAPI();
-        Entity expResult = null;
-        Entity result = instance.getObjectByID(id, type);
+        Optional<Entity> expResult = null;
+        Optional<Entity> result = instance.getObjectByID(id, type);
         System.out.println(result.toString());
-//        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getFilePath method, of class CsvAPI.
-     */
-    @Test
-    public void testGetFilePath() throws Exception {
-        System.out.println("getFilePath");
-        ClassType classType = null;
-        CsvAPI instance = new CsvAPI();
-        String expResult = "";
-        String result = instance.getFilePath(classType);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -113,15 +123,16 @@ public class CsvAPITest {
     @Test
     public void testSelect() throws Exception {
         System.out.println("select");
-        String col = "passwordHash";
-        String val = "e3afed0047b08059d0fada10f400c1e5";
+        String col = "id";
+        String val = "111";
         ClassType type = ClassType.OURUSER;
         CsvAPI instance = new CsvAPI();
-        Optional<List<Entity>> expResult = null;
-        Optional<List<Entity>> result = instance.select(col, val, type);
-        System.out.println(result);
+        List<Entity> expResult = null;
+        List<Entity> result = instance.select(col, val, type);
+        result.stream().forEach(iterator -> {
+            System.out.println(iterator.toString());
+        });
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
 }

@@ -95,7 +95,7 @@ public class PlatformUser extends Entity{
         return banned;
     }
      
-    public void getBanned( boolean banned ) {
+    public void setBanned( boolean banned ) {
         this.banned = banned;
     }
     

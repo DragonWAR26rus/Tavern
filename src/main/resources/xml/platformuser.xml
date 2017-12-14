@@ -1,1 +1,220 @@
-
+<entityList>
+   <list class="java.util.ArrayList">
+      <object class="ru.sfedu.tavern.model.entities.PlatformUser">
+         <id>1</id>
+         <login>login1</login>
+         <avatarLink>link1</avatarLink>
+         <lastAct>3211</lastAct>
+         <banned>false</banned>
+         <platformId>1</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.PlatformUser">
+         <id>2</id>
+         <login>login2</login>
+         <avatarLink>link2</avatarLink>
+         <lastAct>3212</lastAct>
+         <banned>false</banned>
+         <platformId>1</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.PlatformUser">
+         <id>3</id>
+         <login>login3</login>
+         <avatarLink>link3</avatarLink>
+         <lastAct>3213</lastAct>
+         <banned>false</banned>
+         <platformId>1</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.PlatformUser">
+         <id>5</id>
+         <login>login5</login>
+         <avatarLink>link5</avatarLink>
+         <lastAct>3215</lastAct>
+         <banned>false</banned>
+         <platformId>2</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.PlatformUser">
+         <id>6</id>
+         <login>login6</login>
+         <avatarLink>link6</avatarLink>
+         <lastAct>3216</lastAct>
+         <banned>false</banned>
+         <platformId>2</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.PlatformUser">
+         <id>7</id>
+         <login>login7</login>
+         <avatarLink>link7</avatarLink>
+         <lastAct>3217</lastAct>
+         <banned>false</banned>
+         <platformId>2</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.PlatformUser">
+         <id>9</id>
+         <login>login9</login>
+         <avatarLink>link9</avatarLink>
+         <lastAct>3219</lastAct>
+         <banned>false</banned>
+         <platformId>3</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.PlatformUser">
+         <id>10</id>
+         <login>login10</login>
+         <avatarLink>link10</avatarLink>
+         <lastAct>32110</lastAct>
+         <banned>false</banned>
+         <platformId>3</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.PlatformUser">
+         <id>11</id>
+         <login>login11</login>
+         <avatarLink>link11</avatarLink>
+         <lastAct>32111</lastAct>
+         <banned>false</banned>
+         <platformId>3</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.PlatformUser">
+         <id>21</id>
+         <login>login21</login>
+         <avatarLink>link21</avatarLink>
+         <lastAct>32121</lastAct>
+         <banned>false</banned>
+         <platformId>5</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.PlatformUser">
+         <id>22</id>
+         <login>login22</login>
+         <avatarLink>link22</avatarLink>
+         <lastAct>32122</lastAct>
+         <banned>false</banned>
+         <platformId>5</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.PlatformUser">
+         <id>23</id>
+         <login>login23</login>
+         <avatarLink>link23</avatarLink>
+         <lastAct>32123</lastAct>
+         <banned>false</banned>
+         <platformId>5</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.PlatformUser">
+         <id>25</id>
+         <login>login25</login>
+         <avatarLink>link25</avatarLink>
+         <lastAct>32125</lastAct>
+         <banned>false</banned>
+         <platformId>6</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.PlatformUser">
+         <id>26</id>
+         <login>login26</login>
+         <avatarLink>link26</avatarLink>
+         <lastAct>32126</lastAct>
+         <banned>false</banned>
+         <platformId>6</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.PlatformUser">
+         <id>27</id>
+         <login>login27</login>
+         <avatarLink>link27</avatarLink>
+         <lastAct>32127</lastAct>
+         <banned>false</banned>
+         <platformId>6</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.PlatformUser">
+         <id>29</id>
+         <login>login29</login>
+         <avatarLink>link29</avatarLink>
+         <lastAct>32129</lastAct>
+         <banned>false</banned>
+         <platformId>7</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.PlatformUser">
+         <id>30</id>
+         <login>login30</login>
+         <avatarLink>link30</avatarLink>
+         <lastAct>32130</lastAct>
+         <banned>false</banned>
+         <platformId>7</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.PlatformUser">
+         <id>31</id>
+         <login>login31</login>
+         <avatarLink>link31</avatarLink>
+         <lastAct>32131</lastAct>
+         <banned>false</banned>
+         <platformId>7</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.PlatformUser">
+         <id>41</id>
+         <login>login41</login>
+         <avatarLink>link41</avatarLink>
+         <lastAct>32141</lastAct>
+         <banned>false</banned>
+         <platformId>9</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.PlatformUser">
+         <id>42</id>
+         <login>login42</login>
+         <avatarLink>link42</avatarLink>
+         <lastAct>32142</lastAct>
+         <banned>false</banned>
+         <platformId>9</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.PlatformUser">
+         <id>43</id>
+         <login>login43</login>
+         <avatarLink>link43</avatarLink>
+         <lastAct>32143</lastAct>
+         <banned>false</banned>
+         <platformId>9</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.PlatformUser">
+         <id>45</id>
+         <login>login45</login>
+         <avatarLink>link45</avatarLink>
+         <lastAct>32145</lastAct>
+         <banned>false</banned>
+         <platformId>10</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.PlatformUser">
+         <id>46</id>
+         <login>login46</login>
+         <avatarLink>link46</avatarLink>
+         <lastAct>32146</lastAct>
+         <banned>false</banned>
+         <platformId>10</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.PlatformUser">
+         <id>47</id>
+         <login>login47</login>
+         <avatarLink>link47</avatarLink>
+         <lastAct>32147</lastAct>
+         <banned>false</banned>
+         <platformId>10</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.PlatformUser">
+         <id>49</id>
+         <login>login49</login>
+         <avatarLink>link49</avatarLink>
+         <lastAct>32149</lastAct>
+         <banned>false</banned>
+         <platformId>11</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.PlatformUser">
+         <id>50</id>
+         <login>login50</login>
+         <avatarLink>link50</avatarLink>
+         <lastAct>32150</lastAct>
+         <banned>false</banned>
+         <platformId>11</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.PlatformUser">
+         <id>51</id>
+         <login>login51</login>
+         <avatarLink>link51</avatarLink>
+         <lastAct>32151</lastAct>
+         <banned>false</banned>
+         <platformId>11</platformId>
+      </object>
+   </list>
+</entityList>

@@ -8,10 +8,13 @@ import org.simpleframework.xml.ElementList;
  * @author entropy
  */
 public class EntityList<T> {
-    @ElementList(inline = true, entry = "Entity")
+    @ElementList
     private List<T> list;
     public EntityList() {
 
+    }
+    public EntityList(List<T> list) {
+        this.list = list;
     }
     public List<T> getList() {
         return list;

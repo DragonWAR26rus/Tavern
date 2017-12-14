@@ -18,7 +18,7 @@ import org.simpleframework.xml.Root;
 // Table message
 @Root
 public class Message extends Entity{
-    
+
     @Element
     @CsvBindByPosition(position = 1)
     private long id = 1l;
@@ -150,6 +150,5 @@ public class Message extends Entity{
     @Override
     public void setId(long id) {
         this.id = id;
-    }
-    
+    }    
 }

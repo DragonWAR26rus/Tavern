@@ -1,1 +1,25 @@
-
+<entityList>
+   <list class="java.util.ArrayList">
+      <object class="ru.sfedu.tavern.model.entities.OurUser">
+         <id>1</id>
+         <login>Test1</login>
+         <passwordHash>Hash1</passwordHash>
+         <email>qwe1@mail.ru</email>
+         <lastAct>1231</lastAct>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.OurUser">
+         <id>2</id>
+         <login>Test2</login>
+         <passwordHash>Hash2</passwordHash>
+         <email>qwe2@mail.ru</email>
+         <lastAct>1232</lastAct>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.OurUser">
+         <id>3</id>
+         <login>Test3</login>
+         <passwordHash>Hash3</passwordHash>
+         <email>qwe3@mail.ru</email>
+         <lastAct>1233</lastAct>
+      </object>
+   </list>
+</entityList>
