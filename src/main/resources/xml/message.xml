@@ -4,568 +4,1793 @@
          <id>1</id>
          <senderId>1</senderId>
          <text>dsdasd</text>
-         <sendTime>5551</sendTime>
+         <sendTime>1513673739867</sendTime>
          <platformId>1</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>2</id>
          <senderId>1</senderId>
          <text>dsdasd</text>
-         <sendTime>5552</sendTime>
+         <sendTime>1513601216203</sendTime>
          <platformId>1</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>3</id>
          <senderId>1</senderId>
          <text>dsdasd</text>
-         <sendTime>5553</sendTime>
+         <sendTime>1513601216206</sendTime>
+         <platformId>1</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>4</id>
+         <senderId>1</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601216209</sendTime>
          <platformId>1</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>5</id>
          <senderId>2</senderId>
          <text>dsdasd</text>
-         <sendTime>5555</sendTime>
+         <sendTime>1513601216215</sendTime>
          <platformId>1</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>6</id>
          <senderId>2</senderId>
          <text>dsdasd</text>
-         <sendTime>5556</sendTime>
+         <sendTime>1513601216217</sendTime>
          <platformId>1</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>7</id>
          <senderId>2</senderId>
          <text>dsdasd</text>
-         <sendTime>5557</sendTime>
+         <sendTime>1513601216220</sendTime>
+         <platformId>1</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>8</id>
+         <senderId>2</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601216245</sendTime>
          <platformId>1</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>9</id>
          <senderId>3</senderId>
          <text>dsdasd</text>
-         <sendTime>5559</sendTime>
+         <sendTime>1513601216256</sendTime>
          <platformId>1</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>10</id>
          <senderId>3</senderId>
          <text>dsdasd</text>
-         <sendTime>55510</sendTime>
+         <sendTime>1513601216259</sendTime>
          <platformId>1</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>11</id>
          <senderId>3</senderId>
          <text>dsdasd</text>
-         <sendTime>55511</sendTime>
+         <sendTime>1513601216266</sendTime>
          <platformId>1</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
-         <id>21</id>
+         <id>12</id>
+         <senderId>3</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601216277</sendTime>
+         <platformId>1</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>13</id>
+         <senderId>4</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601216289</sendTime>
+         <platformId>1</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>14</id>
+         <senderId>4</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601216295</sendTime>
+         <platformId>1</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>15</id>
+         <senderId>4</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601216306</sendTime>
+         <platformId>1</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>16</id>
+         <senderId>4</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601216312</sendTime>
+         <platformId>1</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>17</id>
          <senderId>5</senderId>
          <text>dsdasd</text>
-         <sendTime>55521</sendTime>
+         <sendTime>1513673740688</sendTime>
+         <platformId>2</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>18</id>
+         <senderId>5</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513673740789</sendTime>
+         <platformId>2</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>19</id>
+         <senderId>5</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513673740917</sendTime>
+         <platformId>2</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>20</id>
+         <senderId>5</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513673740995</sendTime>
+         <platformId>2</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>21</id>
+         <senderId>6</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513673741089</sendTime>
          <platformId>2</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>22</id>
-         <senderId>5</senderId>
+         <senderId>6</senderId>
          <text>dsdasd</text>
-         <sendTime>55522</sendTime>
+         <sendTime>1513673741140</sendTime>
          <platformId>2</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>23</id>
-         <senderId>5</senderId>
+         <senderId>6</senderId>
          <text>dsdasd</text>
-         <sendTime>55523</sendTime>
+         <sendTime>1513673741173</sendTime>
+         <platformId>2</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>24</id>
+         <senderId>6</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513673741209</sendTime>
          <platformId>2</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>25</id>
-         <senderId>6</senderId>
+         <senderId>7</senderId>
          <text>dsdasd</text>
-         <sendTime>55525</sendTime>
+         <sendTime>1513673741245</sendTime>
          <platformId>2</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>26</id>
-         <senderId>6</senderId>
+         <senderId>7</senderId>
          <text>dsdasd</text>
-         <sendTime>55526</sendTime>
+         <sendTime>1513673741272</sendTime>
          <platformId>2</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>27</id>
-         <senderId>6</senderId>
+         <senderId>7</senderId>
          <text>dsdasd</text>
-         <sendTime>55527</sendTime>
+         <sendTime>1513673741294</sendTime>
+         <platformId>2</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>28</id>
+         <senderId>7</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513673741342</sendTime>
          <platformId>2</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>29</id>
-         <senderId>7</senderId>
+         <senderId>8</senderId>
          <text>dsdasd</text>
-         <sendTime>55529</sendTime>
+         <sendTime>1513673741428</sendTime>
          <platformId>2</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>30</id>
-         <senderId>7</senderId>
+         <senderId>8</senderId>
          <text>dsdasd</text>
-         <sendTime>55530</sendTime>
+         <sendTime>1513673741500</sendTime>
          <platformId>2</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>31</id>
-         <senderId>7</senderId>
+         <senderId>8</senderId>
          <text>dsdasd</text>
-         <sendTime>55531</sendTime>
+         <sendTime>1513673741574</sendTime>
          <platformId>2</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
-         <id>41</id>
+         <id>32</id>
+         <senderId>8</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513673741659</sendTime>
+         <platformId>2</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>33</id>
          <senderId>9</senderId>
          <text>dsdasd</text>
-         <sendTime>55541</sendTime>
+         <sendTime>1513601216465</sendTime>
+         <platformId>3</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>34</id>
+         <senderId>9</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601216475</sendTime>
+         <platformId>3</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>35</id>
+         <senderId>9</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601216479</sendTime>
+         <platformId>3</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>36</id>
+         <senderId>9</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601216483</sendTime>
+         <platformId>3</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>37</id>
+         <senderId>10</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601216491</sendTime>
+         <platformId>3</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>38</id>
+         <senderId>10</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601216501</sendTime>
+         <platformId>3</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>39</id>
+         <senderId>10</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601216504</sendTime>
+         <platformId>3</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>40</id>
+         <senderId>10</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601216510</sendTime>
+         <platformId>3</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>41</id>
+         <senderId>11</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601216522</sendTime>
          <platformId>3</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>42</id>
-         <senderId>9</senderId>
+         <senderId>11</senderId>
          <text>dsdasd</text>
-         <sendTime>55542</sendTime>
+         <sendTime>1513601216532</sendTime>
          <platformId>3</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>43</id>
-         <senderId>9</senderId>
+         <senderId>11</senderId>
          <text>dsdasd</text>
-         <sendTime>55543</sendTime>
+         <sendTime>1513601216547</sendTime>
+         <platformId>3</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>44</id>
+         <senderId>11</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601216576</sendTime>
          <platformId>3</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>45</id>
-         <senderId>10</senderId>
+         <senderId>12</senderId>
          <text>dsdasd</text>
-         <sendTime>55545</sendTime>
+         <sendTime>1513601216597</sendTime>
          <platformId>3</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>46</id>
-         <senderId>10</senderId>
+         <senderId>12</senderId>
          <text>dsdasd</text>
-         <sendTime>55546</sendTime>
+         <sendTime>1513601216603</sendTime>
          <platformId>3</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>47</id>
-         <senderId>10</senderId>
+         <senderId>12</senderId>
          <text>dsdasd</text>
-         <sendTime>55547</sendTime>
+         <sendTime>1513601216608</sendTime>
+         <platformId>3</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>48</id>
+         <senderId>12</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601216617</sendTime>
          <platformId>3</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>49</id>
-         <senderId>11</senderId>
+         <senderId>13</senderId>
          <text>dsdasd</text>
-         <sendTime>55549</sendTime>
-         <platformId>3</platformId>
+         <sendTime>1513601216639</sendTime>
+         <platformId>4</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>50</id>
-         <senderId>11</senderId>
+         <senderId>13</senderId>
          <text>dsdasd</text>
-         <sendTime>55550</sendTime>
-         <platformId>3</platformId>
+         <sendTime>1513601216647</sendTime>
+         <platformId>4</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>51</id>
-         <senderId>11</senderId>
+         <senderId>13</senderId>
          <text>dsdasd</text>
-         <sendTime>55551</sendTime>
-         <platformId>3</platformId>
+         <sendTime>1513601216659</sendTime>
+         <platformId>4</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>52</id>
+         <senderId>13</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601216672</sendTime>
+         <platformId>4</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>53</id>
+         <senderId>14</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601216681</sendTime>
+         <platformId>4</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>54</id>
+         <senderId>14</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601216686</sendTime>
+         <platformId>4</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>55</id>
+         <senderId>14</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601216691</sendTime>
+         <platformId>4</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>56</id>
+         <senderId>14</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601216701</sendTime>
+         <platformId>4</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>57</id>
+         <senderId>15</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601216719</sendTime>
+         <platformId>4</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>58</id>
+         <senderId>15</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601216728</sendTime>
+         <platformId>4</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>59</id>
+         <senderId>15</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601216743</sendTime>
+         <platformId>4</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>60</id>
+         <senderId>15</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601216754</sendTime>
+         <platformId>4</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>61</id>
+         <senderId>16</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601216765</sendTime>
+         <platformId>4</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>62</id>
+         <senderId>16</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601216778</sendTime>
+         <platformId>4</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>63</id>
+         <senderId>16</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601216787</sendTime>
+         <platformId>4</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>64</id>
+         <senderId>16</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601216794</sendTime>
+         <platformId>4</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>65</id>
+         <senderId>17</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601216809</sendTime>
+         <platformId>5</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>66</id>
+         <senderId>17</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601216822</sendTime>
+         <platformId>5</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>67</id>
+         <senderId>17</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601216831</sendTime>
+         <platformId>5</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>68</id>
+         <senderId>17</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601216861</sendTime>
+         <platformId>5</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>69</id>
+         <senderId>18</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601216876</sendTime>
+         <platformId>5</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>70</id>
+         <senderId>18</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601216884</sendTime>
+         <platformId>5</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>71</id>
+         <senderId>18</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601216894</sendTime>
+         <platformId>5</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>72</id>
+         <senderId>18</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601216906</sendTime>
+         <platformId>5</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>73</id>
+         <senderId>19</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601216922</sendTime>
+         <platformId>5</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>74</id>
+         <senderId>19</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601216931</sendTime>
+         <platformId>5</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>75</id>
+         <senderId>19</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601216944</sendTime>
+         <platformId>5</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>76</id>
+         <senderId>19</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601216958</sendTime>
+         <platformId>5</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>77</id>
+         <senderId>20</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601216976</sendTime>
+         <platformId>5</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>78</id>
+         <senderId>20</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601216983</sendTime>
+         <platformId>5</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>79</id>
+         <senderId>20</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601216990</sendTime>
+         <platformId>5</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>80</id>
+         <senderId>20</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601217005</sendTime>
+         <platformId>5</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>81</id>
+         <senderId>21</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601217024</sendTime>
+         <platformId>6</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>82</id>
+         <senderId>21</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601217037</sendTime>
+         <platformId>6</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>83</id>
+         <senderId>21</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601217048</sendTime>
+         <platformId>6</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>84</id>
+         <senderId>21</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601217065</sendTime>
+         <platformId>6</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>85</id>
+         <senderId>22</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601217079</sendTime>
+         <platformId>6</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>86</id>
+         <senderId>22</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601217093</sendTime>
+         <platformId>6</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>87</id>
+         <senderId>22</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601217106</sendTime>
+         <platformId>6</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>88</id>
+         <senderId>22</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601217117</sendTime>
+         <platformId>6</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>89</id>
+         <senderId>23</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601217139</sendTime>
+         <platformId>6</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>90</id>
+         <senderId>23</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601217155</sendTime>
+         <platformId>6</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>91</id>
+         <senderId>23</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601217164</sendTime>
+         <platformId>6</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>92</id>
+         <senderId>23</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601217179</sendTime>
+         <platformId>6</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>93</id>
+         <senderId>24</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601217204</sendTime>
+         <platformId>6</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>94</id>
+         <senderId>24</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601217213</sendTime>
+         <platformId>6</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>95</id>
+         <senderId>24</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601217221</sendTime>
+         <platformId>6</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>96</id>
+         <senderId>24</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601217236</sendTime>
+         <platformId>6</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>97</id>
+         <senderId>25</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601217257</sendTime>
+         <platformId>7</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>98</id>
+         <senderId>25</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601217272</sendTime>
+         <platformId>7</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>99</id>
+         <senderId>25</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601217286</sendTime>
+         <platformId>7</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>100</id>
+         <senderId>25</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601217299</sendTime>
+         <platformId>7</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>101</id>
-         <senderId>21</senderId>
+         <senderId>26</senderId>
          <text>dsdasd</text>
-         <sendTime>555101</sendTime>
-         <platformId>5</platformId>
+         <sendTime>1513601217316</sendTime>
+         <platformId>7</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>102</id>
-         <senderId>21</senderId>
+         <senderId>26</senderId>
          <text>dsdasd</text>
-         <sendTime>555102</sendTime>
-         <platformId>5</platformId>
+         <sendTime>1513601217324</sendTime>
+         <platformId>7</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>103</id>
-         <senderId>21</senderId>
+         <senderId>26</senderId>
          <text>dsdasd</text>
-         <sendTime>555103</sendTime>
-         <platformId>5</platformId>
+         <sendTime>1513601217334</sendTime>
+         <platformId>7</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>104</id>
+         <senderId>26</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601217348</sendTime>
+         <platformId>7</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>105</id>
-         <senderId>22</senderId>
+         <senderId>27</senderId>
          <text>dsdasd</text>
-         <sendTime>555105</sendTime>
-         <platformId>5</platformId>
+         <sendTime>1513601217360</sendTime>
+         <platformId>7</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>106</id>
-         <senderId>22</senderId>
+         <senderId>27</senderId>
          <text>dsdasd</text>
-         <sendTime>555106</sendTime>
-         <platformId>5</platformId>
+         <sendTime>1513601217372</sendTime>
+         <platformId>7</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>107</id>
-         <senderId>22</senderId>
+         <senderId>27</senderId>
          <text>dsdasd</text>
-         <sendTime>555107</sendTime>
-         <platformId>5</platformId>
+         <sendTime>1513601217389</sendTime>
+         <platformId>7</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>108</id>
+         <senderId>27</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601217401</sendTime>
+         <platformId>7</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>109</id>
-         <senderId>23</senderId>
+         <senderId>28</senderId>
          <text>dsdasd</text>
-         <sendTime>555109</sendTime>
-         <platformId>5</platformId>
+         <sendTime>1513601217423</sendTime>
+         <platformId>7</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>110</id>
-         <senderId>23</senderId>
+         <senderId>28</senderId>
          <text>dsdasd</text>
-         <sendTime>555110</sendTime>
-         <platformId>5</platformId>
+         <sendTime>1513601217438</sendTime>
+         <platformId>7</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>111</id>
-         <senderId>23</senderId>
+         <senderId>28</senderId>
          <text>dsdasd</text>
-         <sendTime>555111</sendTime>
-         <platformId>5</platformId>
+         <sendTime>1513601217449</sendTime>
+         <platformId>7</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>112</id>
+         <senderId>28</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601217464</sendTime>
+         <platformId>7</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>113</id>
+         <senderId>29</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601217482</sendTime>
+         <platformId>8</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>114</id>
+         <senderId>29</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601217495</sendTime>
+         <platformId>8</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>115</id>
+         <senderId>29</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601217506</sendTime>
+         <platformId>8</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>116</id>
+         <senderId>29</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601217515</sendTime>
+         <platformId>8</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>117</id>
+         <senderId>30</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601217531</sendTime>
+         <platformId>8</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>118</id>
+         <senderId>30</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601217544</sendTime>
+         <platformId>8</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>119</id>
+         <senderId>30</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601217557</sendTime>
+         <platformId>8</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>120</id>
+         <senderId>30</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601217570</sendTime>
+         <platformId>8</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>121</id>
-         <senderId>25</senderId>
+         <senderId>31</senderId>
          <text>dsdasd</text>
-         <sendTime>555121</sendTime>
-         <platformId>6</platformId>
+         <sendTime>1513601217588</sendTime>
+         <platformId>8</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>122</id>
-         <senderId>25</senderId>
+         <senderId>31</senderId>
          <text>dsdasd</text>
-         <sendTime>555122</sendTime>
-         <platformId>6</platformId>
+         <sendTime>1513601217599</sendTime>
+         <platformId>8</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>123</id>
-         <senderId>25</senderId>
+         <senderId>31</senderId>
          <text>dsdasd</text>
-         <sendTime>555123</sendTime>
-         <platformId>6</platformId>
+         <sendTime>1513601217613</sendTime>
+         <platformId>8</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>124</id>
+         <senderId>31</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601217623</sendTime>
+         <platformId>8</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>125</id>
-         <senderId>26</senderId>
+         <senderId>32</senderId>
          <text>dsdasd</text>
-         <sendTime>555125</sendTime>
-         <platformId>6</platformId>
+         <sendTime>1513601217645</sendTime>
+         <platformId>8</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>126</id>
-         <senderId>26</senderId>
+         <senderId>32</senderId>
          <text>dsdasd</text>
-         <sendTime>555126</sendTime>
-         <platformId>6</platformId>
+         <sendTime>1513601217658</sendTime>
+         <platformId>8</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>127</id>
-         <senderId>26</senderId>
+         <senderId>32</senderId>
          <text>dsdasd</text>
-         <sendTime>555127</sendTime>
-         <platformId>6</platformId>
+         <sendTime>1513601217676</sendTime>
+         <platformId>8</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>128</id>
+         <senderId>32</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601217689</sendTime>
+         <platformId>8</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>129</id>
-         <senderId>27</senderId>
+         <senderId>33</senderId>
          <text>dsdasd</text>
-         <sendTime>555129</sendTime>
-         <platformId>6</platformId>
+         <sendTime>1513601217713</sendTime>
+         <platformId>9</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>130</id>
-         <senderId>27</senderId>
+         <senderId>33</senderId>
          <text>dsdasd</text>
-         <sendTime>555130</sendTime>
-         <platformId>6</platformId>
+         <sendTime>1513601217724</sendTime>
+         <platformId>9</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>131</id>
-         <senderId>27</senderId>
+         <senderId>33</senderId>
          <text>dsdasd</text>
-         <sendTime>555131</sendTime>
-         <platformId>6</platformId>
+         <sendTime>1513601217734</sendTime>
+         <platformId>9</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>132</id>
+         <senderId>33</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601217743</sendTime>
+         <platformId>9</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>133</id>
+         <senderId>34</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601217759</sendTime>
+         <platformId>9</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>134</id>
+         <senderId>34</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601217774</sendTime>
+         <platformId>9</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>135</id>
+         <senderId>34</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601217786</sendTime>
+         <platformId>9</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>136</id>
+         <senderId>34</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601217797</sendTime>
+         <platformId>9</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>137</id>
+         <senderId>35</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601217818</sendTime>
+         <platformId>9</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>138</id>
+         <senderId>35</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601217829</sendTime>
+         <platformId>9</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>139</id>
+         <senderId>35</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601217836</sendTime>
+         <platformId>9</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>140</id>
+         <senderId>35</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601217849</sendTime>
+         <platformId>9</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>141</id>
-         <senderId>29</senderId>
+         <senderId>36</senderId>
          <text>dsdasd</text>
-         <sendTime>555141</sendTime>
-         <platformId>7</platformId>
+         <sendTime>1513601217864</sendTime>
+         <platformId>9</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>142</id>
-         <senderId>29</senderId>
+         <senderId>36</senderId>
          <text>dsdasd</text>
-         <sendTime>555142</sendTime>
-         <platformId>7</platformId>
+         <sendTime>1513601217878</sendTime>
+         <platformId>9</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>143</id>
-         <senderId>29</senderId>
+         <senderId>36</senderId>
          <text>dsdasd</text>
-         <sendTime>555143</sendTime>
-         <platformId>7</platformId>
+         <sendTime>1513601217889</sendTime>
+         <platformId>9</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>144</id>
+         <senderId>36</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601217900</sendTime>
+         <platformId>9</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>145</id>
-         <senderId>30</senderId>
+         <senderId>37</senderId>
          <text>dsdasd</text>
-         <sendTime>555145</sendTime>
-         <platformId>7</platformId>
+         <sendTime>1513601217921</sendTime>
+         <platformId>10</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>146</id>
-         <senderId>30</senderId>
+         <senderId>37</senderId>
          <text>dsdasd</text>
-         <sendTime>555146</sendTime>
-         <platformId>7</platformId>
+         <sendTime>1513601217933</sendTime>
+         <platformId>10</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>147</id>
-         <senderId>30</senderId>
+         <senderId>37</senderId>
          <text>dsdasd</text>
-         <sendTime>555147</sendTime>
-         <platformId>7</platformId>
+         <sendTime>1513601217944</sendTime>
+         <platformId>10</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>148</id>
+         <senderId>37</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601217960</sendTime>
+         <platformId>10</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>149</id>
-         <senderId>31</senderId>
+         <senderId>38</senderId>
          <text>dsdasd</text>
-         <sendTime>555149</sendTime>
-         <platformId>7</platformId>
+         <sendTime>1513601217976</sendTime>
+         <platformId>10</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>150</id>
-         <senderId>31</senderId>
+         <senderId>38</senderId>
          <text>dsdasd</text>
-         <sendTime>555150</sendTime>
-         <platformId>7</platformId>
+         <sendTime>1513601217988</sendTime>
+         <platformId>10</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>151</id>
-         <senderId>31</senderId>
+         <senderId>38</senderId>
          <text>dsdasd</text>
-         <sendTime>555151</sendTime>
-         <platformId>7</platformId>
+         <sendTime>1513601217998</sendTime>
+         <platformId>10</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>152</id>
+         <senderId>38</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601218006</sendTime>
+         <platformId>10</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>153</id>
+         <senderId>39</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601218023</sendTime>
+         <platformId>10</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>154</id>
+         <senderId>39</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601218038</sendTime>
+         <platformId>10</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>155</id>
+         <senderId>39</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601218048</sendTime>
+         <platformId>10</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>156</id>
+         <senderId>39</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601218063</sendTime>
+         <platformId>10</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>157</id>
+         <senderId>40</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601218079</sendTime>
+         <platformId>10</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>158</id>
+         <senderId>40</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601218093</sendTime>
+         <platformId>10</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>159</id>
+         <senderId>40</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601218101</sendTime>
+         <platformId>10</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>160</id>
+         <senderId>40</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601218145</sendTime>
+         <platformId>10</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>161</id>
+         <senderId>41</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601218163</sendTime>
+         <platformId>11</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>162</id>
+         <senderId>41</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601218178</sendTime>
+         <platformId>11</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>163</id>
+         <senderId>41</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601218189</sendTime>
+         <platformId>11</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>164</id>
+         <senderId>41</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601218200</sendTime>
+         <platformId>11</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>165</id>
+         <senderId>42</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601218214</sendTime>
+         <platformId>11</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>166</id>
+         <senderId>42</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601218230</sendTime>
+         <platformId>11</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>167</id>
+         <senderId>42</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601218244</sendTime>
+         <platformId>11</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>168</id>
+         <senderId>42</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601218259</sendTime>
+         <platformId>11</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>169</id>
+         <senderId>43</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601218277</sendTime>
+         <platformId>11</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>170</id>
+         <senderId>43</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601218288</sendTime>
+         <platformId>11</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>171</id>
+         <senderId>43</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601218302</sendTime>
+         <platformId>11</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>172</id>
+         <senderId>43</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601218314</sendTime>
+         <platformId>11</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>173</id>
+         <senderId>44</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601218327</sendTime>
+         <platformId>11</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>174</id>
+         <senderId>44</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601218344</sendTime>
+         <platformId>11</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>175</id>
+         <senderId>44</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601218361</sendTime>
+         <platformId>11</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>176</id>
+         <senderId>44</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601218376</sendTime>
+         <platformId>11</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>177</id>
+         <senderId>45</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601218395</sendTime>
+         <platformId>12</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>178</id>
+         <senderId>45</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601218417</sendTime>
+         <platformId>12</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>179</id>
+         <senderId>45</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601218429</sendTime>
+         <platformId>12</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>180</id>
+         <senderId>45</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601218444</sendTime>
+         <platformId>12</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>181</id>
+         <senderId>46</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601218462</sendTime>
+         <platformId>12</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>182</id>
+         <senderId>46</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601218478</sendTime>
+         <platformId>12</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>183</id>
+         <senderId>46</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601218492</sendTime>
+         <platformId>12</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>184</id>
+         <senderId>46</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601218503</sendTime>
+         <platformId>12</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>185</id>
+         <senderId>47</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601218527</sendTime>
+         <platformId>12</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>186</id>
+         <senderId>47</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601218546</sendTime>
+         <platformId>12</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>187</id>
+         <senderId>47</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601218561</sendTime>
+         <platformId>12</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>188</id>
+         <senderId>47</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601218578</sendTime>
+         <platformId>12</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>189</id>
+         <senderId>48</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601218598</sendTime>
+         <platformId>12</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>190</id>
+         <senderId>48</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601218612</sendTime>
+         <platformId>12</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>191</id>
+         <senderId>48</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601218622</sendTime>
+         <platformId>12</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>192</id>
+         <senderId>48</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601218639</sendTime>
+         <platformId>12</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>193</id>
+         <senderId>49</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601218663</sendTime>
+         <platformId>13</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>194</id>
+         <senderId>49</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601218678</sendTime>
+         <platformId>13</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>195</id>
+         <senderId>49</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601218694</sendTime>
+         <platformId>13</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>196</id>
+         <senderId>49</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601218707</sendTime>
+         <platformId>13</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>197</id>
+         <senderId>50</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601218722</sendTime>
+         <platformId>13</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>198</id>
+         <senderId>50</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601218736</sendTime>
+         <platformId>13</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>199</id>
+         <senderId>50</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601218756</sendTime>
+         <platformId>13</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>200</id>
+         <senderId>50</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601218771</sendTime>
+         <platformId>13</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>201</id>
-         <senderId>41</senderId>
+         <senderId>51</senderId>
          <text>dsdasd</text>
-         <sendTime>555201</sendTime>
-         <platformId>9</platformId>
+         <sendTime>1513601218790</sendTime>
+         <platformId>13</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>202</id>
-         <senderId>41</senderId>
+         <senderId>51</senderId>
          <text>dsdasd</text>
-         <sendTime>555202</sendTime>
-         <platformId>9</platformId>
+         <sendTime>1513601218806</sendTime>
+         <platformId>13</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>203</id>
-         <senderId>41</senderId>
+         <senderId>51</senderId>
          <text>dsdasd</text>
-         <sendTime>555203</sendTime>
-         <platformId>9</platformId>
+         <sendTime>1513601218818</sendTime>
+         <platformId>13</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>204</id>
+         <senderId>51</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601218829</sendTime>
+         <platformId>13</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>205</id>
-         <senderId>42</senderId>
+         <senderId>52</senderId>
          <text>dsdasd</text>
-         <sendTime>555205</sendTime>
-         <platformId>9</platformId>
+         <sendTime>1513601218855</sendTime>
+         <platformId>13</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>206</id>
-         <senderId>42</senderId>
+         <senderId>52</senderId>
          <text>dsdasd</text>
-         <sendTime>555206</sendTime>
-         <platformId>9</platformId>
+         <sendTime>1513601218872</sendTime>
+         <platformId>13</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>207</id>
-         <senderId>42</senderId>
+         <senderId>52</senderId>
          <text>dsdasd</text>
-         <sendTime>555207</sendTime>
-         <platformId>9</platformId>
+         <sendTime>1513601218888</sendTime>
+         <platformId>13</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>208</id>
+         <senderId>52</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601218907</sendTime>
+         <platformId>13</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>209</id>
-         <senderId>43</senderId>
+         <senderId>53</senderId>
          <text>dsdasd</text>
-         <sendTime>555209</sendTime>
-         <platformId>9</platformId>
+         <sendTime>1513601218929</sendTime>
+         <platformId>14</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>210</id>
-         <senderId>43</senderId>
+         <senderId>53</senderId>
          <text>dsdasd</text>
-         <sendTime>555210</sendTime>
-         <platformId>9</platformId>
+         <sendTime>1513601218949</sendTime>
+         <platformId>14</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>211</id>
-         <senderId>43</senderId>
+         <senderId>53</senderId>
          <text>dsdasd</text>
-         <sendTime>555211</sendTime>
-         <platformId>9</platformId>
+         <sendTime>1513601218965</sendTime>
+         <platformId>14</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>212</id>
+         <senderId>53</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601218981</sendTime>
+         <platformId>14</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>213</id>
+         <senderId>54</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601218997</sendTime>
+         <platformId>14</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>214</id>
+         <senderId>54</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601219015</sendTime>
+         <platformId>14</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>215</id>
+         <senderId>54</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601219032</sendTime>
+         <platformId>14</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>216</id>
+         <senderId>54</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601219049</sendTime>
+         <platformId>14</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>217</id>
+         <senderId>55</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601219068</sendTime>
+         <platformId>14</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>218</id>
+         <senderId>55</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601219083</sendTime>
+         <platformId>14</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>219</id>
+         <senderId>55</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601219100</sendTime>
+         <platformId>14</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>220</id>
+         <senderId>55</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601219115</sendTime>
+         <platformId>14</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>221</id>
-         <senderId>45</senderId>
+         <senderId>56</senderId>
          <text>dsdasd</text>
-         <sendTime>555221</sendTime>
-         <platformId>10</platformId>
+         <sendTime>1513601219138</sendTime>
+         <platformId>14</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>222</id>
-         <senderId>45</senderId>
+         <senderId>56</senderId>
          <text>dsdasd</text>
-         <sendTime>555222</sendTime>
-         <platformId>10</platformId>
+         <sendTime>1513601219152</sendTime>
+         <platformId>14</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>223</id>
-         <senderId>45</senderId>
+         <senderId>56</senderId>
          <text>dsdasd</text>
-         <sendTime>555223</sendTime>
-         <platformId>10</platformId>
+         <sendTime>1513601219165</sendTime>
+         <platformId>14</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>224</id>
+         <senderId>56</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601219182</sendTime>
+         <platformId>14</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>225</id>
-         <senderId>46</senderId>
+         <senderId>57</senderId>
          <text>dsdasd</text>
-         <sendTime>555225</sendTime>
-         <platformId>10</platformId>
+         <sendTime>1513601219201</sendTime>
+         <platformId>15</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>226</id>
-         <senderId>46</senderId>
+         <senderId>57</senderId>
          <text>dsdasd</text>
-         <sendTime>555226</sendTime>
-         <platformId>10</platformId>
+         <sendTime>1513601219220</sendTime>
+         <platformId>15</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>227</id>
-         <senderId>46</senderId>
+         <senderId>57</senderId>
          <text>dsdasd</text>
-         <sendTime>555227</sendTime>
-         <platformId>10</platformId>
+         <sendTime>1513601219251</sendTime>
+         <platformId>15</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>228</id>
+         <senderId>57</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601219273</sendTime>
+         <platformId>15</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>229</id>
-         <senderId>47</senderId>
+         <senderId>58</senderId>
          <text>dsdasd</text>
-         <sendTime>555229</sendTime>
-         <platformId>10</platformId>
+         <sendTime>1513601219292</sendTime>
+         <platformId>15</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>230</id>
-         <senderId>47</senderId>
+         <senderId>58</senderId>
          <text>dsdasd</text>
-         <sendTime>555230</sendTime>
-         <platformId>10</platformId>
+         <sendTime>1513601219310</sendTime>
+         <platformId>15</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>231</id>
-         <senderId>47</senderId>
+         <senderId>58</senderId>
          <text>dsdasd</text>
-         <sendTime>555231</sendTime>
-         <platformId>10</platformId>
+         <sendTime>1513601219327</sendTime>
+         <platformId>15</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>232</id>
+         <senderId>58</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601219347</sendTime>
+         <platformId>15</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>233</id>
+         <senderId>59</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601219371</sendTime>
+         <platformId>15</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>234</id>
+         <senderId>59</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601219386</sendTime>
+         <platformId>15</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>235</id>
+         <senderId>59</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601219403</sendTime>
+         <platformId>15</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>236</id>
+         <senderId>59</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601219422</sendTime>
+         <platformId>15</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>237</id>
+         <senderId>60</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601219448</sendTime>
+         <platformId>15</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>238</id>
+         <senderId>60</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601219467</sendTime>
+         <platformId>15</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>239</id>
+         <senderId>60</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601219484</sendTime>
+         <platformId>15</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>240</id>
+         <senderId>60</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601219502</sendTime>
+         <platformId>15</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>241</id>
-         <senderId>49</senderId>
+         <senderId>61</senderId>
          <text>dsdasd</text>
-         <sendTime>555241</sendTime>
-         <platformId>11</platformId>
+         <sendTime>1513601219531</sendTime>
+         <platformId>16</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>242</id>
-         <senderId>49</senderId>
+         <senderId>61</senderId>
          <text>dsdasd</text>
-         <sendTime>555242</sendTime>
-         <platformId>11</platformId>
+         <sendTime>1513601219551</sendTime>
+         <platformId>16</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>243</id>
-         <senderId>49</senderId>
+         <senderId>61</senderId>
          <text>dsdasd</text>
-         <sendTime>555243</sendTime>
-         <platformId>11</platformId>
+         <sendTime>1513601219568</sendTime>
+         <platformId>16</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>244</id>
+         <senderId>61</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601219585</sendTime>
+         <platformId>16</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>245</id>
-         <senderId>50</senderId>
+         <senderId>62</senderId>
          <text>dsdasd</text>
-         <sendTime>555245</sendTime>
-         <platformId>11</platformId>
+         <sendTime>1513601219612</sendTime>
+         <platformId>16</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>246</id>
-         <senderId>50</senderId>
+         <senderId>62</senderId>
          <text>dsdasd</text>
-         <sendTime>555246</sendTime>
-         <platformId>11</platformId>
+         <sendTime>1513601219631</sendTime>
+         <platformId>16</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>247</id>
-         <senderId>50</senderId>
+         <senderId>62</senderId>
          <text>dsdasd</text>
-         <sendTime>555247</sendTime>
-         <platformId>11</platformId>
+         <sendTime>1513601219648</sendTime>
+         <platformId>16</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>248</id>
+         <senderId>62</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601219665</sendTime>
+         <platformId>16</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>249</id>
-         <senderId>51</senderId>
+         <senderId>63</senderId>
          <text>dsdasd</text>
-         <sendTime>555249</sendTime>
-         <platformId>11</platformId>
+         <sendTime>1513601219685</sendTime>
+         <platformId>16</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>250</id>
-         <senderId>51</senderId>
+         <senderId>63</senderId>
          <text>dsdasd</text>
-         <sendTime>555250</sendTime>
-         <platformId>11</platformId>
+         <sendTime>1513601219704</sendTime>
+         <platformId>16</platformId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Message">
          <id>251</id>
-         <senderId>51</senderId>
+         <senderId>63</senderId>
          <text>dsdasd</text>
-         <sendTime>555251</sendTime>
-         <platformId>11</platformId>
+         <sendTime>1513601219718</sendTime>
+         <platformId>16</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>252</id>
+         <senderId>63</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601219740</sendTime>
+         <platformId>16</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>253</id>
+         <senderId>64</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601219769</sendTime>
+         <platformId>16</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>254</id>
+         <senderId>64</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601219784</sendTime>
+         <platformId>16</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>255</id>
+         <senderId>64</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601219804</sendTime>
+         <platformId>16</platformId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Message">
+         <id>256</id>
+         <senderId>64</senderId>
+         <text>dsdasd</text>
+         <sendTime>1513601219823</sendTime>
+         <platformId>16</platformId>
       </object>
    </list>
 </entityList>

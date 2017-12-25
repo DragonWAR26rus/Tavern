@@ -2,20 +2,26 @@
    <list class="java.util.ArrayList">
       <object class="ru.sfedu.tavern.model.entities.Platform">
          <id>1</id>
-         <domain>domain1</domain>
-         <key>key1</key>
-         <ownerId>1</ownerId>
+         <domain>MyGreatPlatform</domain>
+         <key>L2OQ0Fmv3EVIucaiUywoi0k9y5ZPEx3b</key>
+         <ownerId>5</ownerId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Platform">
          <id>2</id>
          <domain>domain2</domain>
-         <key>a0yy4cTNpkBoRAGoNoDR6Upuk1i6wBtU</key>
+         <key>key2</key>
          <ownerId>1</ownerId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Platform">
          <id>3</id>
          <domain>domain3</domain>
          <key>key3</key>
+         <ownerId>1</ownerId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Platform">
+         <id>4</id>
+         <domain>domain4</domain>
+         <key>key4</key>
          <ownerId>1</ownerId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Platform">
@@ -34,6 +40,12 @@
          <id>7</id>
          <domain>domain7</domain>
          <key>key7</key>
+         <ownerId>2</ownerId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Platform">
+         <id>8</id>
+         <domain>domain8</domain>
+         <key>key8</key>
          <ownerId>2</ownerId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Platform">
@@ -56,15 +68,33 @@
       </object>
       <object class="ru.sfedu.tavern.model.entities.Platform">
          <id>12</id>
-         <domain>My super domain name</domain>
-         <key>RrQ5098bMT8sWhvkJJvmkcgLBbVCMdo8</key>
+         <domain>domain12</domain>
+         <key>key12</key>
          <ownerId>3</ownerId>
       </object>
       <object class="ru.sfedu.tavern.model.entities.Platform">
          <id>13</id>
-         <domain>My second cool domain</domain>
-         <key>H1WiwQLUIcuWfia1sg6vnIaA7UclOfd9</key>
-         <ownerId>3</ownerId>
+         <domain>domain13</domain>
+         <key>key13</key>
+         <ownerId>4</ownerId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Platform">
+         <id>14</id>
+         <domain>domain14</domain>
+         <key>key14</key>
+         <ownerId>4</ownerId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Platform">
+         <id>15</id>
+         <domain>domain15</domain>
+         <key>key15</key>
+         <ownerId>4</ownerId>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.Platform">
+         <id>16</id>
+         <domain>domain16</domain>
+         <key>key16</key>
+         <ownerId>4</ownerId>
       </object>
    </list>
 </entityList>

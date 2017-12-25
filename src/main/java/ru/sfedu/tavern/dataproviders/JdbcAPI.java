@@ -1,13 +1,16 @@
 package ru.sfedu.tavern.dataproviders;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import javafx.animation.Animation;
 import org.apache.log4j.Logger;
-import org.apache.log4j.Priority;
-import ru.sfedu.tavern.database.DbConnection;
+import ru.sfedu.tavern.model.Constants;
 import ru.sfedu.tavern.model.Result;
 import ru.sfedu.tavern.model.StatusType;
 import ru.sfedu.tavern.model.entities.ClassType;
@@ -16,6 +19,7 @@ import ru.sfedu.tavern.model.entities.Message;
 import ru.sfedu.tavern.model.entities.OurUser;
 import ru.sfedu.tavern.model.entities.Platform;
 import ru.sfedu.tavern.model.entities.PlatformUser;
+import ru.sfedu.tavern.utils.ConfigurationUtil;
 
 /**
  *
@@ -23,17 +27,78 @@ import ru.sfedu.tavern.model.entities.PlatformUser;
  */
 public class JdbcAPI implements IDataProvider{
 
-    
-    private static Logger logger = Logger.getLogger(CsvAPI.class);
-    private DbConnection instance;
-        
-    public JdbcAPI() {
-        try {
-            instance = DbConnection.getInstance();
-        } catch (Exception ex) {
-            logger.error(ex);
+    /**
+     *
+     * @param col
+     * @param val
+     * @param type
+     * @param needWarngs
+     * @return
+     */
+    @Override
+    public List<Entity> select(String col, String val, ClassType type, boolean needWarngs) {
+        try {   
+            return select(col, val, type);
+        } catch (Exception ex){ 
+            return new ArrayList();
         }
+    }
+
+    
+    private static Logger log = Logger.getLogger(JdbcAPI.class);
+    
+    private static List<Entity> ourUserList;
+    private static List<Entity> platformList;
+    private static List<Entity> platformUserList;
+    private static List<Entity> messageList;
+    private static boolean transactionThere;
+    
+    private Connection con  = null;
+    private String url;
+    private String login;
+    private String password;
+    private String driver;
         
+    /**
+     *
+     */
+    public JdbcAPI() {
+        try{
+            url      = ConfigurationUtil.getConfigurationEntry(Constants.CONFIG_DB_URL);
+            login    = ConfigurationUtil.getConfigurationEntry(Constants.CONFIG_DB_LOGIN);
+            password = ConfigurationUtil.getConfigurationEntry(Constants.CONFIG_DB_PASSWORD);
+            driver   = ConfigurationUtil.getConfigurationEntry(Constants.CONFIG_DB_DRIVER);
+        } catch ( Exception ex ) {
+            log.info(ex.getMessage());
+        } 
+        openConnection();
+        
+    }
+    
+    private void openConnection() {
+        log.info("Trying to open DB connection...");
+        try {
+            Class.forName(driver);
+            con = DriverManager.getConnection(url, login, password);
+            log.info("DB connection opened!");
+        } catch (Exception ex) {
+            log.info("Error connection: " + ex);
+        } 
+    }
+    
+    // Close connection
+
+    /**
+     *
+     */
+    public void closeConnection(){
+        if(con != null){
+            try {
+                con.close();
+            } catch (SQLException ex) {
+                log.info(ex);
+            }
+        }
     }
 
     @Override
@@ -42,7 +107,7 @@ public class JdbcAPI implements IDataProvider{
         try {
             object.stream().forEach(iterator -> {
                 String query = "INSERT INTO " + classType.getTableName() + "(" + classType.getHeaderString() + ") VALUES (" + iterator.toString(true) + ");";
-                instance.execQuery(query, classType);
+                execQuery(query, classType);
             });
         } catch (Exception ex) {
             return new Result(StatusType.ERROR);
@@ -65,7 +130,7 @@ public class JdbcAPI implements IDataProvider{
         Entity object = optObject.get();
         ClassType classType = object.getClassType();
         try {
-            instance.execQuery("UPDATE " + classType.getTableName() + " " + setExpGen(object) + " WHERE id=" + object.getId() + ";", classType);   
+            execQuery("UPDATE " + classType.getTableName() + " " + setExpGen(Optional.ofNullable(object)) + " WHERE id=" + object.getId() + ";", classType);   
         } catch (Exception ex) {
             return new Result(StatusType.ERROR);
         }
@@ -78,7 +143,7 @@ public class JdbcAPI implements IDataProvider{
         Entity object = optObject.get();
         ClassType classType = object.getClassType();
         try {
-            instance.execQuery("DELETE FROM " + classType.getTableName() + " WHERE id=" + object.getId() + ";", classType);   
+            execQuery("DELETE FROM " + classType.getTableName() + " WHERE id=" + object.getId() + ";", classType);   
         } catch (Exception ex) {
             return new Result(StatusType.ERROR);
         }
@@ -91,7 +156,7 @@ public class JdbcAPI implements IDataProvider{
             try{
                 delete(Optional.ofNullable(e));
             } catch (Exception ex) {
-                logger.warn(ex);
+                log.warn(ex);
             }
         });
         return new Result(StatusType.OK);
@@ -99,18 +164,24 @@ public class JdbcAPI implements IDataProvider{
 
     @Override
     public Optional<Entity> getObjectByID(long id, ClassType type) {
-        Optional<Entity> result;
+        Optional<Entity> result = Optional.empty();
         List<Entity> list = new ArrayList();
         try {
-            list = select("id", String.valueOf(id), type);
+            list.addAll(select("id", String.valueOf(id), type));
         }catch(Exception ex) {
-            logger.error(ex);
+            log.error(ex);
         }
         
-        result = Optional.ofNullable(list.get(0));
+        if(!list.isEmpty()) result = Optional.ofNullable(list.get(0));
         return result;
     }
 
+    /**
+     *
+     * @param type
+     * @return
+     * @throws Exception
+     */
     public List<Entity> select(ClassType type) throws Exception {
         return select(null, null, type);
     }
@@ -123,11 +194,13 @@ public class JdbcAPI implements IDataProvider{
         }
         
         List<Entity> result = new ArrayList();
-        result = instance.execQuery("SELECT * FROM " + type.getTableName() + whereCond + ";", type);
+        result.addAll(execQuery("SELECT * FROM " + type.getTableName() + whereCond + ";", type));
         return result;
     }
 
-    private String setExpGen(Entity obj) {
+    private String setExpGen(Optional<Entity> optObject) {
+        if(!optObject.isPresent()) return "";
+        Entity obj = optObject.get();
         String res = "";
         switch(obj.getClassType()) {
             case MESSAGE:
@@ -174,8 +247,85 @@ public class JdbcAPI implements IDataProvider{
         } catch(Exception ex) {
             return 1;
         }
-        long maxId = list.stream().max((p1, p2) -> Long.valueOf(p1.getId()).compareTo(p2.getId())).get().getId();
+        long maxId = 0;
+        Optional<Entity> entity = list.stream().max((p1, p2) -> Long.valueOf(p1.getId()).compareTo(p2.getId()));
+        if(entity.isPresent()) {
+            maxId = entity.get().getId();
+        }
+        
         return maxId + 1;
+    }
+
+    @Override
+    public void checkAndRemoveAllWrongDependecies() {
+        return;
+    }
+    
+    /**
+     *
+     * @param query
+     * @param type
+     * @return
+     */
+    public List<Entity> execQuery (String query, ClassType type){
+        List<Entity> result = new ArrayList();
+        if(con != null){
+            try (Statement stmt = con.createStatement(); ){
+                try{
+                    ResultSet rs = stmt.executeQuery(query);
+                    while(rs.next()) {
+                        Entity obj = null;
+                        switch(type) {
+                            case OURUSER:
+                                obj = new OurUser(
+                                        rs.getLong(1),
+                                        rs.getString(2),
+                                        rs.getString(3),
+                                        rs.getLong(4),
+                                        rs.getString(5)
+                                );
+                                break;
+                            case PLATFORM:
+                                obj = new Platform(
+                                        rs.getLong(1),
+                                        rs.getString(2),
+                                        rs.getString(3),
+                                        rs.getLong(4)  
+                                );
+                                break;
+                            case PLATFORMUSER:
+                                obj = new PlatformUser(
+                                        rs.getLong(1),
+                                        rs.getString(2),
+                                        rs.getString(3),
+                                        rs.getLong(4),
+                                        rs.getBoolean(5),
+                                        rs.getLong(6)
+                                );
+                                break;
+                            case MESSAGE:
+                                obj = new Message(
+                                        rs.getLong(1),
+                                        rs.getLong(2),
+                                        rs.getLong(4),
+                                        rs.getString(3),
+                                        rs.getLong(5)
+                                );
+                                break;
+                        }
+                        result.add(obj);
+                    }
+                } catch (Exception ex) {
+//                    log.warn("Exception: " + ex);
+                }
+            } catch (Exception ex){
+                log.warn("Exception: " + ex);
+                return result;
+            }
+        } else {
+            openConnection();
+        }
+        return result;
     }
     
 }

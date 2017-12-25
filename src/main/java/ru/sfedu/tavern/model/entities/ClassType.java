@@ -13,9 +13,24 @@ import ru.sfedu.tavern.model.Constants;
  */
 public enum ClassType {
     
+    /**
+     *
+     */
     OURUSER      (Constants.HEADERS_OURUSER,      OurUser.class,      Constants.OURUSER_FILENAME,       Constants.OURUSER_TABLE),
+
+    /**
+     *
+     */
     PLATFORM     (Constants.HEADERS_PLATFORM,     Platform.class,     Constants.PLATFORM_FILENAME,      Constants.PLATFORM_TABLE),
+
+    /**
+     *
+     */
     PLATFORMUSER (Constants.HEADERS_PLATFORMUSER, PlatformUser.class, Constants.PLATFORMUSER_FILENAME,  Constants.PLATFORMUSER_TABLE),
+
+    /**
+     *
+     */
     MESSAGE      (Constants.HEADERS_MESSAGE,      Message.class,      Constants.MESSAGE_FILENAME,       Constants.MESSAGE_TABLE);
     
     private Class _class;
@@ -36,22 +51,42 @@ public enum ClassType {
         return super.toString();
     }
     
+    /**
+     *
+     * @return
+     */
     public String getHeaderString() {
         return String.join(", ", headers);
     }
     
+    /**
+     *
+     * @return
+     */
     public Class getCl() {
         return _class;
     }
     
+    /**
+     *
+     * @return
+     */
     public String[] getHeaders() {
         return headers;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getFileName() {
         return fileName;
     }
     
+    /**
+     *
+     * @return
+     */
     public String getTableName() {
         return tableName;
     }

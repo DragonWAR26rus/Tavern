@@ -6,6 +6,9 @@ package ru.sfedu.tavern.exception;
  */
 public class RecordNotFoundException extends Exception{
     
+    /**
+     *
+     */
     public RecordNotFoundException() {
         super("Record not found");
     }

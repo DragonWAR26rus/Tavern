@@ -4,7 +4,7 @@ CREATE TABLE our_user (
     id serial primary key,
     login varchar(50) not null,
     passwordHash varchar(32) not null,
-    lastAct varchar(20),
+    lastAct bigint,
     email varchar(255) not null
 );
 
@@ -21,7 +21,7 @@ CREATE TABLE platform_user (
     id serial primary key,
     login varchar(50) not null,
     avatarlink varchar(255),
-    lastAct varchar(20),
+    lastAct bigint,
     banned boolean,
     platformId integer NOT NULL REFERENCES platform(id) ON DELETE CASCADE ON UPDATE CASCADE,
     UNIQUE( login, platformId )
@@ -32,11 +32,13 @@ CREATE TABLE message (
     id serial primary key,
     senderId integer NOT NULL REFERENCES platform_user(id) ON DELETE CASCADE ON UPDATE CASCADE,
     text text,
-    sendTime varchar(20),
+    sendTime bigint,
     platformId integer NOT NULL REFERENCES platform(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
-insert into our_user(id, login, passwordHash, lastAct, email) values(111, 'Sergey', 'passhashSuperHash', '123', 'sergey.s.l@mail.ru');
+truncate our_user cascade;
+
+insert into our_user(id, login, passwordHash, lastAct, email) values(111, 'Sergey', 'passhashSuperHash', 123, 'sergey.s.l@mail.ru');
 insert into platform(id, domain, key, ownerId) values(111, 'seregaDomain', 'keeey', 111);
 insert into platform_user(id, login, avatarlink, lastAct, banned, platformId) values(111,'seregaLogin', 'avavava', 123, false, 111);
 insert into message(id, senderId, text, sendTime, platformId) values(111, 111, 'avasdadasdvava', 124, 111);

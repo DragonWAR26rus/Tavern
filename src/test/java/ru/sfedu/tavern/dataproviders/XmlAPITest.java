@@ -5,8 +5,6 @@
  */
 package ru.sfedu.tavern.dataproviders;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -16,6 +14,7 @@ import ru.sfedu.tavern.model.entities.Message;
 import ru.sfedu.tavern.model.entities.OurUser;
 import ru.sfedu.tavern.model.entities.Platform;
 import ru.sfedu.tavern.model.entities.PlatformUser;
+import ru.sfedu.tavern.utils.EntityGenerator;
 
 /**
  *
@@ -25,73 +24,165 @@ public class XmlAPITest {
     
     public XmlAPITest() {
     }
-
+    
     /**
-     * Test of insert method, of class XmlAPI.
+     * Test of CRUD methods for OurUser entity, of class XmlAPI
      */
     @Test
-    public void testInsert_List() throws Exception {
+    public void testOurUserCRUD() {
+        XmlAPI xml = new XmlAPI();
+        OurUser user = EntityGenerator.generateOurUser(xml);
+        assertNotNull(user);
+        Optional<Entity> optUser = Optional.ofNullable(user);
+        try {
+            // CREATE
+            xml.insert(optUser);
+            assertEquals(optUser, xml.getObjectByID(user.getId(), ClassType.OURUSER));
+            
+            // UPDATE
+            user.setLogin(user.getLogin() + "_TEST_UPDATE");
+            optUser = Optional.ofNullable(user);
+            xml.update(optUser);
+            assertEquals(optUser, xml.getObjectByID(user.getId(), ClassType.OURUSER));
+            
+            // READ
+            assertEquals(user, xml.select("id", String.valueOf(user.getId()), ClassType.OURUSER).get(0));
+            
+            // DELETE
+            xml.delete(optUser);
+            assertFalse(xml.getObjectByID(user.getId(), ClassType.OURUSER).isPresent());
+        } catch (Exception ex) {}   
+    }
+    
+    /**
+     * Test of CRUD methods for Platform entity, of class XmlAPI
+     */
+    @Test
+    public void testPlatformCRUD() {
+        XmlAPI xml = new XmlAPI();
+        OurUser user = EntityGenerator.generateOurUser(xml);
+        assertNotNull(user);
+        Platform pl = EntityGenerator.generatePlatform(xml, user);
+        assertNotNull(pl);
+        Optional<Entity> optPl = Optional.ofNullable(pl);
+        try {
+            
+            xml.insert(Optional.ofNullable(user));
+            assertEquals(Optional.ofNullable(user), xml.getObjectByID(user.getId(), ClassType.OURUSER));
+            
+            // CREATE
+            xml.insert(optPl);
+            assertEquals(optPl, xml.getObjectByID(pl.getId(), ClassType.PLATFORM));
+            
+            // UPDATE
+            pl.setDomain(pl.getDomain()+ "_TEST_UPDATE");
+            optPl = Optional.ofNullable(pl);
+            xml.update(optPl);
+            assertEquals(optPl, xml.getObjectByID(pl.getId(), ClassType.PLATFORM));
+            
+            // READ
+            assertEquals(pl, xml.select("id", String.valueOf(pl.getId()), ClassType.PLATFORM).get(0));
+            
+            // DELETE
+            xml.delete(optPl);
+            assertFalse(xml.getObjectByID(pl.getId(), ClassType.PLATFORM).isPresent());
+            
+            
+            xml.delete(Optional.ofNullable(user));
+            assertFalse(xml.getObjectByID(user.getId(), ClassType.OURUSER).isPresent());
+        } catch (Exception ex) {}   
     }
 
     /**
-     * Test of insert method, of class XmlAPI.
+     * Test of CRUD methods for PlatformUser entity, of class XmlAPI
      */
     @Test
-    public void testInsert_Entity() throws Exception {
-        XmlAPI instance = new XmlAPI();
-        System.out.println("insert");
-        for(int i = 1; i < 4; i++) {
-            Entity object1 = new OurUser(i, "Test" + i, "Hash" + i, "123" + i, "qwe" + i + "@mail.ru");
-            instance.insert(Optional.ofNullable(object1));
-            for(int j = 1; j < 4; j++) {
-                int q = (i-1) * 4 + j;
-                Entity object2 = new Platform(q, "domain" + q, "key" + q, i);
-                instance.insert(Optional.ofNullable(object2));
-                for(int x = 1; x < 4; x++) {
-                    int z = (i-1) * 4 + (q-1) * 4 + x;
-                    Entity object3 = new PlatformUser(z, "login" + z, "link" + z, "321" + z, false, q);
-                    instance.insert(Optional.ofNullable(object3));
-                    for(int d = 1; d < 4; d++) {
-                        int m = (i-1) * 4 + (q-1) * 4 + (z-1) * 4 + d;
-                        Entity object4 = new Message(m, z, "555"+m, "dsdasd", q);
-                         instance.insert(Optional.ofNullable(object4));
-                    }
-                }
-            }
-        }
-        
+    public void testPlatformUserCRUD() {
+        XmlAPI xml = new XmlAPI();
+        OurUser user = EntityGenerator.generateOurUser(xml);
+        assertNotNull(user);
+        Platform pl = EntityGenerator.generatePlatform(xml, user);
+        assertNotNull(pl);
+        PlatformUser plUser = EntityGenerator.generatePlatformUser(xml, pl);
+        assertNotNull(pl);
+        Optional<Entity> optPlUser = Optional.ofNullable(plUser);
+        try {
+            
+            xml.insert(Optional.ofNullable(user));
+            assertEquals(Optional.ofNullable(user), xml.getObjectByID(user.getId(), ClassType.OURUSER));
+            xml.insert(Optional.ofNullable(pl));
+            assertEquals(Optional.ofNullable(pl), xml.getObjectByID(pl.getId(), ClassType.PLATFORM));
+            
+            // CREATE
+            xml.insert(optPlUser);
+            assertEquals(optPlUser, xml.getObjectByID(plUser.getId(), ClassType.PLATFORMUSER));
+            
+            // UPDATE
+            plUser.setLogin(plUser.getLogin()+ "_TEST_UPDATE");
+            optPlUser = Optional.ofNullable(plUser);
+            xml.update(optPlUser);
+            assertEquals(optPlUser, xml.getObjectByID(plUser.getId(), ClassType.PLATFORMUSER));
+            
+            // READ
+            assertEquals(plUser, xml.select("id", String.valueOf(plUser.getId()), ClassType.PLATFORMUSER).get(0));
+            
+            // DELETE
+            xml.delete(optPlUser);
+            assertFalse(xml.getObjectByID(plUser.getId(), ClassType.PLATFORMUSER).isPresent());
+            
+            
+            xml.delete(Optional.ofNullable(user));
+            assertFalse(xml.getObjectByID(user.getId(), ClassType.OURUSER).isPresent());
+            assertFalse(xml.getObjectByID(pl.getId(), ClassType.PLATFORM).isPresent());
+        } catch (Exception ex) {}   
     }
-
+    
     /**
-     * Test of update method, of class XmlAPI.
+     * Test of CRUD methods for Message entity, of class XmlAPI
      */
     @Test
-    public void testUpdate() throws Exception {
-    }
-
-    /**
-     * Test of delete method, of class XmlAPI.
-     */
-    @Test
-    public void testDelete() throws Exception {
-    }
-
-    /**
-     * Test of getObjectByID method, of class XmlAPI.
-     */
-    @Test
-    public void testGetObjectByID() {
-    }
-
-    /**
-     * Test of select method, of class XmlAPI.
-     */
-    @Test
-    public void testSelect() throws Exception {
-        XmlAPI instance = new XmlAPI();
-        List<Entity> list = new ArrayList();
-        list.addAll(instance.select("ownerId", "2", ClassType.PLATFORM));
-        list.forEach(System.out::println);
+    public void testMessageCRUD() {
+        XmlAPI xml = new XmlAPI();
+        OurUser user = EntityGenerator.generateOurUser(xml);
+        assertNotNull(user);
+        Platform pl = EntityGenerator.generatePlatform(xml, user);
+        assertNotNull(pl);
+        PlatformUser plUser = EntityGenerator.generatePlatformUser(xml, pl);
+        assertNotNull(pl);
+        Message message = EntityGenerator.generateMessage(xml, plUser, pl);
+        assertNotNull(message);
+        Optional<Entity> optMessage = Optional.ofNullable(message);
+        try {  
+            xml.insert(Optional.ofNullable(user));
+            assertEquals(Optional.ofNullable(user), xml.getObjectByID(user.getId(), ClassType.OURUSER));
+            xml.insert(Optional.ofNullable(pl));
+            assertEquals(Optional.ofNullable(pl), xml.getObjectByID(pl.getId(), ClassType.PLATFORM));
+            xml.insert(Optional.ofNullable(plUser));
+            assertEquals(Optional.ofNullable(plUser), xml.getObjectByID(plUser.getId(), ClassType.PLATFORMUSER));
+            
+            // CREATE
+            xml.insert(optMessage);
+            assertEquals(optMessage, xml.getObjectByID(message.getId(), ClassType.MESSAGE));
+            
+            // UPDATE
+            message.setText(message.getText()+ "_TEST_UPDATE");
+            optMessage = Optional.ofNullable(message);
+            xml.update(optMessage);
+            assertEquals(optMessage, xml.getObjectByID(message.getId(), ClassType.MESSAGE));
+            
+            // READ
+            assertEquals(message, xml.select("id", String.valueOf(message.getId()), ClassType.MESSAGE).get(0));
+            
+            // DELETE
+            xml.delete(optMessage);
+            assertFalse(xml.getObjectByID(message.getId(), ClassType.MESSAGE).isPresent());
+            
+            
+            xml.delete(Optional.ofNullable(user));
+            assertFalse(xml.getObjectByID(user.getId(), ClassType.OURUSER).isPresent());
+            assertFalse(xml.getObjectByID(pl.getId(), ClassType.PLATFORM).isPresent());
+            assertFalse(xml.getObjectByID(plUser.getId(), ClassType.PLATFORMUSER).isPresent());
+        } catch (Exception ex) {}   
     }
     
 }

@@ -6,7 +6,14 @@ package ru.sfedu.tavern.model;
  */
 public enum StatusType {
     
+    /**
+     *
+     */
     OK("OK"),
+
+    /**
+     *
+     */
     ERROR("ERROR");
     
     private String description;

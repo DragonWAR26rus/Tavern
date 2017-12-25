@@ -1,6 +1,7 @@
 package ru.sfedu.tavern;
 
 import org.apache.log4j.Logger;
+import ru.sfedu.tavern.utils.CliUtil;
 
 /**
  *
@@ -31,7 +32,20 @@ public class Tavern {
     }
     
     public static void main(String []args) {
-        
+//        args = new String[] { 
+//            "-r",
+//            "-l",
+//            "admin",
+//            "-p",
+//            "admin",
+//            "-dp",
+//            "xml",
+//            "-e",
+//            "admin@tavern.com",
+//        };
+       if(CliUtil.authorize(args)){
+           CliUtil.remoteControl();
+       }
     }
     
 }

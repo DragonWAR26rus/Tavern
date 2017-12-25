@@ -1,7 +1,11 @@
 package ru.sfedu.tavern.utils;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.Properties;
 
 /**
@@ -12,9 +16,10 @@ import java.util.Properties;
  */
 public class ConfigurationUtil {
 
-    private static final String DEFAULT_CONFIG_PATH = "/config.properties";
+//    private static final String DEFAULT_CONFIG_PATH = "./src/main/resources/config.properties";
+    private static final String DEFAULT_CONFIG_PATH = "config.properties";
+    private static final String SYSTEM_PROP_PATH = "tavern.file.path";
     private static final Properties configuration = new Properties();
-
     /**
      * Hides default constructor
      */
@@ -34,13 +39,17 @@ public class ConfigurationUtil {
      * @throws IOException In case of the configuration file read failure
      */
     private static void loadConfiguration() throws IOException{
-        InputStream in = DEFAULT_CONFIG_PATH.getClass().getResourceAsStream(DEFAULT_CONFIG_PATH);
-        try {
-            configuration.load(in);
+        try{
+            if(System.getProperty(SYSTEM_PROP_PATH) == null) {
+                ClassLoader CL = ConfigurationUtil.class.getClassLoader();
+                configuration.load(CL.getResourceAsStream(DEFAULT_CONFIG_PATH));
+            } else {
+                File nf = new File(System.getProperty(SYSTEM_PROP_PATH));
+                InputStream in = new FileInputStream(nf);
+                configuration.load(in);
+            }
         } catch (IOException ex) {
             throw new IOException(ex);
-        } finally{
-            in.close();
         }
     }
     /**

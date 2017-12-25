@@ -29,14 +29,24 @@ public class OurUser extends Entity{
     private String email;
     @Element
     @CsvBindByPosition(position = 5)
-    private String lastAct;
-//    @CsvBindByPosition(position = 6)
-//    private ArrayList<Integer> platformsId;
+    private Long lastAct;
     
+    /**
+     *
+     */
     public OurUser(){
         super(ClassType.OURUSER);
     }
-    public OurUser(long id, String login, String passwordHash, String lastAct, String email) {
+
+    /**
+     *
+     * @param id
+     * @param login
+     * @param passwordHash
+     * @param lastAct
+     * @param email
+     */
+    public OurUser(long id, String login, String passwordHash, long lastAct, String email) {
         super(ClassType.OURUSER);
         this.id             = id;
         this.login          = login;
@@ -44,12 +54,17 @@ public class OurUser extends Entity{
         this.lastAct        = lastAct;
         this.email          = email;
     }
+
+    /**
+     *
+     * @param initList
+     */
     public OurUser(ArrayList<Object> initList) {
         super(ClassType.OURUSER);
         this.id = initList.get(0) == null ? 1l : Long.parseLong(initList.get(0).toString());
         String _login        = initList.get(1) == null ? null : initList.get(1).toString();
         String _passwordHash = initList.get(2) == null ? null : initList.get(2).toString();
-        String _lastAct      = initList.get(3) == null ? null : initList.get(3).toString();
+        long _lastAct        = initList.get(3) == null ? null : Long.parseLong(initList.get(3).toString());
         String _email        = initList.get(4) == null ? null : initList.get(4).toString();
         
         this.login          = _login;
@@ -58,34 +73,66 @@ public class OurUser extends Entity{
         this.email          = _email;
     }
     
+    /**
+     *
+     * @return
+     */
     public String getLogin() {
         return login;
     }
     
+    /**
+     *
+     * @param login
+     */
     public void setLogin( String login ) {
         this.login = login;
     }
     
+    /**
+     *
+     * @return
+     */
     public String getPasswordHash() {
         return passwordHash;
     }
     
+    /**
+     *
+     * @param passwordHash
+     */
     public void setPasswordHash( String passwordHash ) {
         this.passwordHash = passwordHash;
     }
     
-    public String getLastAct() {
+    /**
+     *
+     * @return
+     */
+    public long getLastAct() {
         return lastAct;
     }
     
-    public void setLastAct( String lastAct ) {
+    /**
+     *
+     * @param lastAct
+     */
+    public void setLastAct( long lastAct ) {
         this.lastAct = lastAct;
     }
     
+    /**
+     *
+     * @return
+     */
     public String getEmail() {
         return email;
     }
      
+    /**
+     *
+     * @param email
+     */
     public void setEmail( String email ) {
         this.email = email;
     }
@@ -107,6 +154,13 @@ public class OurUser extends Entity{
         this.platforms.add(platform);
     }
     */
+
+    /**
+     *
+     * @param needId
+     * @return
+     */
+
     
     public String valuesToString(boolean needId) {
         String row = needId ? Long.toString(getId()) + ", '" : "'";
@@ -125,6 +179,11 @@ public class OurUser extends Entity{
                 '}';
     }
     
+    /**
+     *
+     * @param comma
+     * @return
+     */
     @Override
     public String toString(boolean comma) {
         if(comma) {
@@ -155,15 +214,35 @@ public class OurUser extends Entity{
         if (getId() != other.getId()) {
             return false;
         }
+        if (!getLogin().equals(other.getLogin())) {
+            return false;
+        }
+        if (!getPasswordHash().equals(other.getPasswordHash())) {
+            return false;
+        }
+        if (!getEmail().equals(other.getEmail())) {
+            return false;
+        }
+        if (getLastAct()!= other.getLastAct()) {
+            return false;
+        }
         
         return true;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public long getId() {
         return id;
     }
 
+    /**
+     *
+     * @param id
+     */
     @Override
     public void setId(long id) {
         this.id = id;

@@ -5,134 +5,187 @@
  */
 package ru.sfedu.tavern.dataproviders;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.FixMethodOrder;
+import org.junit.runners.MethodSorters;
 import ru.sfedu.tavern.model.entities.ClassType;
 import ru.sfedu.tavern.model.entities.Entity;
 import ru.sfedu.tavern.model.entities.Message;
 import ru.sfedu.tavern.model.entities.OurUser;
 import ru.sfedu.tavern.model.entities.Platform;
 import ru.sfedu.tavern.model.entities.PlatformUser;
+import ru.sfedu.tavern.utils.EntityGenerator;
 
 /**
  *
  * @author entropy
  */
+
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class CsvAPITest {
     
     public CsvAPITest() {
     }
-
+    
     /**
-     * Test of insert method, of class CsvAPI.
+     * Test of CRUD methods for OurUser entity, of class CsvAPI
      */
     @Test
-    public void testInsert_ArrayList() {
-        System.out.println("insert");
-        ArrayList<Entity> objectList = null;
-        CsvAPI instance = new CsvAPI();
-        instance.insert(objectList);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of insert method, of class CsvAPI.
-     */
-    @Test
-    public void testInsert_Entity() {
-        
-        CsvAPI instance = new CsvAPI();
-        System.out.println("insert");
-        for(int i = 1; i < 4; i++) {
-            Entity object1 = new OurUser(i, "Test" + i, "Hash" + i, "123" + i, "qwe" + i + "@mail.ru");
-            instance.insert(Optional.ofNullable(object1));
-            for(int j = 1; j < 4; j++) {
-                int q = (i-1) * 4 + j;
-                Entity object2 = new Platform(q, "domain" + q, "key" + q, i);
-                instance.insert(Optional.ofNullable(object2));
-                for(int x = 1; x < 4; x++) {
-                    int z = (i-1) * 4 + (q-1) * 4 + x;
-                    Entity object3 = new PlatformUser(z, "login" + z, "link" + z, "321" + z, false, q);
-                    instance.insert(Optional.ofNullable(object3));
-                    for(int d = 1; d < 4; d++) {
-                        int m = (i-1) * 4 + (q-1) * 4 + (z-1) * 4 + d;
-                        Entity object4 = new Message(m, z, "555"+m, "dsdasd", q);
-                         instance.insert(Optional.ofNullable(object4));
-                    }
-                }
-            }
-        }
-        
-        // Test wrong dependency
-        Entity wrongObj = new Platform(112312, "domain", "key", 1233212);
-        instance.insert(Optional.ofNullable(wrongObj));
-//        instance.insert(object1);
-    }
-
-    /**
-     * Test of update method, of class CsvAPI.
-     */
-    @Test
-    public void testUpdate() {
-        System.out.println("update");
-        OurUser updateableObject = new OurUser(2, "Entropy", "NewPassHash1", "1509574941841", "DragonWAR26russ@gmail.com");
-        CsvAPI instance = new CsvAPI();
+    public void testOurUserCRUD() {
+        CsvAPI csv = new CsvAPI();
+        OurUser user = EntityGenerator.generateOurUser(csv);
+        assertNotNull(user);
+        Optional<Entity> optUser = Optional.ofNullable(user);
         try {
-            instance.update(Optional.ofNullable(updateableObject));
-        } catch (Exception ex) {
+            // CREATE
+            csv.insert(optUser);
+            assertEquals(optUser, csv.getObjectByID(user.getId(), ClassType.OURUSER));
             
-        }
-    }
-
-    /**
-     * Test of delete method, of class CsvAPI.
-     */
-    @Test
-    public void testDelete() {
-        System.out.println("delete");
-        CsvAPI instance = new CsvAPI();
-        Entity removeableObject = instance.getObjectByID(1, ClassType.OURUSER).get();
-        Entity removeableObject2 = instance.getObjectByID(3, ClassType.OURUSER).get();
-        List<Entity> l = new ArrayList();
-        l.add(removeableObject);
-        l.add(removeableObject2);
-        instance.delete(l);
-    }
-
-    /**
-     * Test of getObjectByID method, of class CsvAPI.
-     */
-    @Test
-    public void testGetObjectByID() {
-        System.out.println("getObjectByID");
-        long id = 1L;
-        ClassType type = ClassType.PLATFORM;
-        CsvAPI instance = new CsvAPI();
-        Optional<Entity> expResult = null;
-        Optional<Entity> result = instance.getObjectByID(id, type);
-        System.out.println(result.toString());
-    }
-
-    /**
-     * Test of select method, of class CsvAPI.
-     */
-    @Test
-    public void testSelect() throws Exception {
-        System.out.println("select");
-        String col = "id";
-        String val = "111";
-        ClassType type = ClassType.OURUSER;
-        CsvAPI instance = new CsvAPI();
-        List<Entity> expResult = null;
-        List<Entity> result = instance.select(col, val, type);
-        result.stream().forEach(iterator -> {
-            System.out.println(iterator.toString());
-        });
-        // TODO review the generated test code and remove the default call to fail.
+            // UPDATE
+            user.setLogin(user.getLogin() + "_TEST_UPDATE");
+            optUser = Optional.ofNullable(user);
+            csv.update(optUser);
+            assertEquals(optUser, csv.getObjectByID(user.getId(), ClassType.OURUSER));
+            
+            // READ
+            assertEquals(user, csv.select("id", String.valueOf(user.getId()), ClassType.OURUSER).get(0));
+            
+            // DELETE
+            csv.delete(optUser);
+            assertFalse(csv.getObjectByID(user.getId(), ClassType.OURUSER).isPresent());
+        } catch (Exception ex) {}   
     }
     
+    /**
+     * Test of CRUD methods for Platform entity, of class CsvAPI
+     */
+    @Test
+    public void testPlatformCRUD() {
+        CsvAPI csv = new CsvAPI();
+        OurUser user = EntityGenerator.generateOurUser(csv);
+        assertNotNull(user);
+        Platform pl = EntityGenerator.generatePlatform(csv, user);
+        assertNotNull(pl);
+        Optional<Entity> optPl = Optional.ofNullable(pl);
+        try {
+            
+            csv.insert(Optional.ofNullable(user));
+            assertEquals(Optional.ofNullable(user), csv.getObjectByID(user.getId(), ClassType.OURUSER));
+            
+            // CREATE
+            csv.insert(optPl);
+            assertEquals(optPl, csv.getObjectByID(pl.getId(), ClassType.PLATFORM));
+            
+            // UPDATE
+            pl.setDomain(pl.getDomain()+ "_TEST_UPDATE");
+            optPl = Optional.ofNullable(pl);
+            csv.update(optPl);
+            assertEquals(optPl, csv.getObjectByID(pl.getId(), ClassType.PLATFORM));
+            
+            // READ
+            assertEquals(pl, csv.select("id", String.valueOf(pl.getId()), ClassType.PLATFORM).get(0));
+            
+            // DELETE
+            csv.delete(optPl);
+            assertFalse(csv.getObjectByID(pl.getId(), ClassType.PLATFORM).isPresent());
+            
+            
+            csv.delete(Optional.ofNullable(user));
+            assertFalse(csv.getObjectByID(user.getId(), ClassType.OURUSER).isPresent());
+        } catch (Exception ex) {}   
+    }
+
+    /**
+     * Test of CRUD methods for PlatformUser entity, of class CsvAPI
+     */
+    @Test
+    public void testPlatformUserCRUD() {
+        CsvAPI csv = new CsvAPI();
+        OurUser user = EntityGenerator.generateOurUser(csv);
+        assertNotNull(user);
+        Platform pl = EntityGenerator.generatePlatform(csv, user);
+        assertNotNull(pl);
+        PlatformUser plUser = EntityGenerator.generatePlatformUser(csv, pl);
+        assertNotNull(pl);
+        Optional<Entity> optPlUser = Optional.ofNullable(plUser);
+        try {
+            
+            csv.insert(Optional.ofNullable(user));
+            assertEquals(Optional.ofNullable(user), csv.getObjectByID(user.getId(), ClassType.OURUSER));
+            csv.insert(Optional.ofNullable(pl));
+            assertEquals(Optional.ofNullable(pl), csv.getObjectByID(pl.getId(), ClassType.PLATFORM));
+            
+            // CREATE
+            csv.insert(optPlUser);
+            assertEquals(optPlUser, csv.getObjectByID(plUser.getId(), ClassType.PLATFORMUSER));
+            
+            // UPDATE
+            plUser.setLogin(plUser.getLogin()+ "_TEST_UPDATE");
+            optPlUser = Optional.ofNullable(plUser);
+            csv.update(optPlUser);
+            assertEquals(optPlUser, csv.getObjectByID(plUser.getId(), ClassType.PLATFORMUSER));
+            
+            // READ
+            assertEquals(plUser, csv.select("id", String.valueOf(plUser.getId()), ClassType.PLATFORMUSER).get(0));
+            
+            // DELETE
+            csv.delete(optPlUser);
+            assertFalse(csv.getObjectByID(plUser.getId(), ClassType.PLATFORMUSER).isPresent());
+            
+            
+            csv.delete(Optional.ofNullable(user));
+            assertFalse(csv.getObjectByID(user.getId(), ClassType.OURUSER).isPresent());
+            assertFalse(csv.getObjectByID(pl.getId(), ClassType.PLATFORM).isPresent());
+        } catch (Exception ex) {}   
+    }
+    
+    /**
+     * Test of CRUD methods for Message entity, of class CsvAPI
+     */
+    @Test
+    public void testMessageCRUD() {
+        CsvAPI csv = new CsvAPI();
+        OurUser user = EntityGenerator.generateOurUser(csv);
+        assertNotNull(user);
+        Platform pl = EntityGenerator.generatePlatform(csv, user);
+        assertNotNull(pl);
+        PlatformUser plUser = EntityGenerator.generatePlatformUser(csv, pl);
+        assertNotNull(pl);
+        Message message = EntityGenerator.generateMessage(csv, plUser, pl);
+        assertNotNull(message);
+        Optional<Entity> optMessage = Optional.ofNullable(message);
+        try {  
+            csv.insert(Optional.ofNullable(user));
+            assertEquals(Optional.ofNullable(user), csv.getObjectByID(user.getId(), ClassType.OURUSER));
+            csv.insert(Optional.ofNullable(pl));
+            assertEquals(Optional.ofNullable(pl), csv.getObjectByID(pl.getId(), ClassType.PLATFORM));
+            csv.insert(Optional.ofNullable(plUser));
+            assertEquals(Optional.ofNullable(plUser), csv.getObjectByID(plUser.getId(), ClassType.PLATFORMUSER));
+            
+            // CREATE
+            csv.insert(optMessage);
+            assertEquals(optMessage, csv.getObjectByID(message.getId(), ClassType.MESSAGE));
+            
+            // UPDATE
+            message.setText(message.getText()+ "_TEST_UPDATE");
+            optMessage = Optional.ofNullable(message);
+            csv.update(optMessage);
+            assertEquals(optMessage, csv.getObjectByID(message.getId(), ClassType.MESSAGE));
+            
+            // READ
+            assertEquals(message, csv.select("id", String.valueOf(message.getId()), ClassType.MESSAGE).get(0));
+            
+            // DELETE
+            csv.delete(optMessage);
+            assertFalse(csv.getObjectByID(message.getId(), ClassType.MESSAGE).isPresent());
+            
+            
+            csv.delete(Optional.ofNullable(user));
+            assertFalse(csv.getObjectByID(user.getId(), ClassType.OURUSER).isPresent());
+            assertFalse(csv.getObjectByID(pl.getId(), ClassType.PLATFORM).isPresent());
+            assertFalse(csv.getObjectByID(plUser.getId(), ClassType.PLATFORMUSER).isPresent());
+        } catch (Exception ex) {}   
+    }
 }

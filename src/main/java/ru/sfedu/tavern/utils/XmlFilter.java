@@ -16,10 +16,21 @@ import ru.sfedu.tavern.model.entities.PlatformUser;
  */
 public class XmlFilter {
 
+    /**
+     *
+     */
     public XmlFilter() {
 
     }
     
+    /**
+     *
+     * @param col
+     * @param val
+     * @param list
+     * @param type
+     * @return
+     */
     public static List<Entity> filter(String col, String val, List<Entity> list, ClassType type){
         List<Entity> resultList = new ArrayList();
         if(col == null || val == null) {
@@ -50,7 +61,7 @@ public class XmlFilter {
                         break;
                     case "lastAct":
                         resultList.addAll(list.stream()
-                                .filter(e -> ((OurUser)e).getLastAct().equals(val))
+                                .filter(e -> ((OurUser)e).getLastAct() == Long.valueOf(val))
                                 .collect(Collectors.toList()));
                         break;
                 }
@@ -75,7 +86,7 @@ public class XmlFilter {
                         break;
                     case "ownerId":
                         resultList.addAll(list.stream()
-                                .filter(e -> ((Platform)e).getOwnerId()== Long.valueOf(val))
+                                .filter(e -> ((Platform)e).getOwnerId() == Long.valueOf(val))
                                 .collect(Collectors.toList()));
                         break;
                 }
@@ -100,7 +111,7 @@ public class XmlFilter {
                         break;
                     case "lastAct":
                         resultList.addAll(list.stream()
-                                .filter(e -> ((PlatformUser)e).getLastAct().equals(val))
+                                .filter(e -> ((PlatformUser)e).getLastAct() == Long.valueOf(val))
                                 .collect(Collectors.toList()));
                         break;
                     case "banned":
@@ -135,7 +146,7 @@ public class XmlFilter {
                         break;
                     case "sendTime":
                         resultList.addAll(list.stream()
-                                .filter(e -> ((Message)e).getSendTime().equals(val))
+                                .filter(e -> ((Message)e).getSendTime() == Long.valueOf(val))
                                 .collect(Collectors.toList()));
                         break;
                     case "platformId":

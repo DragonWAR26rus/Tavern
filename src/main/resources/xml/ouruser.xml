@@ -2,24 +2,38 @@
    <list class="java.util.ArrayList">
       <object class="ru.sfedu.tavern.model.entities.OurUser">
          <id>1</id>
-         <login>Test1</login>
-         <passwordHash>Hash1</passwordHash>
-         <email>qwe1@mail.ru</email>
-         <lastAct>1231</lastAct>
+         <login>Maxon</login>
+         <passwordHash>3aaa874dcee8ba238a92cd352386c24a</passwordHash>
+         <email>klakson@maxon.ru</email>
+         <lastAct>1513503687878</lastAct>
       </object>
       <object class="ru.sfedu.tavern.model.entities.OurUser">
          <id>2</id>
-         <login>Test2</login>
-         <passwordHash>Hash2</passwordHash>
-         <email>qwe2@mail.ru</email>
-         <lastAct>1232</lastAct>
+         <login>Maxon2</login>
+         <passwordHash>ea1447b342ea6fe0e5b27f87da64b1ef</passwordHash>
+         <email>klakson4@maxon.ru</email>
+         <lastAct>1513503760811</lastAct>
       </object>
       <object class="ru.sfedu.tavern.model.entities.OurUser">
          <id>3</id>
-         <login>Test3</login>
-         <passwordHash>Hash3</passwordHash>
-         <email>qwe3@mail.ru</email>
-         <lastAct>1233</lastAct>
+         <login>Maxoooon</login>
+         <passwordHash>91d244530b46808d3ecd77c470eaafd9</passwordHash>
+         <email>klaksossn4@maxon.ru</email>
+         <lastAct>1513504055013</lastAct>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.OurUser">
+         <id>4</id>
+         <login>Maxoooon1</login>
+         <passwordHash>91d244530b46808d3ecd77c470eaafd9</passwordHash>
+         <email>klaksossn4@maxon.ru</email>
+         <lastAct>1513504260221</lastAct>
+      </object>
+      <object class="ru.sfedu.tavern.model.entities.OurUser">
+         <id>5</id>
+         <login>admin</login>
+         <passwordHash>21232f297a57a5a743894a0e4a801fc3</passwordHash>
+         <email>admin@tavern.com</email>
+         <lastAct>1513594543948</lastAct>
       </object>
    </list>
 </entityList>

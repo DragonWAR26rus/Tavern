@@ -6,7 +6,6 @@
 package ru.sfedu.tavern.model.entities;
 
 
-import com.opencsv.bean.CsvBindByName;
 import com.opencsv.bean.CsvBindByPosition;
 import java.util.ArrayList;
 import org.simpleframework.xml.Element;
@@ -31,7 +30,7 @@ public class PlatformUser extends Entity{
     private String avatarLink;
     @Element
     @CsvBindByPosition(position = 4)
-    private String lastAct;
+    private long lastAct;
     @Element
     @CsvBindByPosition(position = 5)
     private boolean banned;
@@ -39,10 +38,23 @@ public class PlatformUser extends Entity{
     @CsvBindByPosition(position = 6)
     private long platformId;
     
+    /**
+     *
+     */
     public PlatformUser(){
         super(ClassType.PLATFORMUSER);
     }
-    public PlatformUser(long id, String login, String avatarLink, String lastAct, boolean banned, long platformId) {
+
+    /**
+     *
+     * @param id
+     * @param login
+     * @param avatarLink
+     * @param lastAct
+     * @param banned
+     * @param platformId
+     */
+    public PlatformUser(long id, String login, String avatarLink, long lastAct, boolean banned, long platformId) {
         super(ClassType.PLATFORMUSER);
         this.id         = id;
         this.login      = login;
@@ -51,12 +63,17 @@ public class PlatformUser extends Entity{
         this.banned     = banned;
         this.platformId = platformId;
     }
+
+    /**
+     *
+     * @param initList
+     */
     public PlatformUser(ArrayList<Object> initList) {
         super(ClassType.PLATFORMUSER);
         this.id             = initList.get(0) == null ? 1l : Long.parseLong(initList.get(0).toString());
         String  _login      = initList.get(1) == null ? null : initList.get(1).toString();
         String  _avatarLink = initList.get(2) == null ? null : initList.get(2).toString();
-        String  _lastAct    = initList.get(3) == null ? null : initList.get(3).toString();
+        long  _lastAct      = initList.get(3) == null ? null : Long.parseLong(initList.get(3).toString());
         boolean _banned     = initList.get(4) == null ? null : Boolean.parseBoolean(initList.get(4).toString());
         long    _platformId = initList.get(5) == null ? null : Long.parseLong(initList.get(5).toString());
         
@@ -67,42 +84,82 @@ public class PlatformUser extends Entity{
         this.platformId = _platformId;
     }
     
+    /**
+     *
+     * @return
+     */
     public String getLogin() {
         return login;
     }
     
+    /**
+     *
+     * @param login
+     */
     public void setLogin( String login ) {
         this.login = login;
     }
     
+    /**
+     *
+     * @return
+     */
     public String getAvatarLink() {
         return avatarLink;
     }
     
+    /**
+     *
+     * @param avatarLink
+     */
     public void setAvatarLink( String avatarLink ) {
         this.avatarLink = avatarLink;
     }
     
-    public String getLastAct() {
+    /**
+     *
+     * @return
+     */
+    public long getLastAct() {
         return lastAct;
     }
      
-    public void setLastAct( String lastAct ) {
+    /**
+     *
+     * @param lastAct
+     */
+    public void setLastAct( long lastAct ) {
         this.lastAct = lastAct;
     }
     
+    /**
+     *
+     * @return
+     */
     public boolean getBanned() {
         return banned;
     }
      
+    /**
+     *
+     * @param banned
+     */
     public void setBanned( boolean banned ) {
         this.banned = banned;
     }
     
+    /**
+     *
+     * @return
+     */
     public long getPlatformId(){
         return platformId;
     }
     
+    /**
+     *
+     * @param platformId
+     */
     public void setPlatformId( long platformId ){
         this.platformId = platformId;
     }
@@ -119,6 +176,11 @@ public class PlatformUser extends Entity{
                 '}';
     }
     
+    /**
+     *
+     * @param comma
+     * @return
+     */
     @Override
     public String toString( boolean comma ) {
         if(comma) {
@@ -150,15 +212,35 @@ public class PlatformUser extends Entity{
         if (getId() != other.getId()) {
             return false;
         }
+        if (!getLogin().equals(other.getLogin())) {
+            return false;
+        }
+        if (!getAvatarLink().equals(other.getAvatarLink())) {
+            return false;
+        }
+        if (getPlatformId()!= other.getPlatformId()) {
+            return false;
+        }
+        if (getBanned()!= other.getBanned()) {
+            return false;
+        }
         
         return true;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public long getId() {
         return id;
     }
 
+    /**
+     *
+     * @param id
+     */
     @Override
     public void setId(long id) {
         this.id = id;

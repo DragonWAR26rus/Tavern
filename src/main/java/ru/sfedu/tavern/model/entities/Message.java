@@ -5,7 +5,6 @@
  */
 package ru.sfedu.tavern.model.entities;
 
-import com.opencsv.bean.CsvBindByName;
 import com.opencsv.bean.CsvBindByPosition;
 import java.util.ArrayList;
 import org.simpleframework.xml.Element;
@@ -30,17 +29,29 @@ public class Message extends Entity{
     private String text;
     @Element
     @CsvBindByPosition(position = 4)
-    private String sendTime;
+    private long sendTime;
     @Element
     @CsvBindByPosition(position = 5)
     private long platformId;
     
+    /**
+     *
+     */
     public Message(){
         super(ClassType.MESSAGE);
     }
+
+    /**
+     *
+     * @param id
+     * @param senderId
+     * @param sendTime
+     * @param text
+     * @param platformId
+     */
     public Message( long id,
                     long senderId,
-                    String sendTime,
+                    long sendTime,
                     String text,
                     long platformId){
         super(ClassType.MESSAGE);
@@ -50,48 +61,85 @@ public class Message extends Entity{
         this.sendTime = sendTime;
         this.platformId = platformId;
     }
+
+    /**
+     *
+     * @param initList
+     */
     public Message(ArrayList<Object> initList) {
         super(ClassType.MESSAGE);
         this.id = initList.get(0) == null ? 1l : Long.parseLong(initList.get(0).toString());
         long _senderId    = initList.get(1) == null ? null : Long.parseLong(initList.get(1).toString());
         String _text      = initList.get(2) == null ? null : initList.get(2).toString();
-        String _send_time = initList.get(3) == null ? null : initList.get(3).toString();
+        long _sendTime    = initList.get(3) == null ? null : Long.parseLong(initList.get(3).toString());
         long _platformId  = initList.get(4) == null ? null : Long.parseLong(initList.get(4).toString());
         
         this.senderId           = _senderId;
         this.text               = _text;
-        this.sendTime           = _send_time;
+        this.sendTime           = _sendTime;
         this.platformId         = _platformId;
     }
     
+    /**
+     *
+     * @return
+     */
     public long getSenderId() {
         return senderId;
     }
     
+    /**
+     *
+     * @param senderId
+     */
     public void setSenderId( long senderId ) {
         this.senderId = senderId;
     }
     
+    /**
+     *
+     * @return
+     */
     public String getText() {
         return text;
     }
     
+    /**
+     *
+     * @param text
+     */
     public void setText( String text ) {
         this.text = text;
     }
     
-    public String getSendTime() {
+    /**
+     *
+     * @return
+     */
+    public long getSendTime() {
         return sendTime;
     }
     
-    public void setSendTime( String sendTime ) {
+    /**
+     *
+     * @param sendTime
+     */
+    public void setSendTime( long sendTime ) {
         this.sendTime = sendTime;
     }
     
+    /**
+     *
+     * @return
+     */
     public long getPlatformId() {
         return platformId;
     }
     
+    /**
+     *
+     * @param platformId
+     */
     public void setPlatformId( long platformId ) {
         this.platformId = platformId;
     }
@@ -107,6 +155,11 @@ public class Message extends Entity{
                 '}';
     }
     
+    /**
+     *
+     * @param comma
+     * @return
+     */
     @Override
     public String toString(boolean comma) {
         if(comma) {
@@ -138,15 +191,35 @@ public class Message extends Entity{
         if (getId() != other.getId()) {
             return false;
         }
+        if (getPlatformId()!= other.getPlatformId()) {
+            return false;
+        }
+        if (!getText().equals(other.getText())) {
+            return false;
+        }
+        if (getSenderId()!= other.getSenderId()) {
+            return false;
+        }
+        if (getSendTime()!= other.getSendTime()) {
+            return false;
+        }
         
         return true;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public long getId() {
         return id;
     }
 
+    /**
+     *
+     * @param id
+     */
     @Override
     public void setId(long id) {
         this.id = id;

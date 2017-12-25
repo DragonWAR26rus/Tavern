@@ -28,9 +28,20 @@ public class Platform extends Entity{
     @CsvBindByPosition(position = 4)
     private long ownerId;
     
+    /**
+     *
+     */
     public Platform(){
         super(ClassType.PLATFORM);
     }
+
+    /**
+     *
+     * @param id
+     * @param domain
+     * @param key
+     * @param ownerId
+     */
     public Platform(long id, String domain, String key, long ownerId){
         super(ClassType.PLATFORM);
         this.id = id;
@@ -38,6 +49,11 @@ public class Platform extends Entity{
         this.key = key;
         this.ownerId = ownerId;
     }
+
+    /**
+     *
+     * @param initList
+     */
     public Platform(ArrayList<Object> initList) {
         super(ClassType.PLATFORM);
         this.id        = initList.get(0) == null ? 1l : Long.parseLong(initList.get(0).toString());
@@ -50,26 +66,50 @@ public class Platform extends Entity{
         this.ownerId = _ownerId;
     }
     
+    /**
+     *
+     * @return
+     */
     public String getDomain(){
         return domain;
     }
     
+    /**
+     *
+     * @param domain
+     */
     public void setDomain( String domain ){
         this.domain = domain;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getKey(){
         return key;
     }
     
+    /**
+     *
+     * @param key
+     */
     public void setKey( String key ){
         this.key = key;
     }
     
+    /**
+     *
+     * @return
+     */
     public long getOwnerId(){
         return ownerId;
     }
     
+    /**
+     *
+     * @param ownerId
+     */
     public void setOwnerId( int ownerId ){
         this.ownerId = ownerId;
     }
@@ -84,6 +124,11 @@ public class Platform extends Entity{
                 '}';
     }
     
+    /**
+     *
+     * @param comma
+     * @return
+     */
     @Override
     public String toString(boolean comma) {
         if(comma) {
@@ -113,15 +158,32 @@ public class Platform extends Entity{
         if (getId() != other.getId()) {
             return false;
         }
+        if (!getDomain().equals(other.getDomain())) {
+            return false;
+        }
+        if (!getKey().equals(other.getKey())) {
+            return false;
+        }
+        if (getOwnerId()!= other.getOwnerId()) {
+            return false;
+        }
         
         return true;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public long getId() {
         return id;
     }
 
+    /**
+     *
+     * @param id
+     */
     @Override
     public void setId(long id) {
         this.id = id;

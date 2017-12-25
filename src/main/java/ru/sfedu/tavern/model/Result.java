@@ -14,27 +14,57 @@ public class Result {
     private StatusType status;
     private String msg;
 
+    /**
+     *
+     */
     public Result() {}
+
+    /**
+     *
+     * @param status
+     */
     public Result(StatusType status) {
         this.status = status;
     }
+
+    /**
+     *
+     * @param status
+     * @param msg
+     */
     public Result(StatusType status, String msg) {
         this.status = status;
         this.msg = msg;
     }
     
+    /**
+     *
+     * @return
+     */
     public StatusType getStatus() {
         return status;
     }
     
+    /**
+     *
+     * @param status
+     */
     public void setStatus(StatusType status) {
         this.status = status;
     }
     
+    /**
+     *
+     * @return
+     */
     public String getMsg() {
         return msg;
     }
     
+    /**
+     *
+     * @param msg
+     */
     public void setMsg(String msg) {
         this.msg = msg;
     }
