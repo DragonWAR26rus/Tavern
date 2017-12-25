@@ -9,7 +9,9 @@ import java.util.Optional;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
 import ru.sfedu.tavern.model.entities.ClassType;
 import ru.sfedu.tavern.model.entities.Entity;
 import ru.sfedu.tavern.model.entities.Message;
@@ -22,6 +24,7 @@ import ru.sfedu.tavern.utils.EntityGenerator;
  *
  * @author entropy
  */
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class JdbcAPITest {
     
     public JdbcAPITest() {

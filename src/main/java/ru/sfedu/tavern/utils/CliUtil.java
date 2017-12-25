@@ -141,7 +141,8 @@ public class CliUtil {
      */
     public static void remoteControl() {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Tavern> ");
+        log.info("Tavern~" + session.getAuthorisedUser().getLogin() + 
+                ":" + DataProviderSessionUtil.getDataProviderName() + "> ");
         String[] args = scanner.nextLine().trim().split(" ");
         execCommand(args);
         remoteControl();

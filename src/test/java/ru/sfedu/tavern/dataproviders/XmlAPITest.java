@@ -8,6 +8,8 @@ package ru.sfedu.tavern.dataproviders;
 import java.util.Optional;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.FixMethodOrder;
+import org.junit.runners.MethodSorters;
 import ru.sfedu.tavern.model.entities.ClassType;
 import ru.sfedu.tavern.model.entities.Entity;
 import ru.sfedu.tavern.model.entities.Message;
@@ -20,6 +22,7 @@ import ru.sfedu.tavern.utils.EntityGenerator;
  *
  * @author entropy
  */
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class XmlAPITest {
     
     public XmlAPITest() {

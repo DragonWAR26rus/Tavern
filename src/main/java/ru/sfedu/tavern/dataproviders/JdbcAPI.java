@@ -3,7 +3,6 @@ package ru.sfedu.tavern.dataproviders;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -171,7 +170,6 @@ public class JdbcAPI implements IDataProvider{
         }catch(Exception ex) {
             log.error(ex);
         }
-        
         if(!list.isEmpty()) result = Optional.ofNullable(list.get(0));
         return result;
     }
